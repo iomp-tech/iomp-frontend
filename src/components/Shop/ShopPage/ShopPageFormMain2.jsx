@@ -6,12 +6,13 @@ import validate from "./validate";
 
 import {RenderCheckboxPolycy, RenderInput} from "../../";
 
-let ShopPageFormMain2 = ({size, handleSubmit}) => {
+let ShopPageFormMain2 = (props, { size, handleSubmit }) => {
+	console.log(props);
     return (
         <form
             className={`shop-page-main2-form ${size}`}
             onSubmit={handleSubmit}
-        >
+		>
             <div className="shop-page-main2-form-middle">
                 <div className={`shop-page-main2-form-block-wrapper ${size}`}>
                     <div className="input shop-page-main2-form-input-wrapper">

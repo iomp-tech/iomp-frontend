@@ -27,25 +27,8 @@ const ShopPageFeedbackPhotos = ({title, photos, size}) => {
 
     const next = () => {
         slider.current.slickNext();
-    };
-
-    // const options = {
-    //     items: 1,
-    // 	loop: true,
-    // 	center: true,
-    //     mouseDrag: false,
-    //     margin: 25,
-    //     autoWidth: false,
-    //     responsive: {
-    //         1000: {
-    //             items: 5,
-    //         },
-    //         600: {
-    //             items: 3,
-    //         },
-    //     },
-    // };
-
+	};
+	
     const settings = {
         dots: false,
         arrows: false,

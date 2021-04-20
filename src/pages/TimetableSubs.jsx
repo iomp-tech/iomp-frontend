@@ -121,6 +121,10 @@ const TimetableSubs = (props) => {
                                             minDate={byUrlItem.minDate}
                                             maxDate={byUrlItem.maxDate}
                                             date={byUrlItem.date}
+                                            vk={byUrlItem.vk}
+                                            vkUrl={byUrlItem.vkUrl}
+                                            telegram={byUrlItem.telegram}
+                                            telegramUrl={byUrlItem.telegramUrl}
                                         />
                                     ) : null}
                                     {block.type === "section-squares" ? (
