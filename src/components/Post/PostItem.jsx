@@ -20,6 +20,11 @@ const PostItem = React.memo(
                 <div className="post-cover">
                     <div className={`post-cover-text ${size}`}>
                         <div className="post-cover-block-top">
+                            <span className={`post-cover__date ${size}`}>
+                                {moment(date, "YYYY-MM-DD, HH:mm")
+                                    .locale("ru")
+                                    .format("DD MMMM, HH:mm")}
+                            </span>
                             <div className="post-cover-types">
                                 <span
                                     className={`post-cover__type_color ${size}`}
@@ -32,11 +37,6 @@ const PostItem = React.memo(
                                     {postsType && postsType.title}
                                 </span>
                             </div>
-                            <span className={`post-cover__date ${size}`}>
-                                {moment(date, "YYYY-MM-DD, HH:mm")
-                                    .locale("ru")
-                                    .format("DD MMMM, HH:mm")}
-                            </span>
                         </div>
                         <h2 className={`post-cover__title ${size}`}>{title}</h2>
                         <p className={`post-cover__description ${size}`}>

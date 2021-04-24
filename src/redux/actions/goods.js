@@ -19,6 +19,7 @@ export const fetchGoods = (limit = null, query = "") => (dispatch) => {
 	});
 };
 
+
 export const fetchAllGoods = () => (dispatch) => {
 	dispatch({
 		type: 'SET_LOADED_GOODS',

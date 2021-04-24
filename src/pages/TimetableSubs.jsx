@@ -113,17 +113,12 @@ const TimetableSubs = (props) => {
                                         <ShopPageMain2
                                             size={size}
                                             {...block}
-                                            form_id_awo={byUrlItem.id_awo}
                                             action={byUrlItem.action}
-                                            formId={byUrlItem.formId}
-                                            formVc={byUrlItem.formVc}
                                             range={byUrlItem.range}
                                             minDate={byUrlItem.minDate}
                                             maxDate={byUrlItem.maxDate}
                                             date={byUrlItem.date}
-                                            vk={byUrlItem.vk}
                                             vkUrl={byUrlItem.vkUrl}
-                                            telegram={byUrlItem.telegram}
                                             telegramUrl={byUrlItem.telegramUrl}
                                         />
                                     ) : null}
@@ -145,10 +140,9 @@ const TimetableSubs = (props) => {
                                         <ShopPageCompositionProduct
                                             size={size}
                                             {...block}
-                                            form_id_awo={byUrlItem.id_awo}
                                             action={byUrlItem.action}
-                                            formId={byUrlItem.formId}
-                                            formVc={byUrlItem.formVc}
+                                            vkUrl={byUrlItem.vkUrl}
+                                            telegramUrl={byUrlItem.telegramUrl}
                                         />
                                     ) : null}
                                     {block.type === "teachers" ? (

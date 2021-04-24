@@ -2,7 +2,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import {fetchCategories} from "../../../redux/actions/categories";
-import {fetchGoods, fetchGoodsType} from "../../../redux/actions/goods";
+import {fetchAllGoods, fetchGoodsType} from "../../../redux/actions/goods";
 import {addGoodsCart, statusGoodsPush} from "../../../redux/actions/cart";
 import {fetchTeacher} from "../../../redux/actions/teacher";
 
@@ -32,7 +32,7 @@ const ShopPageGoods = ({title, goods, size}) => {
         }
 
         if (!Object.keys(items).length) {
-            dispatch(fetchGoods());
+            dispatch(fetchAllGoods());
         }
     }, []);
 

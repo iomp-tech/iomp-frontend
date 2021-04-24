@@ -300,7 +300,7 @@ const Shop = (props) => {
                                         Object.keys(filters.auth).length !==
                                             0 ||
                                         Object.keys(filters.time).length
-                                            ? "btn-bold_color_icon"
+                                            ? "btn-bold_color_icon white border"
                                             : "btn-regular_color_icon"
                                     }`}
                                     onClick={
