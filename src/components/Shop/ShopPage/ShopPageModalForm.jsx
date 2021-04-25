@@ -36,7 +36,9 @@ let ShopPageModalForm = ({size, handleSubmit}) => {
                     component={RenderCheckboxPolycy}
                     type="checkbox"
                     name="confirmation"
-                    id="shop-page__checkbox-1"
+                    id={`shop-page__checkbox-${Math.floor(
+                        Math.random() * 10000000
+                    )}`}
                     size={size}
                 />
             </div>

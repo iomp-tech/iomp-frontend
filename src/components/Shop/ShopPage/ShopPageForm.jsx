@@ -7,10 +7,7 @@ import {RenderCheckboxPolycy, RenderInput} from "../../";
 
 let ShopPageForm = ({size, handleSubmit}) => {
     return (
-        <form
-            className={`shop-page-form ${size}`}
-            onSubmit={handleSubmit}
-        >
+        <form className={`shop-page-form ${size}`} onSubmit={handleSubmit}>
             <div className="shop-page-form-middle">
                 <div className={`shop-page-form-block-wrapper ${size}`}>
                     <div className="input shop-page-form-input-wrapper">
@@ -36,7 +33,9 @@ let ShopPageForm = ({size, handleSubmit}) => {
                     component={RenderCheckboxPolycy}
                     type="checkbox"
                     name="confirmation"
-                    id="shop-page__checkbox-1"
+                    id={`shop-page__checkbox-${Math.floor(
+                        Math.random() * 10000000
+                    )}`}
                     size={size}
                 />
             </div>
