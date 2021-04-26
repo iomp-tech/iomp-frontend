@@ -75,6 +75,13 @@ const ShopPageCompositionProduct = ({
             document.querySelector(".shop-page-composition-product-list")
                 .clientHeight + 50
         );
+    }, []);
+
+    React.useEffect(() => {
+        setHeightList(
+            document.querySelector(".shop-page-composition-product-list")
+                .clientHeight + 50
+        );
     }, [stateModulesIndex]);
 
     const sliderRef = React.useRef();
