@@ -12,7 +12,7 @@ export const sendRegister = (formData) => (dispatch) => {
 	axios
 		.post(`${API_DOMEN}/register`, formData)
 		.then(({ data }) => {
-			localStorage.setItem('success-token', data.token.original.token);
+			localStorage.setItem('success-token', data.token);
 
 			dispatch({
 				type: 'SET_LOADED_REGISTER',
@@ -21,8 +21,8 @@ export const sendRegister = (formData) => (dispatch) => {
 
 			window.location.href = "/cabinet";
 		})
-		.catch((error) => {
-			dispatch(setMessageRegister("Данный Email уже существует"));
+		.catch(({ response }) => {
+			dispatch(setMessageRegister(response.data.message));
 
 			dispatch({
 				type: 'SET_LOADED_REGISTER',

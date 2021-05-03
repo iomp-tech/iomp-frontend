@@ -18,12 +18,31 @@ export const sendRestoreEmail = (formData) => (dispatch) => {
 
 			window.location.href = "/restoresuccess";
 		})
-		.catch((error) => {
-			dispatch(setMessageRestoreEmail("Email не найден"));
+		.catch(({ response }) => {
+			dispatch(setMessageRestoreEmail(response.data.message));
 
 			dispatch({
 				type: 'SET_LOADED_RESTORE_EMAIL',
 				payload: false,
+			});
+		});
+};
+
+export const checkRestorePass = (hash) => (dispatch) => {
+	axios
+		.post(`${API_DOMEN}/checkRestorePass`, hash)
+		.then((response) => {
+			dispatch(setCheckRestorePass(true));
+
+			dispatch({
+				type: 'SET_LOADED_RESTORE_CHECK',
+				payload: true,
+			});
+		})
+		.catch(({ response }) => {
+			dispatch({
+				type: 'SET_LOADED_RESTORE_CHECK',
+				payload: true,
 			});
 		});
 };
@@ -44,8 +63,8 @@ export const sendRestorePass = (formData) => (dispatch) => {
 
 			window.location.href = "/login";
 		})
-		.catch((error) => {
-			dispatch(setMessageRestorePass("Аккаунт не найден"));
+		.catch(({ response }) => {
+			dispatch(setMessageRestorePass(response.data.message));
 
 			dispatch({
 				type: 'SET_LOADED_RESTORE_PASS',
@@ -62,4 +81,9 @@ const setMessageRestoreEmail = (message) => ({
 const setMessageRestorePass = (message) => ({
 	type: 'SET_MESSAGE_RESTORE_PASS',
 	payload: message,
+});
+
+const setCheckRestorePass = (status) => ({
+	type: 'SET_RESTORE_CHECK',
+	payload: status,
 });

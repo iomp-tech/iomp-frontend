@@ -54,6 +54,11 @@ export const fetchByUrlGoods = (url = "") => (dispatch) => {
 		payload: false,
 	});
 
+	dispatch({
+		type: 'SET_LOADED_GOODS',
+		payload: false,
+	});
+
 	axios.get(`${API_DOMEN}/goods${url !== "" ? `?url=${url}` : ""}`).then(({ data }) => {
 		dispatch(setGoodsByUrl(data));
 	});
