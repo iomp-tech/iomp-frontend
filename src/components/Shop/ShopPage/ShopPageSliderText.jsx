@@ -17,6 +17,13 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
             document.querySelector(".shop-page-slider-text-list").clientHeight +
                 50
         );
+    }, []);
+
+    React.useEffect(() => {
+        setHeightList(
+            document.querySelector(".shop-page-slider-text-list").clientHeight +
+                50
+        );
     }, [stateListTabsIndex]);
 
     const sliderRef = React.useRef();
@@ -62,7 +69,7 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
         }
     };
 
-	const next = () => {
+    const next = () => {
         if (stateListTabsIndex !== parseFloat(tabs.length - 1)) {
             setStateListTabsIndex(parseFloat(stateListTabsIndex + 1));
 
