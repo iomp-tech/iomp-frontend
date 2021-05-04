@@ -6,8 +6,6 @@ export const validateInfo = (values) => {
 
 	if (!values.first_name) {
 		errors.first_name = 'Поле не может быть пустым';
-	} else if (!/^[А-Яа-яЁё]+$/i.test(values.first_name)) {
-		errors.first_name = 'Поле не может содержать спец символы';
 	} else if (values.first_name.length > defaultMax) {
 		errors.first_name = `Не более ${defaultMax} символов`;
 	} else if (values.first_name.length < defaultMin) {
@@ -16,8 +14,6 @@ export const validateInfo = (values) => {
 
 	if (!values.middle_name) {
 		errors.middle_name = 'Поле не может быть пустым';
-	} else if (!/^[А-Яа-яЁё]+$/i.test(values.middle_name)) {
-		errors.middle_name = 'Поле не может содержать спец символы';
 	} else if (values.middle_name.length > defaultMax) {
 		errors.middle_name = `Не более ${defaultMax} символов`;
 	} else if (values.middle_name.length < defaultMin) {
@@ -26,8 +22,6 @@ export const validateInfo = (values) => {
 
 	if (!values.last_name) {
 		errors.last_name = 'Поле не может быть пустым';
-	} else if (!/^[А-Яа-яЁё]+$/i.test(values.last_name)) {
-		errors.last_name = 'Поле не может содержать спец символы';
 	} else if (values.last_name.length > defaultMax) {
 		errors.last_name = `Не более ${defaultMax} символов`;
 	} else if (values.last_name.length < defaultMin) {

@@ -8,8 +8,6 @@ const validate = values => {
 
 	if (!values.name) {
 		errors.name = 'Поле не может быть пустым';
-	} else if (!/^[А-Яа-яЁё]+$/i.test(values.name)) {
-		errors.name = 'Поле не может содержать спец символы';
 	} else if (values.name.length > defaultMax) {
 		errors.name = `Не более ${defaultMax} символов`;
 	} else if (values.name.length < defaultMin) {
