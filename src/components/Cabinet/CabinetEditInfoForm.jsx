@@ -185,7 +185,7 @@ let CabinetEditInfoForm = React.memo(
                             size={size}
                         />
                     </div>
-                    <div className="cabinet-input">
+                    {/* <div className="cabinet-input">
                         <Field
                             component={CabinetInputRender}
                             type="date"
@@ -248,7 +248,7 @@ let CabinetEditInfoForm = React.memo(
                             label="Facebook"
                             size={size}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <button
                     type="submit"
