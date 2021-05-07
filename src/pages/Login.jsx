@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {LoginForm, PreloaderPage} from ".././components/";
 import {sendLogin} from ".././redux/actions/login";
 
-import Er404 from "./Er404";
+import {INDEX_MAGAZIN_AWO} from "../api";
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -59,6 +59,10 @@ const Login = () => {
         dispatch(sendLogin(formData));
     };
 
+    const redirect = () => {
+        window.location.href = `https://${INDEX_MAGAZIN_AWO}.ru/personal/`;
+    };
+
     return (
         <>
             <Helmet>
@@ -105,7 +109,7 @@ const Login = () => {
                             </div>
                         </section>
                     ) : (
-                        <Er404 />
+                        redirect()
                     )}
                 </>
             ) : (

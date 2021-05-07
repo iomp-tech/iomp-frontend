@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RegisterForm, PreloaderPage} from ".././components/";
 import {sendRegister} from ".././redux/actions/register";
 
-import Er404 from "./Er404";
+import { INDEX_MAGAZIN_AWO } from "../api";
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -20,6 +20,10 @@ const Register = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    const redirect = () => {
+        window.location.href = `https://${INDEX_MAGAZIN_AWO}.ru/personal/`;
+	};
+	
     React.useEffect(() => {
         if (Object.keys(integration).length) {
             // Top
@@ -100,7 +104,7 @@ const Register = () => {
                             </div>
                         </section>
                     ) : (
-                        <Er404 />
+                        redirect()
                     )}
                 </>
             ) : (
