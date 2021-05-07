@@ -19,7 +19,11 @@ export const sendRestoreEmail = (formData) => (dispatch) => {
 			window.location.href = "/restoresuccess";
 		})
 		.catch(({ response }) => {
-			dispatch(setMessageRestoreEmail(response.data.message));
+			if (response.data) {
+				dispatch(setMessageRestoreEmail(response.data.message));
+			} else {
+				dispatch(setMessageRestoreEmail(""));
+			}
 
 			dispatch({
 				type: 'SET_LOADED_RESTORE_EMAIL',

@@ -22,7 +22,11 @@ export const sendRegister = (formData) => (dispatch) => {
 			window.location.href = "/cabinet";
 		})
 		.catch(({ response }) => {
-			dispatch(setMessageRegister(response.data.message));
+			if (response.data) {
+				dispatch(setMessageRegister(response.data.message));
+			} else {
+				dispatch(setMessageRegister(""));
+			}
 
 			dispatch({
 				type: 'SET_LOADED_REGISTER',

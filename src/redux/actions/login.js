@@ -10,7 +10,7 @@ export const sendLogin = (formData) => (dispatch) => {
 
 	axios
 		.post(`${API_DOMEN}/login`, formData)
-		.then(({data}) => {
+		.then(({ data }) => {
 			localStorage.setItem('success-token', data.token);
 
 			dispatch({
@@ -20,8 +20,13 @@ export const sendLogin = (formData) => (dispatch) => {
 
 			window.location.href = "/cabinet";
 		})
-		.catch((error) => {
-			dispatch(setMessageLogin("Пользователь с такой связкой email и пароля не найден"));
+		.catch(({ response }) => {
+			if (response.data) {
+				dispatch(setMessageLogin(response.data.message));
+			} else {
+				dispatch(setMessageLogin(""));
+			}
+
 
 			dispatch({
 				type: 'SET_LOADED_LOGIN',
