@@ -2,7 +2,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
 
-import {fetchTeacherMain} from ".././redux/actions/teacher";
+import {fetchTeacher} from ".././redux/actions/teacher";
 
 import {
     TeacherBlock,
@@ -16,7 +16,7 @@ import {
 const Teacher = () => {
     const dispatch = useDispatch();
 
-    const {itemsMain, isLoaded} = useSelector(({teacher}) => teacher);
+    const {items, isLoaded} = useSelector(({teacher}) => teacher);
     const {size, rgb, bgColor} = useSelector(({visually}) => visually);
     const {integration} = useSelector(({integration_page}) => integration_page);
 
@@ -28,8 +28,8 @@ const Teacher = () => {
     React.useEffect(() => {
         window.scrollTo(0, 0);
 
-        if (!Object.keys(itemsMain).length) {
-            dispatch(fetchTeacherMain());
+        if (!Object.keys(items).length) {
+            dispatch(fetchTeacher());
         }
 
         document.body.addEventListener("click", handTeacherModalBool);
@@ -104,21 +104,19 @@ const Teacher = () => {
                             state={TeacherModalBool}
                             onClick={toggleTeacherModal}
                             modalRef={TeacherModalRef}
-                            {...itemsMain[activeTeacherItems]}
+                            {...items[activeTeacherItems]}
                         />
 
                         <div className="teacher-block-wrapper">
                             {isLoaded
-                                ? Object.keys(itemsMain).map((key) => (
+                                ? Object.keys(items).map((key) => (
                                       <TeacherBlock
-                                          key={`teacher-block-${itemsMain[key].id}`}
+                                          key={`teacher-block-${items[key].id}`}
                                           size={size}
                                           onClick={() =>
-                                              toggleTeacherModal(
-                                                  itemsMain[key].id
-                                              )
+                                              toggleTeacherModal(items[key].id)
                                           }
-                                          {...itemsMain[key]}
+                                          {...items[key]}
                                       />
                                   ))
                                 : Array(4)
