@@ -12,7 +12,7 @@ export const ACTION_ROOM = "https://sr-v2.software-dowlatow.ru:8001";
 export const KEY_ROOM = "29aa22da-8e66-11eb-9d1e-92dc685e4205";
 
 // Privacy Policy
-export const PRIVACY_POLICY = "https://mastervision.su/politics-i.pdf";
+export const PRIVACY_POLICY = "https://iomp.ru/politics-i.pdf";
 
 // Index Magazin Awo
 export const INDEX_MAGAZIN_AWO = "shop.iomp";

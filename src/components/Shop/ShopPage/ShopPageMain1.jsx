@@ -24,7 +24,7 @@ const ShopPageMain1 = ({to, subtitle, title, description, btnText, size}) => {
                         to={to}
                         spy={true}
                         smooth={true}
-                        offset={-100}
+                        offset={-200}
                         duration={1000}
                     >
                         <button
