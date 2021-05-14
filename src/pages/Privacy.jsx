@@ -1,6 +1,9 @@
 import React from "react";
+import {useSelector} from "react-redux";
 
 const Privacy = () => {
+    const {size} = useSelector(({visually}) => visually);
+
     React.useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -9,15 +12,15 @@ const Privacy = () => {
         <div className="privacy">
             <div className="container">
                 <div className="privacy-wrapper">
-                    <h2 className="title privacy__title">
+                    <h2 className={`title ${size} privacy__title`}>
                         Политика конфиденциальности
                     </h2>
-                    <div className="privacy-text">
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                    <div className={`privacy-text ${size}`}>
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 1. Общие положения
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 1.1. Настоящая Политика в отношении обработки
                                 персональных данных (далее – «Политика»)
                                 подготовлена в соответствии с п. 2 ч .1 ст. 18.1
@@ -41,16 +44,16 @@ const Privacy = () => {
                                 семейную тайну.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 2. Область применения
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.1. Настоящая Политика распространяется на
                                 Данные, полученные как до, так и после ввода в
                                 действие настоящей Политики
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.2. Понимая важность и ценность Данных, а также
                                 заботясь о соблюдении конституционных прав
                                 граждан Российской Федерации и граждан других
@@ -58,11 +61,11 @@ const Privacy = () => {
                                 защиту Данных.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 3. Определения
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.1. Под Данными понимается любая информация,
                                 относящаяся к прямо или косвенно определенному
                                 или определяемому физическому лицу (гражданину),
@@ -70,7 +73,7 @@ const Privacy = () => {
                                 фамилия, имя, отчество, электронная почта, номер
                                 телефона, город
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.2. Под обработкой Данных понимается любое
                                 действие (операция) или совокупность действий
                                 (операций) с Данными, совершаемых с
@@ -83,7 +86,7 @@ const Privacy = () => {
                                 предоставление, доступ), обезличивание,
                                 блокирование, удаление, уничтожение Данных.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.3. Под безопасностью Данных понимается
                                 защищенность Данных от неправомерного и/или
                                 несанкционированного доступа к ним, уничтожения,
@@ -93,11 +96,11 @@ const Privacy = () => {
                                 Данных.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 4. Правовые основания и цели обработки Данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.1. Обработка и обеспечение безопасности Данных
                                 в Институте осуществляется в соответствии с
                                 требованиями Конституции Российской Федерации,
@@ -107,12 +110,12 @@ const Privacy = () => {
                                 Российской Федерации, руководящих и методических
                                 документов ФСТЭК России и ФСБ России.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.2. Субъектами Данных, обрабатываемых
                                 Институтом, являются клиенты – потребители, в
                                 т.ч. посетители сайта https://iomp.ru/
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3. Компания осуществляет обработку Данных
                                 субъектов в следующих целях: осуществления
                                 возложенных на Института законодательством
@@ -154,11 +157,11 @@ const Privacy = () => {
                                 осуществления взаиморасчетов.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 5.Принципы и условия обработки Данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.1. При обработке Данных Институт
                                 придерживается следующих принципов: обработка
                                 Данных осуществляется на законной и справедливой
@@ -182,7 +185,7 @@ const Privacy = () => {
                                 необходимости в достижении этих целей, если иное
                                 не предусмотрено федеральным законом.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.2. Институт может включать Данные субъектов в
                                 общедоступные источники Данных, при этом
                                 Компания берет письменное согласие субъекта на
@@ -191,7 +194,7 @@ const Privacy = () => {
                                 которого субъект персональных данных выражает
                                 свое согласие.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.3. Институт не осуществляет обработку Данных,
                                 касающихся расовой, национальной принадлежности,
                                 политических взглядов, религиозных, философских
@@ -199,7 +202,7 @@ const Privacy = () => {
                                 общественных объединениях, в том числе в
                                 профессиональных союзах.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.4. Биометрические Данные (сведения, которые
                                 характеризуют физиологические и биологические
                                 особенности человека, на основании которых можно
@@ -207,11 +210,11 @@ const Privacy = () => {
                                 оператором для установления личности субъекта
                                 Данные) в Институте не обрабатываются.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.5. Институт не осуществляет трансграничную
                                 передачу Данных.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.6. В случаях, установленных законодательством
                                 Российской Федерации, Институт вправе
                                 осуществлять передачу Данных третьим лицам
@@ -220,7 +223,7 @@ const Privacy = () => {
                                 органам) в случаях, предусмотренных
                                 законодательством Российской Федерации.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.7. Компания вправе поручить обработку Данных
                                 субъектов Данных третьим лицам с согласия
                                 субъекта Данных, на основании заключаемого с
@@ -229,7 +232,7 @@ const Privacy = () => {
                                 обработки персональных данных размещенных на
                                 сайте.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.8. Лица, осуществляющие обработку Данных на
                                 основании заключаемого с Институтом договора
                                 (поручения оператора), обязуются соблюдать
@@ -244,7 +247,7 @@ const Privacy = () => {
                                 обработке, указываются требования к защите
                                 обрабатываемых Данных в соответствии с Законом.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.9. В целях исполнения требований действующего
                                 законодательства Российской Федерации и своих
                                 договорных обязательств обработка Данных в
@@ -257,7 +260,7 @@ const Privacy = () => {
                                 доступ), обезличивание, блокирование, удаление,
                                 уничтожение Данных.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.10. В Институте запрещается принятие на
                                 основании исключительно автоматизированной
                                 обработки Данных решений, порождающих
@@ -268,11 +271,11 @@ const Privacy = () => {
                                 Федерации.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 5.Принципы и условия обработки Данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.1. При обработке Данных Институт
                                 придерживается следующих принципов: обработка
                                 Данных осуществляется на законной и справедливой
@@ -296,7 +299,7 @@ const Privacy = () => {
                                 необходимости в достижении этих целей, если иное
                                 не предусмотрено федеральным законом.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.2. Институт может включать Данные субъектов в
                                 общедоступные источники Данных, при этом
                                 Компания берет письменное согласие субъекта на
@@ -305,7 +308,7 @@ const Privacy = () => {
                                 которого субъект персональных данных выражает
                                 свое согласие.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.3. Институт не осуществляет обработку Данных,
                                 касающихся расовой, национальной принадлежности,
                                 политических взглядов, религиозных, философских
@@ -313,7 +316,7 @@ const Privacy = () => {
                                 общественных объединениях, в том числе в
                                 профессиональных союзах.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.4. Биометрические Данные (сведения, которые
                                 характеризуют физиологические и биологические
                                 особенности человека, на основании которых можно
@@ -321,11 +324,11 @@ const Privacy = () => {
                                 оператором для установления личности субъекта
                                 Данные) в Институте не обрабатываются.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.5. Институт не осуществляет трансграничную
                                 передачу Данных.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.6. В случаях, установленных законодательством
                                 Российской Федерации, Институт вправе
                                 осуществлять передачу Данных третьим лицам
@@ -334,7 +337,7 @@ const Privacy = () => {
                                 органам) в случаях, предусмотренных
                                 законодательством Российской Федерации.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.7. Компания вправе поручить обработку Данных
                                 субъектов Данных третьим лицам с согласия
                                 субъекта Данных, на основании заключаемого с
@@ -343,7 +346,7 @@ const Privacy = () => {
                                 обработки персональных данных размещенных на
                                 сайте.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.8. Лица, осуществляющие обработку Данных на
                                 основании заключаемого с Институтом договора
                                 (поручения оператора), обязуются соблюдать
@@ -358,7 +361,7 @@ const Privacy = () => {
                                 обработке, указываются требования к защите
                                 обрабатываемых Данных в соответствии с Законом.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.9. В целях исполнения требований действующего
                                 законодательства Российской Федерации и своих
                                 договорных обязательств обработка Данных в
@@ -371,7 +374,7 @@ const Privacy = () => {
                                 доступ), обезличивание, блокирование, удаление,
                                 уничтожение Данных.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.10. В Институте запрещается принятие на
                                 основании исключительно автоматизированной
                                 обработки Данных решений, порождающих
@@ -382,12 +385,12 @@ const Privacy = () => {
                                 Федерации.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 6. Права и обязанности субъектов Данных, а также
                                 Компании в части обработки Данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.1. Субъект, Данные которого обрабатываются
                                 Компанией, имеет право: - получать от Института:
                                 подтверждение факта обработки Данных и сведения
@@ -429,7 +432,7 @@ const Privacy = () => {
                                 числе на возмещения убытков и/или компенсацию
                                 морального вреда в судебном порядке.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.2. Институт в процессе обработки Данных
                                 обязан: предоставлять субъекту Данных по его
                                 запросу информацию, касающуюся обработки его
@@ -516,11 +519,11 @@ const Privacy = () => {
                                 запросам.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 7. Требования к защите Данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.1. Институт при обработке Данных принимает
                                 необходимые правовые, организационные и
                                 технические меры для защиты Данных от
@@ -530,7 +533,7 @@ const Privacy = () => {
                                 распространения Данных, а также от иных
                                 неправомерных действий в отношении Данных.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.2. К таким мерам в соответствии с Законом, в
                                 частности, относятся: назначение лица,
                                 ответственного за организацию обработки Данных,
@@ -581,11 +584,11 @@ const Privacy = () => {
                                 сохранность Данных.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 8. Сроки обработки (хранения) Данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.1. Сроки обработки (хранения) Данных
                                 определяются исходя из целей обработки Данных, в
                                 соответствии со сроком действия договора с
@@ -595,7 +598,7 @@ const Privacy = () => {
                                 обработку Данных, основными правилами работы
                                 архивов организаций, сроками исковой давности.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.2. Данные, срок обработки (хранения) которых
                                 истек, должны быть уничтожены, если иное не
                                 предусмотрено федеральным законом. Хранение
@@ -603,13 +606,13 @@ const Privacy = () => {
                                 допускается только после их обезличивания.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 9. Особенности обработки и защиты Данных,
                                 собираемых Институтом с использованием сети
                                 Интернет
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 9.1. Институт обрабатывает Данные, поступающие
                                 от пользователей Cайта с ресурса:
                                 https://iomp.ru//, а также поступающие на
@@ -617,7 +620,7 @@ const Privacy = () => {
                                 4334-74-1; 372 (6) 68-32-45 , на адрес
                                 электронной почты Института: info@iomp.ru/
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 9.2. Существуют три основных способа, с помощью
                                 которых Института получает Данные с помощью сети
                                 Интернет: Предоставление Данных (самостоятельный
@@ -659,11 +662,11 @@ const Privacy = () => {
                                 взаимодействия с пользователями.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 10. Использование Данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 10.1. Институт вправе пользоваться
                                 предоставленными Данными в соответствии с
                                 заявленными целями их сбора при наличии согласия
@@ -676,7 +679,7 @@ const Privacy = () => {
                                 реализуемых Институтом и улучшения качества
                                 обслуживания.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 10.2 Пользователь Сайта может в любое время
                                 отозвать свое согласие на обработку Данных,
                                 направив сообщение , позвонив по номеру телефона

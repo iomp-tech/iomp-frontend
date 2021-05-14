@@ -1,6 +1,11 @@
 import React from "react";
+import {useSelector} from "react-redux";
+
+import {DOMEN} from ".././api";
 
 const PublicOffer = () => {
+    const {size} = useSelector(({visually}) => visually);
+
     React.useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -9,10 +14,10 @@ const PublicOffer = () => {
         <div className="privacy">
             <div className="container">
                 <div className="privacy-wrapper">
-                    <h2 className="title privacy__title">Публичная оферта</h2>
-                    <div className="privacy-text">
-                        <div className="privacy-text-block">
-                            <p className="privacy-text-block__description">
+                    <h2 className={`title ${size} privacy__title`}>Публичная оферта</h2>
+                    <div className={`privacy-text ${size}`}>
+                        <div className={`privacy-text-block ${size}`}>
+                            <p className={`privacy-text-block__description ${size}`}>
                                 г. Москва Общество с ограниченной
                                 ответственностью «Институт современной
                                 психологии» (ООО «ИСП») (лицензия № 041023 от 02
@@ -35,11 +40,11 @@ const PublicOffer = () => {
                                 услуг.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 1. ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ:
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 1.1. В настоящем Договоре, если из текста прямо
                                 не вытекает иное, следующие термины будут иметь
                                 указанные ниже значения: Курс - совокупность
@@ -90,7 +95,7 @@ const PublicOffer = () => {
                                 по ссылке. Тариф (или Тарифный план) - стоимость
                                 Услуги, опубликованная на Сайте.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 1.2. Все остальные термины и определения,
                                 встречающиеся в тексте настоящей Оферты,
                                 толкуются Сторонами в соответствии с действующим
@@ -99,11 +104,11 @@ const PublicOffer = () => {
                                 Сайте.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 2. ПРЕДМЕТ ПУБЛИЧНОЙ ОФЕРТЫ
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.1. Предметом настоящей публичной оферты
                                 является предоставление Исполнителем Заказчику
                                 Услуг на условиях, определенным настоящей
@@ -111,7 +116,7 @@ const PublicOffer = () => {
                                 Заказчик оплачивает в порядке, установленном
                                 настоящим Договором.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.2. Заключение Заказчиком настоящего Договора
                                 осуществляется путем совершения следующих
                                 действий (акцепт публичной оферты): - Заказчик
@@ -127,14 +132,14 @@ const PublicOffer = () => {
                                 на Сайте и установленном платежной системой,
                                 через которую производится Заказчиком оплата.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.3. Настоящий Договор считается заключенным и
                                 вступает в силу для Сторон с момента
                                 перечисления Заказчиком оплаты на счет
                                 Исполнителя либо в момент внесения Заказчиком
                                 оплаты иным согласованным сторонами способом.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.4. Услуги по настоящему Договору считаются
                                 оказанными Исполнителем в срок с надлежащим
                                 качеством и объемом по факту их предоставления и
@@ -143,7 +148,7 @@ const PublicOffer = () => {
                                 Услуг. Приемка оказанных Услуг производится без
                                 подписания каких-либо актов.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.5. Заказчик соглашается с тем, что по
                                 настоящему Договору запрещена множественность
                                 лиц в обязательстве со стороны Заказчика.
@@ -155,14 +160,14 @@ const PublicOffer = () => {
                                 Федерации и влечет ответственность,
                                 предусмотренную настоящим Договором.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.6. Заказчик соглашается с тем, что по
                                 настоящему Договору запрещена уступка любых прав
                                 Заказчика, возникших в связи с заключением или
                                 исполнением настоящего Договора, без письменного
                                 согласия Исполнителя.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.7. При оплате услуг третьим лицом, в частности
                                 юридическим лицом, следует обращаться
                                 непосредственно к Исполнителю для заключения
@@ -170,7 +175,7 @@ const PublicOffer = () => {
                                 виде. Счет-договор считается заключенным при
                                 оплате его Заказчиком.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.8. В случае если условием допуска к обучению
                                 является прохождение соответствующего
                                 собеседования, либо анкетирования, и Заказчик
@@ -182,7 +187,7 @@ const PublicOffer = () => {
                                 обнаружения недостоверности предоставленной
                                 информации.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.9. Заказчик имеет право письменно отказаться
                                 от обучения не позднее чем за 24 часа до начала
                                 обучения. При этом Исполнитель возвращает
@@ -191,7 +196,7 @@ const PublicOffer = () => {
                                 поступления соответствующего уведомления от
                                 Заказчика.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.10. Заказчик имеет право отказаться от
                                 исполнения договора в любое время при условии
                                 оплаты Исполнителю фактически понесенных им
@@ -201,14 +206,14 @@ const PublicOffer = () => {
                                 курсу, написав соответствующее письменное
                                 заявление (Приложение №1 к настоящему Договору).
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.11. Заявление пишется по прилагаемой форме, от
                                 руки и направляется на электронный адрес
                                 Исполнителя. В случае отсутствия такого
                                 заявления денежные средства Исполнителем не
                                 возвращаются.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.12. Возврат разницы оплаченной суммы (за
                                 вычетом стоимости посещенных Заказчиком занятий)
                                 производится Исполнителем на реквизиты
@@ -216,7 +221,7 @@ const PublicOffer = () => {
                                 10 рабочих дней с даты поступления
                                 соответствующего заявления Заказчика.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.13. В случае отказа Заказчиком от участия в
                                 обучении в соответствии с п.п.2.9 и 2.10
                                 настоящего Договора излишне уплаченная сумма, по
@@ -231,7 +236,7 @@ const PublicOffer = () => {
                                 до 20% от размера имеющейся суммы на депозитном
                                 счете Заказчика.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.14. В случае отказа Заказчика от обучения, и
                                 возврата разницы оплаченной суммы (за вычетом
                                 стоимости посещенных занятий) Исполнитель
@@ -241,7 +246,7 @@ const PublicOffer = () => {
                                 записями материалов Курса/Программы/Модуля на
                                 сайте https://iomp.ru/.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 2.15. Если Заказчик начал обучение, посетил
                                 более 2 занятий и ему был предоставлен доступ в
                                 Личный кабинет с записями Курса/Программы/Модуля
@@ -251,22 +256,22 @@ const PublicOffer = () => {
                                 Заказчику не возвращаются.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 3. СТОИМОСТЬ УСЛУГ
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.1. Стоимость Услуг определяется на основании
                                 Тарифов, которые указываются на Сайте
                                 Исполнителя.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.2. Стоимость Услуг оплачивается на условиях
                                 100% (стопроцентной) предоплаты, если иной
                                 порядок не определен на Сайте либо отдельно
                                 согласован сторонами.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.3. В случае проведения Исполнителем акции,
                                 устанавливающей скидку на стоимость Услуг, акция
                                 действует исключительно в пределах срока,
@@ -279,12 +284,12 @@ const PublicOffer = () => {
                                 Заказчиком по электронной почте, через интернет
                                 мессенджеры или другим способом.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.4. Расходы, в том числе комиссии платежных
                                 сервисов по перечислению Заказчиком денежных
                                 средств по настоящему Договору, несет Заказчик.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 3.5. В случае совершения платежа с помощью
                                 банковской карты, Заказчику рекомендуется
                                 использовать банковскую карту, выпущенную на имя
@@ -296,45 +301,45 @@ const PublicOffer = () => {
                                 банковская карта.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 4. ПРАВА И ОБЯЗАННОСТИ СТОРОН
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.1. Исполнитель обязуется:
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.1.1. Принять необходимые меры к обеспечению
                                 доступа Заказчика к Онлайн мероприятиям и/или
                                 доступа к Информационным материалам.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.1.2. Вернуть оплаченные денежные средства
                                 Заказчику в случае, указанном в п.2.9.
                                 настоящего Договора.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.1.3. Осуществлять консультирование и поддержку
                                 Заказчика в порядке, предусмотренном описанием
                                 Услуги на Сайте.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.1.4. Осуществлять контроль качества
                                 предоставления Услуг.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.1.5. Выдать документ установленного образца
                                 Заказчику, успешно прошедшему курс программы.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.2. Исполнитель имеет право:
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.2.1. Изменять Тарифы в одностороннем порядке
                                 до момента осуществления оплаты Заказчиком путем
                                 публикации новых Тарифов на Сайте.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.2.2. Изменять условия оказания Услуг и условия
                                 настоящего Договора. Исполнитель уведомляет
                                 Заказчика об указанных изменениях путем
@@ -347,12 +352,12 @@ const PublicOffer = () => {
                                 Сайте, смс или иным способом по своему
                                 усмотрению.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.2.3. Привлекать третьих лиц для оказания Услуг
                                 по настоящему Договору без получения согласия
                                 Заказчика.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.2.4. Приостановить доступ к Информационному
                                 материалу, Курсу, Личному кабинету, Онлайн
                                 мероприятию в случае заморозки по причине
@@ -360,7 +365,7 @@ const PublicOffer = () => {
                                 Заказчика с предоставлением подтверждающих
                                 документов.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.2.5. Блокировать доступ к Информационному
                                 материалу, Курсу, Личному кабинету, Онлайн
                                 мероприятию в случае неуважительного отношения
@@ -375,17 +380,17 @@ const PublicOffer = () => {
                                 Исполнитель вправе не возвращать Заказчику
                                 стоимость оплаченных Услуг.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3. Заказчик обязуется:
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3.1. самостоятельно и своевременно знакомиться
                                 с условиями оказания Услуг, с изменениями в
                                 указанных условиях, а также с актуальной
                                 редакцией настоящей Оферты при каждом посещении
                                 Сайта.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3.2. оплатить Услуги на условиях и согласно
                                 выбранному Тарифу, действующего на момент
                                 оплаты. Действующие условия и Тарифы, а также
@@ -393,25 +398,25 @@ const PublicOffer = () => {
                                 размещаются на Сайте Исполнителя и/или в Личном
                                 кабинете.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3.3. самостоятельно изучать информацию,
                                 размещённую в Личном кабинете и/или
                                 предоставленную по Ссылке, а также выполнять
                                 задания, если их наличие предусмотрено описанием
                                 Услуги на Сайте.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3.4. незамедлительно уведомить Исполнителя об
                                 изменении своих контактных данных в письменной
                                 форме посредством отправки сообщения на e-mail
                                 Исполнителя и/или путем внесения изменений в
                                 информацию, содержащуюся в Учетной записи.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3.5. соблюдать порядок и дисциплину при
                                 проведении Оффлайн или Онлайн мероприятий.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.3.6. не допускать распространения
                                 недостоверной, ложной информации и информации,
                                 порочащей честь, достоинство, деловую репутацию
@@ -423,14 +428,14 @@ const PublicOffer = () => {
                                 распространение которой запрещено действующим
                                 законодательством России.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 44.4. Заказчик имеет право:
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.4.1. требовать от Исполнителя соблюдения
                                 условий настоящего Договора.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 4.4.2. отказаться от участия в обучении в
                                 соответствии с условиями пунктов 2.9. - 2.15.
                                 настоящего Договора отказаться от исполнения
@@ -474,11 +479,11 @@ const PublicOffer = () => {
                                 возникшими.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 5. ПОРЯДОК УРЕГУЛИРОВАНИЯ СПОРОВ.
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.1. Все споры, разногласия или требования,
                                 возникающие из настоящего Договора или в связи с
                                 ним, в том числе касающиеся его исполнения,
@@ -491,7 +496,7 @@ const PublicOffer = () => {
                                 приложением подтверждающих требование
                                 документов.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 5.2. В случае не достижения согласия между
                                 Сторонами все споры рассматриваются в судебном
                                 порядке в соответствии с законодательством
@@ -499,18 +504,18 @@ const PublicOffer = () => {
                                 Исполнителя.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 6. ОТВЕТСТВЕННОСТЬ СТОРОН.
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.1. В случаях неисполнения или ненадлежащего
                                 исполнения своих обязательств по настоящему
                                 Договору, Стороны несут ответственность в
                                 соответствии с законодательством Российской
                                 Федерации с учетом условий настоящего Договора.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.2. Исполнитель не несет ответственности в
                                 случае ненадлежащего оказания Услуг, если
                                 ненадлежащее исполнение явилось следствием
@@ -521,7 +526,7 @@ const PublicOffer = () => {
                                 Заказчика, в том числе правил мероприятий,
                                 невыполнения рекомендаций Исполнителя.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.3. Исполнитель не несет ответственности за
                                 несоответствие предоставленных Услуг ожиданиям
                                 Заказчика и/или за его субъективную оценку,
@@ -530,7 +535,7 @@ const PublicOffer = () => {
                                 основаниями считать Услуги оказанными не
                                 качественно или не в согласованном объеме.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.4. Исполнитель не несет ответственность за
                                 достижение Заказчиком каких-либо результатов,
                                 связанных с применением Информационных
@@ -539,7 +544,7 @@ const PublicOffer = () => {
                                 достижение результата, на который рассчитывал
                                 Заказчик.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.5. Исполнитель освобождается от
                                 ответственности за полное или частичное
                                 неисполнение обязательств, предусмотренных
@@ -551,7 +556,7 @@ const PublicOffer = () => {
                                 предвидеть, ни предотвратить разумными мерами
                                 (форс-мажор).
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.6. Исполнитель несет ответственность за
                                 нарушение условий настоящего Договора
                                 исключительно в случае, если ненадлежащее
@@ -566,7 +571,7 @@ const PublicOffer = () => {
                                 Федерации и исключающих ограничение
                                 ответственности Исполнителя.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 6.7. Заказчик понимает и соглашается с тем, что
                                 он должен самостоятельно оценивать все риски,
                                 связанные с оказанием ему Услуг, и что Заказчик
@@ -579,18 +584,18 @@ const PublicOffer = () => {
                                 настоящего Договора.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 7. РЕЗУЛЬТАТЫ ИНТЕЛЛЕКТУАЛЬНОЙ ДЕЯТЕЛЬНОСТИ.
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.1. Любая информация, находящаяся на Сайте,
                                 является результатом интеллектуальной
                                 деятельности, исключительное авторское право на
                                 который (в том числе смежные с авторским права)
                                 принадлежит Исполнителю.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.2. Заказчик не вправе без письменного согласия
                                 Исполнителя копировать и распространять любым
                                 способом (публикация, размещение в сети интернет
@@ -601,12 +606,12 @@ const PublicOffer = () => {
                                 мероприятии в рамках Курса, для любых целей,
                                 кроме личного использования.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.3. Заказчик не вправе осуществлять Записи
                                 Онлайн и/или Оффлайн мероприятий без письменного
                                 согласия Исполнителя.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.4. Заказчик обязуется указывать авторство и
                                 давать ссылку на Исполнителя или Правообладателя
                                 (в сети интернет обязательно активную
@@ -616,7 +621,7 @@ const PublicOffer = () => {
                                 материалов и/или информации, полученной на
                                 Онлайн или Оффлайн мероприятиях.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.5. Исполнитель вправе приостанавливать или
                                 блокировать доступ Заказчика к Информационным
                                 материалам или Записям Онлайн или Оффлайн
@@ -624,7 +629,7 @@ const PublicOffer = () => {
                                 Заказчиком Информационных материалов или доступа
                                 к ним третьим лицам.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 7.6. В случае нарушения Заказчиком
                                 исключительных прав Правообладателя или
                                 Исполнителя, в том числе путем распространения
@@ -634,11 +639,11 @@ const PublicOffer = () => {
                                 тысяч) рублей.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 8. ПРОЧИЕ УСЛОВИЯ.
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.1. В случае, если одно или более положений
                                 настоящего Договора являются по какой-либо
                                 причине недействительными, не имеющими
@@ -647,7 +652,7 @@ const PublicOffer = () => {
                                 другого положения настоящего Договора, которые
                                 остаются в силе.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.2. Любые уведомления по настоящему Договору,
                                 за исключением уведомлений и сообщений, которые
                                 прямо указаны в настоящем Договоре, могут
@@ -661,7 +666,7 @@ const PublicOffer = () => {
                                 Заказчика, указанного им при регистрации на
                                 Сайте, если получателем является Исполнитель.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.3 Заказчик дает согласие на получение от
                                 Исполнителя любых уведомлений путем направления
                                 смс и/или посредством телефонного звонка по
@@ -670,7 +675,7 @@ const PublicOffer = () => {
                                 в рамках исполнения обязательств Исполнителя по
                                 настоящему Договору.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.4. В случае, если условием для получения Услуг
                                 является прохождение соответствующего
                                 собеседования либо анкетирования, и Заказчик
@@ -682,7 +687,7 @@ const PublicOffer = () => {
                                 обнаружения недостоверности предоставленной
                                 информации.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.5. Заказчик подтверждает, что он осведомлен о
                                 том, что Услуги носят информационный характер,
                                 используемые при оказании Услуг технологии,
@@ -698,14 +703,14 @@ const PublicOffer = () => {
                                 ухудшение психоэмоциального и/или
                                 физиологического состояния.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.6. Настоящий Договор при условии соблюдения
                                 Заказчиком порядка совершения акцепта (п. 2.2.
                                 настоящего Договора) считается заключенным в
                                 простой письменной форме в соответствие с п. 3
                                 ст. 434 ГК РФ
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.7. Настоящий Договор вступает в силу с момента
                                 его заключения (п.2.3. настоящего Договора) и
                                 действует до полного и надлежащего исполнения
@@ -714,7 +719,7 @@ const PublicOffer = () => {
                                 к настоящему Договору являются его неотъемлемой
                                 частью.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.8. Стороны соглашаются, что настоящий Договор
                                 может быть изменен Исполнителем в одностороннем
                                 порядке путем размещения обновленного текста
@@ -722,7 +727,7 @@ const PublicOffer = () => {
                                 менее чем за один день до ввода изменений в
                                 действие.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.9. В случае прекращения настоящего Договора
                                 обязательства Сторон по Договору считаются
                                 прекращенными, за исключением обязательств,
@@ -732,18 +737,18 @@ const PublicOffer = () => {
                                 нарушение исключительных прав Правообладателя и
                                 т.д.).
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 8.10. Во всем остальном, что не предусмотрено
                                 настоящим Договором, Стороны будут
                                 руководствоваться действующим законодательством
                                 Российской Федерации.
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 9. РЕКВИЗИТЫ ИСПОЛНИТЕЛЯ:
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 ООО «ИСП» Адрес: 115404, г. Москва, 6-Я
                                 Радиальная ул., д. 5 к. 4, этаж 1 офис 17 ИНН
                                 7727431274 КПП 772401001 ОГРН 1197746615736 р/с
@@ -752,15 +757,15 @@ const PublicOffer = () => {
                                 https://iomp.ru/
                             </p>
                         </div>
-                        <div className="privacy-text-block">
-                            <h3 className="privacy-text-block__title">
+                        <div className={`privacy-text-block ${size}`}>
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 Приложение 1 к Публичному договору-оферте на
                                 оказание информационно-консультационных услуг
                             </h3>
-                            <h3 className="privacy-text-block__title">
+                            <h3 className={`privacy-text-block__title ${size}`}>
                                 Согласие на обработку персональных данных
                             </h3>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 Заказчик настоящим даёт согласие на обработку и
                                 передачу Исполнителю Обществу с ограниченной
                                 ответственностью «Институт современной
@@ -775,18 +780,18 @@ const PublicOffer = () => {
                                 оказанием услуг, а также качества услуг,
                                 оказываемых Исполнителем.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 Перечень персональных данных, на обработку
                                 которых даётся согласие субъекта персональных
                                 данных:
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 - фамилия, имя, отчество, год, месяц, дата и
                                 место рождения, адрес, паспортные данные,
                                 контактный телефон, адрес электронной почты,
                                 образование.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 Перечень действий с персональными данными, на
                                 совершение которых даётся согласие: - сбор,
                                 -систематизация, -накопление, -хранение,
@@ -796,7 +801,7 @@ const PublicOffer = () => {
                                 -уничтожение персональных данных), -иные
                                 действия.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 Общее описание используемых оператором способов
                                 обработки персональных данных: Внесение
                                 персональных данных в электронную базу данных,
@@ -807,18 +812,18 @@ const PublicOffer = () => {
                                 использованием машинных носителей или по каналам
                                 связи или путём передачи документов.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 Срок, в течение которого действует согласие: со
                                 дня его подписания до дня отзыва в письменной
                                 форме.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 Порядок отзыва согласия: отзыв согласия
                                 осуществляется путём подачи субъектом
                                 персональных данных соответствующего письменного
                                 заявления оператору.
                             </p>
-                            <p className="privacy-text-block__description">
+                            <p className={`privacy-text-block__description ${size}`}>
                                 Заказчик настоящим даёт согласие на фото-,
                                 аудио- и видеозапись процесса оказания Услуг со
                                 своим, в том числе на запись изображения и
@@ -832,10 +837,10 @@ const PublicOffer = () => {
                             </p>
                         </div>
 
-                        <div className="privacy-text-block">
+                        <div className={`privacy-text-block ${size}`}>
                             <iframe
                                 className="privacy-text-block__iframe"
-                                src="https://api.iomp.ru/public/storage/all/Public-Offer.pdf"
+                                src={`${DOMEN}/public/storage/all/Public-Offer.pdf`}
                             ></iframe>
                         </div>
                     </div>

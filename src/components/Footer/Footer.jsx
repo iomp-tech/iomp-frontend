@@ -168,13 +168,13 @@ const Footer = () => {
                             <div className="footer-bottom-bottom">
                                 <Link
                                     to="/privacy"
-                                    className="footer-bottom-bottom__link"
+                                    className={`footer-bottom-bottom__link ${size}`}
                                 >
                                     Политика конфиденциальности
                                 </Link>
                                 <Link
                                     to="/public-offer"
-                                    className="footer-bottom-bottom__link"
+                                    className={`footer-bottom-bottom__link ${size}`}
                                 >
                                     Публичная оферта
                                 </Link>
