@@ -14,7 +14,7 @@ import {
 
 import {fetchEmailForm} from "../../redux/actions/emailForm";
 
-import {DOMEN, PRIVACY_POLICY} from "../../api";
+import {DOMEN} from "../../api";
 
 const Footer = () => {
     const dispatch = useDispatch();
@@ -166,13 +166,18 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div className="footer-bottom-bottom">
-                                <a
-                                    href={PRIVACY_POLICY}
+                                <Link
+                                    to="/privacy"
                                     className="footer-bottom-bottom__link"
-                                    target="_blank"
                                 >
                                     Политика конфиденциальности
-                                </a>
+                                </Link>
+                                <Link
+                                    to="/public-offer"
+                                    className="footer-bottom-bottom__link"
+                                >
+                                    Публичная оферта
+                                </Link>
                             </div>
                         </div>
                     </div>

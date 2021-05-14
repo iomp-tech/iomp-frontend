@@ -30,6 +30,8 @@ const Cabinet = React.lazy(() => import('./pages/Cabinet'));
 const Library = React.lazy(() => import('./pages/Library'));
 const Logout = React.lazy(() => import('./pages/Logout'));
 const SessionRoom = React.lazy(() => import('./pages/SessionRoom'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const PublicOffer = React.lazy(() => import('./pages/PublicOffer'));
 
 function App() {
 	const disaptch = useDispatch();
@@ -119,6 +121,9 @@ function App() {
 						<Route path='/library' render={() => <Library />} />
 						<Route path='/session-room' render={() => <SessionRoom />} />
 
+						<Route path='/privacy' render={() => <Privacy />} />
+						<Route path='/public-offer' render={() => <PublicOffer />} />
+						
 						<Route path='/logout' render={() => <Logout />} />
 
 						<Route render={() => <Er404 />} />

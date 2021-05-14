@@ -1,6 +1,6 @@
 import React from "react";
 
-import {PRIVACY_POLICY} from "../../api";
+import {Link} from "react-router-dom";
 
 const EmailFormRenderCheckbox = ({
     size,
@@ -26,9 +26,8 @@ const EmailFormRenderCheckbox = ({
                 htmlFor={id}
             >
                 Я согласен с условиями обработки&nbsp;
-                <a
-                    href={PRIVACY_POLICY}
-                    target="_blank"
+                <Link
+                    to="/privacy"
                     className={`checkbox-label_white__link ${
                         touched && error
                             ? "checkbox-label_white__link_error"
@@ -36,7 +35,7 @@ const EmailFormRenderCheckbox = ({
                     }`}
                 >
                     персональных данных
-                </a>
+                </Link>
             </label>
         </>
     );
