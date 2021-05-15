@@ -651,6 +651,17 @@
 			&__title
 				max-width: 100%
 
+@media screen and (max-width: 700px)
+	// footer
+	.footer
+		&-bottom-bottom
+			display: flex
+			flex-direction: column
+
+			&__link
+				margin-right: 0
+				margin-bottom: 15px
+
 @media screen and (max-width: 640px)
 	// shop
 	.shop
@@ -940,6 +951,9 @@
 
 		&-wrapper
 			flex-direction: column
+
+		&-bottom
+			margin-top: 25px
 
 	// success-add-cart
 	.success-add-cart
