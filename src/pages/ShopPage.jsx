@@ -37,6 +37,8 @@ const ShopPage = (props) => {
             for (let i = 0; i < byUrlItem.page.length; i++) {
                 if (byUrlItem.page[i].type === "composition-product") {
                     setTo("shop-page-composition-product");
+					
+					break;
                 } else if (byUrlItem.page[i].type === "main2") {
                     setTo("shop-page-main2");
                 } else if (byUrlItem.page[i].type === "main1") {
