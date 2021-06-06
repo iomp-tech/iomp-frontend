@@ -98,7 +98,7 @@ const Shop = (props) => {
 
         if (parseQuery.q !== undefined) {
             filters.search = parseQuery.q;
-        }
+        } 
 
         if (parseQuery.type !== undefined) {
             filters.type = parseQuery.type;
