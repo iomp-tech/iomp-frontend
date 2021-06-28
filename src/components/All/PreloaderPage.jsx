@@ -13,7 +13,7 @@ const PreloaderPage = () => {
             }}
         >
             <ContentLoader
-                title="Загрузка..."
+                title="Загрузка"
                 viewBox="0 0 400 160"
                 height={150}
                 width={1200}

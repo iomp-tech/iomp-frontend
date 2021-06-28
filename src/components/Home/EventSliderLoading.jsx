@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 const EventSliderLoading = () => {
     return (
         <ContentLoader
-            title="Загрузка..."
+            title="Загрузка"
             height={500}
             width="100%"
             backgroundColor="#d9d9d9"

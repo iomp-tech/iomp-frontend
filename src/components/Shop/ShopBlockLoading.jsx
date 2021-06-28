@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 const ShopBlockLoading = () => {
     return (
         <ContentLoader
-            title="Загрузка..."
+            title="Загрузка"
             speed={2}
             width="100%"
             height={200}

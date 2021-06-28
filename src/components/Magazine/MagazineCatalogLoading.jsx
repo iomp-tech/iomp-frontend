@@ -12,7 +12,7 @@ const MagazineCatalogLoading = () => {
             }}
         >
             <ContentLoader
-                title="Загрузка..."
+                title="Загрузка"
                 viewBox="0 0 400 160"
                 height={160}
                 width={1200}

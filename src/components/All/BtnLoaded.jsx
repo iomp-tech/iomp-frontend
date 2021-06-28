@@ -12,7 +12,7 @@ const BtnLoaded = ({color}) => {
             }}
         >
             <ContentLoader
-                title="Загрузка..."
+                title="Загрузка"
                 viewBox="0 0 400 160"
                 height={62}
                 width={120}

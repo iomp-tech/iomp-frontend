@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 const TimetableBlockLoading = () => {
     return (
         <ContentLoader
-            title="Загрузка..."
+            title="Загрузка"
             speed={2}
             width="98%"
             height={350}

@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 const MagazineBlockLoading = () => {
 	return (
         <ContentLoader
-            title="Загрузка..."
+            title="Загрузка"
             speed={2}
             width="100%"
             height={770}
