@@ -10,6 +10,7 @@ import "../../../assets/slick/slick-theme.css";
 const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
     const [stateListTabsIndex, setStateListTabsIndex] = React.useState(0);
     const [stateAnimateTabs, setStateAnimateTabs] = React.useState(false);
+    const [disabledArrow, setDisabledArrow] = React.useState(false);
     const [heightList, setHeightList] = React.useState(950);
 
     React.useEffect(() => {
@@ -60,26 +61,35 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
         if (stateListTabsIndex) {
             setStateListTabsIndex(parseFloat(stateListTabsIndex - 1));
             setStateAnimateTabs(true);
-
+			setDisabledArrow(true);
+			
+			sliderRef.current.slickPrev();
+			
             setTimeout(() => {
                 setStateAnimateTabs(false);
-            }, 400);
-
-            sliderRef.current.slickPrev();
+			}, 400);
+			
+            setTimeout(() => {
+                setDisabledArrow(false);
+            }, 1000);
         }
     };
 
     const next = () => {
         if (stateListTabsIndex !== parseFloat(tabs.length - 1)) {
             setStateListTabsIndex(parseFloat(stateListTabsIndex + 1));
-
             setStateAnimateTabs(true);
-
+			setDisabledArrow(true);
+			
+			sliderRef.current.slickNext();
+			
             setTimeout(() => {
                 setStateAnimateTabs(false);
-            }, 400);
+			}, 400);
 
-            sliderRef.current.slickNext();
+			setTimeout(() => {
+                setDisabledArrow(false);
+            }, 1000);
         }
     };
 
@@ -114,7 +124,13 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
                         ))}
                     </Slider>
                     <div className="shop-page-slider-text-arrow">
-                        <div className="arrow">
+                        <div
+                            className="arrow"
+                            style={{
+                                pointerEvents: disabledArrow ? "none" : "auto",
+                                opacity: disabledArrow ? .3 : 1,
+                            }}
+                        >
                             <div className="arrow-prev" onClick={prev}>
                                 <svg
                                     width="50"

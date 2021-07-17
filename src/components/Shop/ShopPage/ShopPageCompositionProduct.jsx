@@ -68,6 +68,7 @@ const ShopPageCompositionProduct = ({
 
     const [stateModulesIndex, setStateModulesIndex] = React.useState(0);
     const [stateAnimateModules, setStateAnimateModules] = React.useState(false);
+    const [disabledArrow, setDisabledArrow] = React.useState(false);
     const [heightList, setHeightList] = React.useState(950);
 
     React.useEffect(() => {
@@ -107,26 +108,35 @@ const ShopPageCompositionProduct = ({
         if (stateModulesIndex) {
             setStateModulesIndex(parseFloat(stateModulesIndex - 1));
             setStateAnimateModules(true);
+            setDisabledArrow(true);
+
+            sliderRef.current.slickPrev();
 
             setTimeout(() => {
                 setStateAnimateModules(false);
             }, 400);
 
-            sliderRef.current.slickPrev();
+            setTimeout(() => {
+                setDisabledArrow(false);
+            }, 1000);
         }
     };
 
     const next = () => {
         if (stateModulesIndex !== parseFloat(modules.length - 1)) {
             setStateModulesIndex(parseFloat(stateModulesIndex + 1));
-
             setStateAnimateModules(true);
+            setDisabledArrow(true);
+
+            sliderRef.current.slickNext();
 
             setTimeout(() => {
                 setStateAnimateModules(false);
             }, 400);
 
-            sliderRef.current.slickNext();
+            setTimeout(() => {
+                setDisabledArrow(false);
+            }, 1000);
         }
     };
 
@@ -199,7 +209,15 @@ const ShopPageCompositionProduct = ({
                             ))}
                         </Slider>
                         <div className="shop-page-composition-product-arrow">
-                            <div className="arrow">
+                            <div
+                                className="arrow"
+                                style={{
+                                    pointerEvents: disabledArrow
+                                        ? "none"
+                                        : "auto",
+                                    opacity: disabledArrow ? 0.3 : 1,
+                                }}
+                            >
                                 <div className="arrow-prev" onClick={prev}>
                                     <svg
                                         width="50"
