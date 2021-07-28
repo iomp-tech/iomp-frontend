@@ -7,23 +7,30 @@ import Slider from "react-slick";
 import "../../../assets/slick/slick.css";
 import "../../../assets/slick/slick-theme.css";
 
-const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
+const ShopPageSliderText = ({to, title, tabs, btnText, size, blockIndex}) => {
     const [stateListTabsIndex, setStateListTabsIndex] = React.useState(0);
     const [stateAnimateTabs, setStateAnimateTabs] = React.useState(false);
     const [disabledArrow, setDisabledArrow] = React.useState(false);
-    const [heightList, setHeightList] = React.useState(950);
+    const [heightList, setHeightList] = React.useState(0);
 
     React.useEffect(() => {
         setHeightList(
-            document.querySelector(".shop-page-slider-text-list").clientHeight +
-                50
+            document.querySelector(
+                `#shop-page-slider-text-list-block-${blockIndex}`
+            ).clientHeight + 50
+        );
+        console.log(
+            document.querySelector(
+                `#shop-page-slider-text-list-block-${blockIndex}`
+            )
         );
     }, []);
 
     React.useEffect(() => {
         setHeightList(
-            document.querySelector(".shop-page-slider-text-list").clientHeight +
-                50
+            document.querySelector(
+                `#shop-page-slider-text-list-block-${blockIndex}`
+            ).clientHeight + 50
         );
     }, [stateListTabsIndex]);
 
@@ -61,14 +68,14 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
         if (stateListTabsIndex) {
             setStateListTabsIndex(parseFloat(stateListTabsIndex - 1));
             setStateAnimateTabs(true);
-			setDisabledArrow(true);
-			
-			sliderRef.current.slickPrev();
-			
+            setDisabledArrow(true);
+
+            sliderRef.current.slickPrev();
+
             setTimeout(() => {
                 setStateAnimateTabs(false);
-			}, 400);
-			
+            }, 400);
+
             setTimeout(() => {
                 setDisabledArrow(false);
             }, 1000);
@@ -79,15 +86,15 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
         if (stateListTabsIndex !== parseFloat(tabs.length - 1)) {
             setStateListTabsIndex(parseFloat(stateListTabsIndex + 1));
             setStateAnimateTabs(true);
-			setDisabledArrow(true);
-			
-			sliderRef.current.slickNext();
-			
+            setDisabledArrow(true);
+
+            sliderRef.current.slickNext();
+
             setTimeout(() => {
                 setStateAnimateTabs(false);
-			}, 400);
+            }, 400);
 
-			setTimeout(() => {
+            setTimeout(() => {
                 setDisabledArrow(false);
             }, 1000);
         }
@@ -128,7 +135,7 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
                             className="arrow"
                             style={{
                                 pointerEvents: disabledArrow ? "none" : "auto",
-                                opacity: disabledArrow ? .3 : 1,
+                                opacity: disabledArrow ? 0.3 : 1,
                             }}
                         >
                             <div className="arrow-prev" onClick={prev}>
@@ -163,6 +170,7 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size}) => {
                             className={`shop-page-slider-text-list ${
                                 stateAnimateTabs ? "active" : ""
                             } ${size}`}
+                            id={`shop-page-slider-text-list-block-${blockIndex}`}
                         >
                             <ul
                                 className={`shop-page-slider-text-list-ul ${size}`}

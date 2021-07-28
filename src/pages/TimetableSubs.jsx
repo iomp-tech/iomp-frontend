@@ -130,6 +130,7 @@ const TimetableSubs = (props) => {
                                         <ShopPageSliderText
                                             size={size}
                                             to={to}
+                                            blockIndex={index}
                                             {...block}
                                         />
                                     ) : null}
@@ -139,6 +140,7 @@ const TimetableSubs = (props) => {
                                             {...block}
                                             action={byUrlItem.action}
                                             vkUrl={byUrlItem.vkUrl}
+                                            blockIndex={index}
                                             telegramUrl={byUrlItem.telegramUrl}
                                         />
                                     ) : null}

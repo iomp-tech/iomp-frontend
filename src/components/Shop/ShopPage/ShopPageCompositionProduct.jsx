@@ -25,6 +25,7 @@ const ShopPageCompositionProduct = ({
     size,
     vkUrl,
     telegramUrl,
+    blockIndex,
 }) => {
     const dispatch = useDispatch();
 
@@ -35,6 +36,12 @@ const ShopPageCompositionProduct = ({
         if (!Object.keys(itemsAll).length) {
             dispatch(fetchAllGoods());
         }
+
+        setHeightList(
+            document.querySelector(
+                `#shop-page-composition-product-list-block-${blockIndex}`
+            ).clientHeight + 50
+        );
     }, []);
 
     const onSubmit = (formData) => {
@@ -69,12 +76,13 @@ const ShopPageCompositionProduct = ({
     const [stateModulesIndex, setStateModulesIndex] = React.useState(0);
     const [stateAnimateModules, setStateAnimateModules] = React.useState(false);
     const [disabledArrow, setDisabledArrow] = React.useState(false);
-    const [heightList, setHeightList] = React.useState(950);
+    const [heightList, setHeightList] = React.useState(0);
 
     React.useEffect(() => {
         setHeightList(
-            document.querySelector(".shop-page-composition-product-list")
-                .clientHeight + 50
+            document.querySelector(
+                `#shop-page-composition-product-list-block-${blockIndex}`
+            ).clientHeight + 50
         );
     }, [stateModulesIndex]);
 
@@ -259,6 +267,7 @@ const ShopPageCompositionProduct = ({
                                 className={`shop-page-composition-product-list ${
                                     stateAnimateModules ? "active" : ""
                                 } ${size}`}
+                                id={`shop-page-composition-product-list-block-${blockIndex}`}
                             >
                                 {modules[stateModulesIndex].items &&
                                     modules[stateModulesIndex].items.map(

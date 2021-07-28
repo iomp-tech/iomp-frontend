@@ -119,12 +119,14 @@ const ShopPage = (props) => {
                                     <ShopPageSliderText
                                         size={size}
                                         to={to}
+                                        blockIndex={index}
                                         {...block}
                                     />
                                 ) : null}
                                 {block.type === "composition-product" ? (
                                     <ShopPageCompositionProduct
                                         size={size}
+                                        blockIndex={index}
                                         {...block}
                                     />
                                 ) : null}
