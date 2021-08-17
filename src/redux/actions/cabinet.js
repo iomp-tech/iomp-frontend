@@ -38,8 +38,6 @@ export const fetchEditUserAvatar = (file) => (dispatch) => {
 export const fetchEditUserInfo = (data) => (dispatch) => {
 	const token = localStorage.getItem('success-token');
 
-	console.log(data);
-
 	axios.post(`${API_DOMEN}/user/update/info`, { ...data, _method: "PUT" }, {
 		headers: {
 			Authorization:

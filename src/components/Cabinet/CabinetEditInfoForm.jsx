@@ -15,13 +15,13 @@ let CabinetEditInfoForm = React.memo(
         first_name,
         middle_name,
         last_name,
-        date_of_birth,
-        sex,
-        timezone,
-        phone,
-        skype,
-        vk,
-        facebook,
+        // date_of_birth,
+        // sex,
+        // timezone,
+        // phone,
+        // skype,
+        // vk,
+        // facebook,
         invalid,
         submitting,
         pristine,
@@ -33,49 +33,49 @@ let CabinetEditInfoForm = React.memo(
             firstNameValue,
             middleNameValue,
             lastNameValue,
-            dateOfBirth,
-            sexValue,
-            timezoneValue,
-            phoneValue,
-            skypeValue,
-            vkValue,
-            facebookValue,
+            // dateOfBirth,
+            // sexValue,
+            // timezoneValue,
+            // phoneValue,
+            // skypeValue,
+            // vkValue,
+            // facebookValue,
         } = useSelector((state) => {
             const {
                 first_name,
                 middle_name,
                 last_name,
-                date_of_birth,
-                sex,
-                timezone,
-                phone,
-                skype,
-                vk,
-                facebook,
+                // date_of_birth,
+                // sex,
+                // timezone,
+                // phone,
+                // skype,
+                // vk,
+                // facebook,
             } = selector(
                 state,
                 "first_name",
                 "middle_name",
-                "last_name",
-                "date_of_birth",
-                "sex",
-                "timezone",
-                "phone",
-                "skype",
-                "vk",
-                "facebook"
+                "last_name"
+                // "date_of_birth",
+                // "sex",
+                // "timezone",
+                // "phone",
+                // "skype",
+                // "vk",
+                // "facebook"
             );
             return {
                 firstNameValue: first_name,
                 middleNameValue: middle_name,
                 lastNameValue: last_name,
-                dateOfBirth: date_of_birth,
-                sexValue: sex,
-                timezoneValue: timezone,
-                phoneValue: phone,
-                skypeValue: skype,
-                vkValue: vk,
-                facebookValue: facebook,
+                // dateOfBirth: date_of_birth,
+                // sexValue: sex,
+                // timezoneValue: timezone,
+                // phoneValue: phone,
+                // skypeValue: skype,
+                // vkValue: vk,
+                // facebookValue: facebook,
             };
         });
 
@@ -84,25 +84,25 @@ let CabinetEditInfoForm = React.memo(
                 first_name: first_name,
                 middle_name: middle_name,
                 last_name: last_name,
-                date_of_birth: date_of_birth,
-                sex: sex,
-                timezone: timezone,
-                phone: phone,
-                skype: skype,
-                vk: vk,
-                facebook: facebook,
+                // date_of_birth: date_of_birth,
+                // sex: sex,
+                // timezone: timezone,
+                // phone: phone,
+                // skype: skype,
+                // vk: vk,
+                // facebook: facebook,
             });
         }, [
             first_name,
             middle_name,
             last_name,
-            date_of_birth,
-            sex,
-            timezone,
-            phone,
-            skype,
-            vk,
-            facebook,
+            // date_of_birth,
+            // sex,
+            // timezone,
+            // phone,
+            // skype,
+            // vk,
+            // facebook,
         ]);
 
         const timezoneList = [
@@ -250,19 +250,20 @@ let CabinetEditInfoForm = React.memo(
                         />
                     </div> */}
                 </div>
-                <button
-                    type="submit"
-                    className={`btn-bold_color cabinet-block__btn ${size} ${
-                        (firstNameValue !== first_name ||
-                            middleNameValue !== middle_name ||
-                            lastNameValue !== last_name ||
+                {/* ||
                             dateOfBirth !== date_of_birth ||
                             sexValue !== sex ||
                             timezoneValue !== timezone ||
                             phoneValue !== phone ||
                             skypeValue !== skype ||
                             vkValue !== vk ||
-                            facebookValue !== facebook) &&
+                            facebookValue !== facebook */}
+                <button
+                    type="submit"
+                    className={`btn-bold_color cabinet-block__btn ${size} ${
+                        (firstNameValue !== first_name ||
+                            middleNameValue !== middle_name ||
+                            lastNameValue !== last_name) &&
                         !invalid
                             ? ""
                             : "btn-bold_color_disabled"
