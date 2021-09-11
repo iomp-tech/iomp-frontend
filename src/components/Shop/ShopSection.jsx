@@ -13,6 +13,7 @@ import ShopSectionBtn from "./ShopSectionBtn";
 const ShopSection = React.memo(({style}) => {
     const dispatch = useDispatch();
 
+    const cart = useSelector(({cart}) => cart.cart);
     const categories = useSelector(({categories}) => categories.items);
     const {isLoaded, types} = useSelector(({goods}) => goods);
     const teachers = useSelector(({teacher}) => teacher.items);
@@ -62,19 +63,23 @@ const ShopSection = React.memo(({style}) => {
 
                             <div className="shop-block-wrapper">
                                 {isLoaded
-                                    ? Object.keys(items).map((key) => (
-                                          <ShopBlock
-                                              key={`shop-block-${items[key].id}`}
-                                              onClickAddGoods={setAddGoods}
-                                              onClickPush={toggleSuccessAddCart}
-                                              types={types}
-                                              size={size}
-                                              categories={categories}
-                                              auths={teachers}
-                                              idAwo={items[key].id_awo}
-                                              {...items[key]}
-                                          />
-                                      ))
+                                    ? Object.keys(items).map((key) =>
+                                          cart[items[key].id] ? null : (
+                                              <ShopBlock
+                                                  key={`shop-block-${items[key].id}`}
+                                                  onClickAddGoods={setAddGoods}
+                                                  onClickPush={
+                                                      toggleSuccessAddCart
+                                                  }
+                                                  types={types}
+                                                  size={size}
+                                                  categories={categories}
+                                                  auths={teachers}
+                                                  idAwo={items[key].id_awo}
+                                                  {...items[key]}
+                                              />
+                                          )
+                                      )
                                     : Array(3)
                                           .fill(0)
                                           .map((_, index) => (
