@@ -100,3 +100,11 @@ export { default as SessionRoomNull } from "./SessionRoom/SessionRoomNull";
 export { default as SessionRoomFormList } from "./SessionRoom/SessionRoomFormList";
 export { default as SessionRoomLinkBlock } from "./SessionRoom/SessionRoomLinkBlock";
 export { default as SessionRoomErrorBlock } from "./SessionRoom/SessionRoomErrorBlock";
+
+// Feedback
+export { default as FeedbackBlock } from "./Feedback/FeedbackBlock";
+export { default as FeedbackModal } from "./Feedback/FeedbackModal";
+// FeedbackFilters
+export { default as FeedbackFilters } from "./Feedback/FeedbackFilters/FeedbackFilters";
+export { default as FeedbackFiltersGoods } from "./Feedback/FeedbackFilters/FeedbackFiltersGoods";
+export { default as FeedbackFiltersTeachers } from "./Feedback/FeedbackFilters/FeedbackFiltersTeachers";

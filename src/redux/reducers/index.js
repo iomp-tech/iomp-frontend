@@ -23,6 +23,7 @@ import institute from './institute';
 import emailForm from './emailForm';
 import integration_page from './integration_page';
 import session_room from './session_room';
+import feedback from './feedback';
 
 const rootReducer = combineReducers({
 	visually,
@@ -47,6 +48,7 @@ const rootReducer = combineReducers({
 	emailForm,
 	integration_page,
 	session_room,
+	feedback,
 	form: formReducer,
 });
 

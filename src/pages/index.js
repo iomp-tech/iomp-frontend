@@ -43,3 +43,6 @@ export { default as Library } from './Library';
 
 // SessionRoom
 export { default as SessionRoom } from './SessionRoom';
+
+// Feedback
+export { default as Feedback } from './Feedback';

@@ -61,6 +61,15 @@ const HeaderTop = () => {
                     >
                         Сведения об образовательной организации
                     </NavLink>
+
+                    <NavLink
+                        style={{color: color}}
+                        to="/feedback"
+                        className="header__link"
+                        activeClassName="header__link_active"
+                    >
+                        Отзывы
+                    </NavLink>
                 </div>
             </div>
 

@@ -127,6 +127,15 @@ const HeaderModal = React.memo(({isLogin}) => {
                         >
                             Журнал
                         </NavLink>
+
+                        <NavLink
+                            onClick={toggleVisibleHeaderModal}
+                            to="/feedback"
+                            className="header-modal__link"
+                            activeClassName="header-modal__link_active"
+                        >
+                            Отзывы
+                        </NavLink>
                         {isLogin ? (
                             <>
                                 <a

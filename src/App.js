@@ -32,6 +32,7 @@ const Logout = React.lazy(() => import('./pages/Logout'));
 const SessionRoom = React.lazy(() => import('./pages/SessionRoom'));
 const Privacy = React.lazy(() => import('./pages/Privacy'));
 const PublicOffer = React.lazy(() => import('./pages/PublicOffer'));
+const Feedback = React.lazy(() => import('./pages/Feedback'));
 
 function App() {
 	const disaptch = useDispatch();
@@ -107,6 +108,8 @@ function App() {
 
 						<Route path='/cart' render={() => <Cart />} exact />
 
+						<Route path="/feedback" render={(props) => <Feedback {...props} />} exact />
+
 						<Route path='/register' render={() => <Register />} exact />
 						<Route path='/login' render={() => <Login />} exact />
 
@@ -123,7 +126,7 @@ function App() {
 
 						<Route path='/privacy' render={() => <Privacy />} />
 						<Route path='/public-offer' render={() => <PublicOffer />} />
-						
+
 						<Route path='/logout' render={() => <Logout />} />
 
 						<Route render={() => <Er404 />} />
