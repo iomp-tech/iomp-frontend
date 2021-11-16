@@ -81,12 +81,6 @@ const Login = () => {
                                         <h2 className={`reglog__title ${size}`}>
                                             Войти
                                         </h2>
-                                        <Link
-                                            to="/register"
-                                            className={`reglog__link ${size}`}
-                                        >
-                                            Зapeгиcтpиpoвaтьcя
-                                        </Link>
 
                                         {message && (
                                             <p

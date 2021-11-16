@@ -19,7 +19,6 @@ const Cart = React.lazy(() => import('./pages/Cart'));
 const Shop = React.lazy(() => import('./pages/Shop'));
 const ShopPage = React.lazy(() => import('./pages/ShopPage'));
 const Login = React.lazy(() => import('./pages/Login'));
-const Register = React.lazy(() => import('./pages/Register'));
 const Confirmed = React.lazy(() => import('./pages/Confirmed'));
 const Repeat = React.lazy(() => import('./pages/Repeat'));
 const RestoreEmail = React.lazy(() => import('./pages/RestoreEmail'));
@@ -110,7 +109,6 @@ function App() {
 
 						<Route path="/feedback" render={(props) => <Feedback {...props} />} exact />
 
-						<Route path='/register' render={() => <Register />} exact />
 						<Route path='/login' render={() => <Login />} exact />
 
 						<Route path='/confirmed/:hash' render={(props) => <Confirmed {...props} />} />

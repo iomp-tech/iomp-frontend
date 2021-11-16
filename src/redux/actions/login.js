@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { API_DOMEN } from '../.././api';
+import { API_DOMEN, INDEX_MAGAZIN_AWO } from "../.././api";
 
 export const sendLogin = (formData) => (dispatch) => {
 	dispatch({
@@ -18,7 +18,7 @@ export const sendLogin = (formData) => (dispatch) => {
 				payload: false,
 			});
 
-			window.location.href = "/cabinet";
+			window.location.href = `https://${INDEX_MAGAZIN_AWO}.ru/personal/`;
 		})
 		.catch(({ response }) => {
 			if (response.data) {

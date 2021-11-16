@@ -4,7 +4,9 @@ import {Helmet} from "react-helmet";
 
 import {
     ShopPageMain1,
+    ShopPageMain1Image,
     ShopPageMain2,
+    ShopPageMain2Image,
     ShopPageSectionSquares,
     ShopPageSliderText,
     ShopPageCompositionProduct,
@@ -36,13 +38,25 @@ const TimetableSubs = (props) => {
         if (Object.keys(byUrlItem).length) {
             for (let i = 0; i < byUrlItem.page.length; i++) {
                 if (byUrlItem.page[i].type === "composition-product") {
-					setTo("shop-page-composition-product");
-					
-					break;
+                    setTo("shop-page-composition-product");
+
+                    break;
                 } else if (byUrlItem.page[i].type === "main2") {
                     setTo("shop-page-main2");
+
+                    break;
+                } else if (byUrlItem.page[i].type === "main2-image") {
+                    setTo("shop-page-main2");
+
+                    break;
                 } else if (byUrlItem.page[i].type === "main1") {
                     setTo("shop-page-main1");
+
+                    break;
+                } else if (byUrlItem.page[i].type === "main1-image") {
+                    setTo("shop-page-main1");
+
+                    break;
                 }
             }
         }
@@ -106,11 +120,23 @@ const TimetableSubs = (props) => {
                                             {...block}
                                         />
                                     ) : null}
+
+                                    {block.type === "main1-image" ? (
+                                        <ShopPageMain1Image
+                                            size={size}
+                                            to={to}
+                                            {...block}
+                                        />
+                                    ) : null}
+
                                     {block.type === "main2" ? (
                                         <ShopPageMain2
-                                            size={size}
                                             {...block}
+                                            size={size}
+                                            id_awo={byUrlItem.id_awo}
                                             action={byUrlItem.action}
+                                            formId={byUrlItem.formId}
+                                            formVc={byUrlItem.formVc}
                                             range={byUrlItem.range}
                                             minDate={byUrlItem.minDate}
                                             maxDate={byUrlItem.maxDate}
@@ -119,6 +145,24 @@ const TimetableSubs = (props) => {
                                             telegramUrl={byUrlItem.telegramUrl}
                                         />
                                     ) : null}
+
+                                    {block.type === "main2-image" ? (
+                                        <ShopPageMain2Image
+                                            {...block}
+                                            size={size}
+                                            id_awo={byUrlItem.id_awo}
+                                            action={byUrlItem.action}
+                                            formId={byUrlItem.formId}
+                                            formVc={byUrlItem.formVc}
+                                            range={byUrlItem.range}
+                                            minDate={byUrlItem.minDate}
+                                            maxDate={byUrlItem.maxDate}
+                                            date={byUrlItem.date}
+                                            vkUrl={byUrlItem.vkUrl}
+                                            telegramUrl={byUrlItem.telegramUrl}
+                                        />
+                                    ) : null}
+
                                     {block.type === "section-squares" ? (
                                         <ShopPageSectionSquares
                                             size={size}

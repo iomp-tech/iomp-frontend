@@ -287,6 +287,7 @@
 
 // shop-page
 .shop-page
+	// main1
 	&-main1
 		margin: 75px 0
 
@@ -341,6 +342,75 @@
 			&.X2
 				font-size: 32px
 
+	// main1-image
+	&-main1-image
+		margin: 75px 0
+
+		&-wrapper
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+		&-text
+			max-width: 50%
+
+			&__subtitle
+				font-size: 21px
+				margin-bottom: 25px
+
+				&.X1-5
+					font-size: 36px
+
+				&.X2
+					font-size: 48px
+
+			&__title
+				font-size: 46px
+
+				& > span
+					color: $mainColor
+
+				&.X1-5
+					max-width: 100%
+					font-size: 108px
+
+				&.X2
+					max-width: 100%
+					font-size: 144px
+
+			&__description
+				font-size: 21px
+				margin-top: 25px
+				max-width: 800px
+
+				&.X1-5, &.X2
+					max-width: 100%
+
+				&.X1-5
+					font-size: 36px
+
+				&.X2
+					font-size: 48px
+
+			&__btn
+				margin-top: 50px
+
+				&.X1-5
+					font-size: 24px
+
+				&.X2
+					font-size: 32px
+
+		&-cover
+			width: 40%
+
+			&__image
+				user-select: none
+				width: 100%
+				border-radius: 15px
+
+	// main2
 	&-main2
 		margin: 75px 0
 
@@ -445,6 +515,79 @@
 		&-form
 			width: 50%
 			margin-top: 50px
+
+	// main2-image
+	&-main2-image
+		margin: 75px 0
+
+		&-wrapper
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+		&-text
+			width: 70%
+
+			&__subtitle
+				font-size: 24px
+				margin-bottom: 25px
+
+			&__title
+				font-size: 54px
+				max-width: 1200px
+
+				& > span
+					color: $mainColor
+
+			&__description
+				font-size: 24px
+				margin-top: 25px
+				max-width: 800px
+
+			&__btn
+				margin-top: 50px
+
+			&__date
+				display: block
+				font-size: 24px
+
+				& > b
+					+bold
+
+				&-range
+					display: inline-block
+					margin-bottom: 15px
+					font-size: 24px
+
+					& > b
+						+bold
+
+			&-date
+				margin-top: 50px
+				display: flex
+
+				&-left
+					margin-right: 30px
+
+				&-right
+					display: flex
+					flex-direction: column
+
+			&__btn
+				width: 100%
+
+			&-form
+				width: 100%
+				margin-top: 50px
+
+		&-cover
+			width: 40%
+
+			&__image
+				user-select: none
+				width: 100%
+				border-radius: 15px
 
 	// services
 	&-services

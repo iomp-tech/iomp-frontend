@@ -5,12 +5,19 @@ const FooterRenderInputButton = ({
     input,
     label,
     type,
+    invalid,
+    submitting,
+    pristine,
     meta: {touched, error},
 }) => {
     return (
         <>
             <div style={{position: "relative"}}>
-                <button type="submit" className="footer-email-form__btn">
+                <button
+                    type="submit"
+                    className="footer-email-form__btn"
+                    disabled={invalid || submitting || pristine}
+                >
                     <svg
                         width="26"
                         height="8"

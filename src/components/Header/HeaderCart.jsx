@@ -1,21 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-
-import {statusGoodsPush} from "../../redux/actions/cart";
+import {useSelector} from "react-redux";
 
 const HeaderCart = React.memo(({headerMobail}) => {
-    const dispatch = useDispatch();
     const cartItems = useSelector(({cart}) => cart.cart);
 
     const {push} = useSelector(({cart}) => cart);
     const {color} = useSelector(({visually}) => visually);
-
-    if (push) {
-        setTimeout(() => {
-            dispatch(statusGoodsPush(false));
-        }, 1000);
-    }
 
     return (
         <>

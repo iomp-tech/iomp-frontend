@@ -8,7 +8,10 @@ const ShopPageModal = ({
     close,
     vkUrl,
     telegramUrl,
-    onSubmit,
+    id_awo,
+    action,
+    formId,
+    formVc,
 }) => {
     return (
         <div
@@ -50,8 +53,12 @@ const ShopPageModal = ({
                         Записаться через:
                     </h4>
                     <div className="shop-page-modal-btn">
-                        <ShopPageModalForm onSubmit={onSubmit} />
-
+                        <ShopPageModalForm
+                            id_awo={id_awo}
+                            action={action}
+                            formId={formId}
+                            formVc={formVc}
+                        />
                         {telegramUrl ? (
                             <a
                                 href={telegramUrl}

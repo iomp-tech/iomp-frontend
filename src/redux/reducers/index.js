@@ -12,7 +12,6 @@ import events from './events';
 import posts from './posts';
 import cart from './cart';
 import footer from './footer';
-import register from './register';
 import login from './login';
 import repeat from './repeat';
 import user from './user';
@@ -37,7 +36,6 @@ const rootReducer = combineReducers({
 	posts,
 	cart,
 	footer,
-	register,
 	login,
 	repeat,
 	user,

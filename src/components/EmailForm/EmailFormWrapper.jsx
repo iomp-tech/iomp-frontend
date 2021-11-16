@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 
 import EmailForm from "./EmailForm";
@@ -17,41 +16,7 @@ const EmailFormWrapper = React.memo(() => {
         }
     }, []);
 
-    const onSubmit = (formData) => {
-        const newData = {
-            Contact: {
-                email: formData.email,
-                id_newsletter: form.id_awo,
-                id_advertising_channel_page: 0,
-            },
-            required_fields: {
-                email: 1,
-            },
-            formId: form.formId,
-            formVc: form.formVc,
-            _aid: "",
-            _vcaid: "",
-        };
-
-        axios
-            .post(form.action, newData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            })
-            .then(() => {
-                window.location.href = form.action;
-            })
-            .catch(() => {
-                return false;
-            });
-	};
-	
-    return (
-        <>
-            <EmailForm size={size} isLoaded={isLoaded} onSubmit={onSubmit} />
-        </>
-    );
+    return <>{isLoaded ? <EmailForm size={size} {...form} /> : null}</>;
 });
 
 export default EmailFormWrapper;

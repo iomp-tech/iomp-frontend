@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import NumberFormat from "react-number-format";
 
@@ -43,35 +42,6 @@ const ShopPageCompositionProduct = ({
             ).clientHeight + 50
         );
     }, []);
-
-    const onSubmit = (formData) => {
-        const newData = {
-            Contact: {
-                email: formData.email,
-                id_newsletter: id_awo,
-                id_advertising_channel_page: 0,
-            },
-            required_fields: {
-                email: 1,
-            },
-            formId: formId,
-            formVc: formVc,
-            _aid: "",
-            _vcaid: "",
-        };
-        axios
-            .post(action, newData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            })
-            .then(() => {
-                window.location.href = action;
-            })
-            .catch(() => {
-                return false;
-            });
-    };
 
     const [stateModulesIndex, setStateModulesIndex] = React.useState(0);
     const [stateAnimateModules, setStateAnimateModules] = React.useState(false);
@@ -309,7 +279,12 @@ const ShopPageCompositionProduct = ({
                                         Записаться
                                     </button>
                                 ) : (
-                                    <ShopPageForm onSubmit={onSubmit} />
+                                    <ShopPageForm
+                                        id_awo={id_awo}
+                                        action={action}
+                                        formId={formId}
+                                        formVc={formVc}
+                                    />
                                 )}
                             </>
                         ) : Object.keys(itemsAll).length ? (

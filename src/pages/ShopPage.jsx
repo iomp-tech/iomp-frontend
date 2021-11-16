@@ -4,7 +4,9 @@ import {Helmet} from "react-helmet";
 
 import {
     ShopPageMain1,
+    ShopPageMain1Image,
     ShopPageMain2,
+    ShopPageMain2Image,
     ShopPageSectionSquares,
     ShopPageSliderText,
     ShopPageCompositionProduct,
@@ -37,12 +39,24 @@ const ShopPage = (props) => {
             for (let i = 0; i < byUrlItem.page.length; i++) {
                 if (byUrlItem.page[i].type === "composition-product") {
                     setTo("shop-page-composition-product");
-					
-					break;
+
+                    break;
                 } else if (byUrlItem.page[i].type === "main2") {
                     setTo("shop-page-main2");
+
+                    break;
+                } else if (byUrlItem.page[i].type === "main2-image") {
+                    setTo("shop-page-main2-image");
+
+                    break;
                 } else if (byUrlItem.page[i].type === "main1") {
                     setTo("shop-page-main1");
+
+                    break;
+                } else if (byUrlItem.page[i].type === "main1-image") {
+                    setTo("shop-page-main1-image");
+
+                    break;
                 }
             }
         }
@@ -105,9 +119,29 @@ const ShopPage = (props) => {
                                         {...block}
                                     />
                                 ) : null}
-                                {block.type === "main2" ? (
-                                    <ShopPageMain2 size={size} {...block} />
+
+                                {block.type === "main1-image" ? (
+                                    <ShopPageMain1Image
+                                        to={to}
+                                        {...block}
+                                        size={size}
+                                    />
                                 ) : null}
+                                {block.type === "main2" ? (
+                                    <ShopPageMain2
+                                        {...block}
+                                        id_awo={block.main2_id_awo}
+                                        size={size}
+                                    />
+                                ) : null}
+                                {block.type === "main2-image" ? (
+                                    <ShopPageMain2Image
+                                        {...block}
+                                        size={size}
+                                        id_awo={block.main2_id_awo}
+                                    />
+                                ) : null}
+
                                 {block.type === "section-squares" ? (
                                     <ShopPageSectionSquares
                                         size={size}

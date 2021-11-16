@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 import moment from "moment";
 import "moment/locale/ru";
@@ -23,35 +22,6 @@ const ShopPageMain2 = ({
     vkUrl,
     telegramUrl,
 }) => {
-    const onSubmit = (formData) => {
-        const newData = {
-            Contact: {
-                email: formData.email,
-                id_newsletter: id_awo,
-                id_advertising_channel_page: 0,
-            },
-            required_fields: {
-                email: 1,
-            },
-            formId: formId,
-            formVc: formVc,
-            _aid: "",
-            _vcaid: "",
-        };
-        axios
-            .post(action, newData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            })
-            .then(() => {
-                window.location.href = action;
-            })
-            .catch(() => {
-                return false;
-            });
-    };
-
     const [stateModalShopPage, setStateModalShopPage] = React.useState(false);
 
     React.useEffect(() => {
@@ -158,7 +128,12 @@ const ShopPageMain2 = ({
                                 Записаться
                             </button>
                         ) : (
-                            <ShopPageForm onSubmit={onSubmit} />
+                            <ShopPageForm
+                                id_awo={id_awo}
+                                action={action}
+                                formId={formId}
+                                formVc={formVc}
+                            />
                         )}
                     </div>
                 </div>
@@ -172,7 +147,10 @@ const ShopPageMain2 = ({
                     emailUrl={action}
                     vkUrl={vkUrl}
                     telegramUrl={telegramUrl}
-                    onSubmit={onSubmit}
+                    id_awo={id_awo}
+                    action={action}
+                    formId={formId}
+                    formVc={formVc}
                 />
             ) : null}
         </>

@@ -240,6 +240,32 @@
 		&-block
 			width: 50%
 
+	// shop-page
+	.shop-page
+		&-main1-image
+			&-wrapper
+				align-items: flex-start
+				flex-direction: column
+
+			&-text
+				max-width: 100%
+
+			&-cover
+				margin-top: 50px
+				width: 100%
+
+		&-main2-image
+			&-wrapper
+				align-items: flex-start
+				flex-direction: column
+
+			&-text
+				width: 100%
+
+			&-cover
+				margin-top: 50px
+				width: 100%
+
 @media screen and (max-width: 1000px)
 	// shop
 	.shop
@@ -503,6 +529,8 @@
 					&__description
 						font-size: 21px
 
+				&-video
+					width: 100%
 	// footer
 	.footer
 		&-media
@@ -647,8 +675,23 @@
 	.shop
 		&-page
 			&-main1, &-main2
+				margin: 50px 0
 				&__title
 					font-size: 42px
+
+			&-main1-image
+				margin: 50px 0
+
+				&-text
+					&__title
+						font-size: 42px
+
+			&-main2-image
+				margin: 50px 0
+
+				&-text
+					&__title
+						font-size: 42px
 
 			&-composition-product
 				&-list
@@ -869,12 +912,34 @@
 				&__btn
 					width: 100%
 
+			&-main1-image
+				&-text
+					&__title
+						font-size: 36px
+
+					&__description
+						font-size: 21px
+
+					&__btn
+						width: 100%
+
 			&-main2
 				&-date
 					flex-direction: column
 
 					&-right
 						margin-top: 15px
+
+			&-main2-image
+				&-text
+					&__title
+						font-size: 36px
+
+					&__description
+						font-size: 21px
+
+					&__btn
+						width: 100%
 
 			&-slider-text
 				&-tabs
@@ -1047,7 +1112,7 @@
 
 		&+label > a
 			font-size: 13px
-			
+
 	// feedback
 	.feedback
 		&-modal
@@ -1061,6 +1126,25 @@
 			&-main1, &-main2
 				&__title
 					font-size: 28px
+
+			&-main1-image
+				&-text
+					&__title
+						font-size: 28px
+
+				&-cover
+					width: 100%
+
+			&-main2-image
+				&-text
+					&__title
+						font-size: 28px
+
+				&-cover
+					width: 100%
+
+			&-services
+				margin-top: 75px
 
 			&-slider-text
 				&-tabs

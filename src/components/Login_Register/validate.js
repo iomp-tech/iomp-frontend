@@ -6,14 +6,6 @@ const validate = values => {
 	const defaultMin = 2;
 	const defaultMax = 255;
 
-	if (!values.name) {
-		errors.name = 'Поле не может быть пустым';
-	} else if (values.name.length > defaultMax) {
-		errors.name = `Не более ${defaultMax} символов`;
-	} else if (values.name.length < defaultMin) {
-		errors.name = `Не менее ${defaultMin} символов`;
-	}
-
 	if (!values.password) {
 		errors.password = 'Поле не может быть пустым';
 	} else if (/[А-Яа-яЁё]/i.test(values.password)) {
