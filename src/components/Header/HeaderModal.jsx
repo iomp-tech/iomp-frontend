@@ -181,17 +181,28 @@ const HeaderModal = React.memo(({isLogin}) => {
                                     </>
                                 )}
 
-                                {menu.map((item, index) => (
-                                    <NavLink
-                                        onClick={toggleVisibleHeaderModal}
-                                        to={`/${item.href}`}
-                                        className="header-modal__link"
-                                        activeClassName="header-modal__link_active"
-                                        key={`header-modal__link-${index}`}
-                                    >
-                                        {item.title}
-                                    </NavLink>
-                                ))}
+                                {menu.map((item, index) =>
+                                    item.local ? (
+                                        <NavLink
+                                            onClick={toggleVisibleHeaderModal}
+                                            to={`/${item.href}`}
+                                            className="header-modal__link"
+                                            activeClassName="header-modal__link_active"
+                                            key={`header-modal__link-${index}`}
+                                        >
+                                            {item.title}
+                                        </NavLink>
+                                    ) : (
+                                        <a
+                                            href={item.href}
+                                            className="header-modal__link"
+                                            activeClassName="header-modal__link_active"
+                                            key={`header-modal__link-${index}`}
+                                        >
+                                            {item.title}
+                                        </a>
+                                    )
+                                )}
                             </nav>
                         </div>
                     </div>
