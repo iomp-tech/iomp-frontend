@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { API_DOMEN, INDEX_MAGAZIN_AWO } from "../.././api";
+import { API_DOMEN } from "../.././api";
 
 export const sendLogin = (formData) => (dispatch) => {
 	dispatch({
@@ -12,13 +12,14 @@ export const sendLogin = (formData) => (dispatch) => {
 		.post(`${API_DOMEN}/login`, formData)
 		.then(({ data }) => {
 			localStorage.setItem('success-token', data.token);
+			localStorage.setItem('link-personal-auth', data.link_personal_auth);
 
 			dispatch({
 				type: 'SET_LOADED_LOGIN',
 				payload: false,
 			});
 
-			window.location.href = `https://${INDEX_MAGAZIN_AWO}.ru/personal/`;
+			window.location.href = data.link_personal_auth;
 		})
 		.catch(({ response }) => {
 			if (response.data) {
@@ -26,7 +27,6 @@ export const sendLogin = (formData) => (dispatch) => {
 			} else {
 				dispatch(setMessageLogin(""));
 			}
-
 
 			dispatch({
 				type: 'SET_LOADED_LOGIN',

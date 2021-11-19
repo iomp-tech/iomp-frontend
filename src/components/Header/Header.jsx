@@ -10,7 +10,7 @@ import HeaderCart from "./HeaderCart";
 import HeaderModal from "./HeaderModal";
 import HeaderTop from "./HeaderTop";
 
-import {DOMEN, INDEX_MAGAZIN_AWO} from "../.././api";
+import {DOMEN} from "../.././api";
 
 const Header = React.memo(() => {
     const dispatch = useDispatch();
@@ -159,11 +159,14 @@ const Header = React.memo(() => {
                                                 <div
                                                     className="header-user-menu"
                                                     style={{
-                                                        backgroundColor: bgColor,
+                                                        backgroundColor:
+                                                            bgColor,
                                                     }}
                                                 >
                                                     <a
-                                                        href={`https://${INDEX_MAGAZIN_AWO}.ru/personal/`}
+                                                        href={localStorage.getItem(
+                                                            "link-personal-auth"
+                                                        )}
                                                         className="header-user-menu__link"
                                                         style={{
                                                             color: color,
@@ -231,7 +234,9 @@ const Header = React.memo(() => {
                                                         Сессионная комната
                                                     </Link>
                                                     <a
-                                                        href={`https://${INDEX_MAGAZIN_AWO}.ru/personal/certificate`}
+                                                        href={`${localStorage.getItem(
+                                                            "link-personal-auth"
+                                                        )}/certificate`}
                                                         className="header-user-menu__link"
                                                         style={{
                                                             color: color,

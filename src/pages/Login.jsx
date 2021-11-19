@@ -7,8 +7,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {LoginForm, PreloaderPage} from ".././components/";
 import {sendLogin} from ".././redux/actions/login";
 
-import {INDEX_MAGAZIN_AWO} from "../api";
-
 const Login = () => {
     const dispatch = useDispatch();
 
@@ -60,7 +58,7 @@ const Login = () => {
     };
 
     const redirect = () => {
-        window.location.href = `https://${INDEX_MAGAZIN_AWO}.ru/personal/`;
+        window.location.href = localStorage.getItem("link-personal-auth");
     };
 
     return (
