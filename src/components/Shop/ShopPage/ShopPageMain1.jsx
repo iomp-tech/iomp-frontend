@@ -2,7 +2,7 @@ import React from "react";
 
 import {Link, animateScroll as scroll} from "react-scroll";
 
-const ShopPageMain1 = ({to, subtitle, title, description, btnText, size}) => {
+const ShopPageMain1 = ({ to, subtitle, title, description, btnText, size }) => {
     return (
         <section className={`shop-page-main1`} id="shop-page-main1">
             <div className="container">

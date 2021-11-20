@@ -157,7 +157,10 @@ const ShopPageCompositionProduct = ({
 
     return (
         <>
-            <section className="shop-page-composition-product">
+            <section
+                className="shop-page-composition-product"
+                id="shop-page-composition-product"
+            >
                 <div className="container">
                     <div className="shop-page-composition-product-wrapper">
                         <h2
