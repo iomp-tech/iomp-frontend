@@ -109,27 +109,29 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size, blockIndex}) => {
                     >
                         {title}
                     </h2>
-                    <Slider ref={sliderRef} {...settings}>
-                        {tabs.map((tab, index) => (
-                            <div
-                                key={`shop-page-slider-text-tabs-item-${index}`}
-                                className="shop-page-slider-text-tabs-item"
-                            >
-                                <h3
-                                    className={`shop-page-slider-text-tabs-item__title ${
-                                        index === stateListTabsIndex
-                                            ? "active"
-                                            : ""
-                                    } ${size}`}
-                                    onClick={() =>
-                                        onClickSliderTextTabsItem(index)
-                                    }
+                    {tabs ? (
+                        <Slider ref={sliderRef} {...settings}>
+                            {tabs.map((tab, index) => (
+                                <div
+                                    key={`shop-page-slider-text-tabs-item-${index}`}
+                                    className="shop-page-slider-text-tabs-item"
                                 >
-                                    {tab.title}
-                                </h3>
-                            </div>
-                        ))}
-                    </Slider>
+                                    <h3
+                                        className={`shop-page-slider-text-tabs-item__title ${
+                                            index === stateListTabsIndex
+                                                ? "active"
+                                                : ""
+                                        } ${size}`}
+                                        onClick={() =>
+                                            onClickSliderTextTabsItem(index)
+                                        }
+                                    >
+                                        {tab.title}
+                                    </h3>
+                                </div>
+                            ))}
+                        </Slider>
+                    ) : null}
                     <div className="shop-page-slider-text-arrow">
                         <div
                             className="arrow"
@@ -175,18 +177,20 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size, blockIndex}) => {
                             <ul
                                 className={`shop-page-slider-text-list-ul ${size}`}
                             >
-                                {tabs[stateListTabsIndex] &&
-                                    tabs[stateListTabsIndex].items &&
-                                    tabs[stateListTabsIndex].items.map(
-                                        (li, index) => (
-                                            <li
-                                                key={`slider-text-li-${index}`}
-                                                className={`shop-page-slider-text-list__li ${size}`}
-                                            >
-                                                <span>{li.text}</span>
-                                            </li>
-                                        )
-                                    )}
+                                {tabs
+                                    ? tabs[stateListTabsIndex] &&
+                                      tabs[stateListTabsIndex].items &&
+                                      tabs[stateListTabsIndex].items.map(
+                                          (li, index) => (
+                                              <li
+                                                  key={`slider-text-li-${index}`}
+                                                  className={`shop-page-slider-text-list__li ${size}`}
+                                              >
+                                                  <span>{li.text}</span>
+                                              </li>
+                                          )
+                                      )
+                                    : null}
                             </ul>
                         </div>
 

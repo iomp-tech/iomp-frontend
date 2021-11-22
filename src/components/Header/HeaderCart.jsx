@@ -18,9 +18,7 @@ const HeaderCart = React.memo(({headerMobail}) => {
                         : "success-add-cart"
                 }
             >
-                <p className="success-add-cart__title">
-                    Товар успешно добавлен в корзину
-                </p>
+                <p className="success-add-cart__title">Перейти в корзину</p>
             </Link>
             <Link
                 to="/cart"

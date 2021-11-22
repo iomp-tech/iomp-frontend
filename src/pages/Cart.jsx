@@ -12,7 +12,11 @@ import {
     PreloaderPage,
 } from ".././components/";
 
-import {removeCartItem, fetchCartGoods} from "../redux/actions/cart";
+import {
+    removeCartItem,
+    fetchCartGoods,
+    statusGoodsPush,
+} from "../redux/actions/cart";
 
 import {fetchCategories} from ".././redux/actions/categories";
 import {fetchGoodsType} from ".././redux/actions/goods";
@@ -24,7 +28,7 @@ const Cart = () => {
     const dispatch = useDispatch();
 
     const cartItemsId = useSelector(({cart}) => cart.cart);
-    const {items, isLoaded} = useSelector(({cart}) => cart);
+    const {push, items, isLoaded} = useSelector(({cart}) => cart);
     const {size, color, type} = useSelector(({visually}) => visually);
     const {integration} = useSelector(({integration_page}) => integration_page);
 
@@ -35,7 +39,11 @@ const Cart = () => {
     let totalPrice = 0;
 
     React.useEffect(() => {
-        window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
+		
+		if (push) {
+            dispatch(statusGoodsPush(false));
+        }
 
         if (!Object.keys(teachers).length) {
             dispatch(fetchTeacher());
@@ -166,16 +174,16 @@ const Cart = () => {
                                             </h3>
 
                                             {Object.keys(items).length
-                                                ? Object.keys(
-                                                      items
-                                                  ).map((key) => (
-                                                      <input
-                                                          type="hidden"
-                                                          value="1"
-                                                          name={`Goods[${items[key].id_awo}]`}
-                                                          key={`${items[key].id_awo}_${items[key].title}`}
-                                                      />
-                                                  ))
+                                                ? Object.keys(items).map(
+                                                      (key) => (
+                                                          <input
+                                                              type="hidden"
+                                                              value="1"
+                                                              name={`Goods[${items[key].id_awo}]`}
+                                                              key={`${items[key].id_awo}_${items[key].title}`}
+                                                          />
+                                                      )
+                                                  )
                                                 : null}
 
                                             <input
