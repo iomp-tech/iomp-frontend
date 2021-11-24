@@ -12,7 +12,6 @@ export const sendLogin = (formData) => (dispatch) => {
 		.post(`${API_DOMEN}/login`, formData)
 		.then(({ data }) => {
 			localStorage.setItem('success-token', data.token);
-			localStorage.setItem('link-personal-auth', data.link_personal_auth);
 
 			dispatch({
 				type: 'SET_LOADED_LOGIN',

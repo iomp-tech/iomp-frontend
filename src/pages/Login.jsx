@@ -11,7 +11,7 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const {message} = useSelector(({login}) => login);
-    const {isLogin, isLoaded} = useSelector(({user}) => user);
+    const {user, isLogin, isLoaded} = useSelector(({user}) => user);
     const {size} = useSelector(({visually}) => visually);
     const {integration} = useSelector(({integration_page}) => integration_page);
 
@@ -58,7 +58,7 @@ const Login = () => {
     };
 
     const redirect = () => {
-        window.location.href = localStorage.getItem("link-personal-auth");
+        window.location.href = user.link_personal_auth;
     };
 
     return (

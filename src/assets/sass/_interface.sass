@@ -13,10 +13,6 @@ body
 	overflow-y: scroll
 	+light
 
-h1,h2,h3,h4,h5,h6
-	line-height: 1.3em
-	+bold
-
 p
 	line-height: 1.5em
 
@@ -296,6 +292,13 @@ input
 			display: none
 
 // title
+h1,h2,h3,h4,h5,h6
+	line-height: 1.3em
+	+bold
+
+	& > span
+			color: $mainColor
+
 .title
 	font-size: 48px
 	margin-bottom: 80px

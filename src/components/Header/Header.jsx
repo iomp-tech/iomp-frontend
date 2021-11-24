@@ -164,9 +164,9 @@ const Header = React.memo(() => {
                                                     }}
                                                 >
                                                     <a
-                                                        href={localStorage.getItem(
-                                                            "link-personal-auth"
-                                                        )}
+                                                        href={
+                                                            user.link_personal_auth
+                                                        }
                                                         className="header-user-menu__link"
                                                         style={{
                                                             color: color,
@@ -234,9 +234,7 @@ const Header = React.memo(() => {
                                                         Сессионная комната
                                                     </Link>
                                                     <a
-                                                        href={`${localStorage.getItem(
-                                                            "link-personal-auth"
-                                                        )}/certificate`}
+                                                        href={`${user.link_personal_auth}/certificate`}
                                                         className="header-user-menu__link"
                                                         style={{
                                                             color: color,
