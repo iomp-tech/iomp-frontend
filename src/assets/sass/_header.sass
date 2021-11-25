@@ -212,6 +212,40 @@
 					height: 20px
 					margin-right: 15px
 
+	&-cart-button
+		background-color: $white
+
+		width: 60px
+		height: 60px
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+		cursor: pointer
+		z-index: 100
+		position: fixed
+		bottom: 15px
+		left: 100px
+		border-radius: 50%
+
+		+transition
+		+boxShadow
+
+		&__number
+			display: flex
+			align-items: center
+			justify-content: center
+			border-radius: 50%
+			width: 20px
+			height: 20px
+			color: $white
+			background-color: $mainColor
+			top: 10px
+			right: 10px
+			position: absolute
+			font-size: 11px
+
 	//modal
 	&-modal
 		&-wrapper
