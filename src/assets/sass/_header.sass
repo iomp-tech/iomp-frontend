@@ -225,8 +225,8 @@
 		cursor: pointer
 		z-index: 100
 		position: fixed
-		bottom: 125px
-		right: 35px
+		bottom: 15px
+		left: 15px
 		border-radius: 50%
 
 		border: 1px solid $mainColor
@@ -236,6 +236,20 @@
 		&_disabled
 			opacity: 0
 			z-index: -100
+
+		&__number
+			display: flex
+			align-items: center
+			justify-content: center
+			border-radius: 50%
+			width: 21px
+			height: 21px
+			color: $white
+			background-color: $mainColor
+			top: -3px
+			right: -3px
+			position: absolute
+			font-size: 11px
 
 	//modal
 	&-modal
