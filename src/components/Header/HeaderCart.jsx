@@ -1,25 +1,36 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
+
+import {statusGoodsPush} from "../../redux/actions/cart";
 
 const HeaderCart = React.memo(({headerMobail}) => {
+    const dispatch = useDispatch();
+
     const cartItems = useSelector(({cart}) => cart.cart);
 
     const {push} = useSelector(({cart}) => cart);
     const {color} = useSelector(({visually}) => visually);
 
+    if (push) {
+        setTimeout(() => {
+            dispatch(statusGoodsPush(false));
+        }, 1000);
+    }
+
     return (
         <>
-            <Link
-                to="/cart"
+            <div
                 className={
                     push
                         ? `success-add-cart success-add-cart_active`
                         : "success-add-cart"
                 }
             >
-                <p className="success-add-cart__title">Перейти в корзину</p>
-            </Link>
+                <p className="success-add-cart__title">
+                    Товар добавлен в корзину
+                </p>
+            </div>
             <Link
                 to="/cart"
                 className={headerMobail ? "header-cart-mobile" : "header-cart"}

@@ -40,10 +40,6 @@ const Cart = () => {
 
     React.useEffect(() => {
 		window.scrollTo(0, 0);
-		
-		if (push) {
-            dispatch(statusGoodsPush(false));
-        }
 
         if (!Object.keys(teachers).length) {
             dispatch(fetchTeacher());
