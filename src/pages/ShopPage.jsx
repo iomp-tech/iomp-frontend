@@ -36,7 +36,13 @@ const ShopPage = (props) => {
         dispatch(fetchByUrlGoods(url));
 
         if (Object.keys(byUrlItem).length) {
-            for (let i = 0; i < byUrlItem.page.length; i++) {
+			for (let i = 0; i < byUrlItem.page.length; i++) {
+				  if (byUrlItem.page[i].type === "composition-product") {
+					setTo("shop-page-composition-product");
+					
+                    break;
+				}
+				
                 if (byUrlItem.page[i].type === "main1") {
                     setTo("shop-page-main1");
                 }
@@ -48,9 +54,6 @@ const ShopPage = (props) => {
                 }
                 if (byUrlItem.page[i].type === "main2-image") {
                     setTo("shop-page-main2-image");
-                }
-                if (byUrlItem.page[i].type === "composition-product") {
-                    setTo("shop-page-composition-product");
                 }
             }
         }
