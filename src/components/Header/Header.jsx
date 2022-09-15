@@ -18,7 +18,7 @@ const Header = React.memo(() => {
     const [visibleButtonCart, setVisibleButtonCart] = React.useState(false);
 
     const cartItems = useSelector(({cart}) => cart.cart);
-	const {user, isLoaded, isLogin} = useSelector(({user}) => user);
+    const {user, isLoaded, isLogin} = useSelector(({user}) => user);
     const {color, bgColor, type} = useSelector(({visually}) => visually);
 
     React.useEffect(() => {
@@ -207,6 +207,39 @@ const Header = React.memo(() => {
                                                             bgColor,
                                                     }}
                                                 >
+                                                    <a
+                                                        href="https://shop.iomp.ru/personal/profile/update"
+                                                        className="header-user-menu__link"
+                                                        style={{
+                                                            color: color,
+                                                        }}
+                                                    >
+                                                        <svg
+                                                            width="20"
+                                                            height="28"
+                                                            viewBox="0 0 20 28"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                d="M0.869566 24.7826C0.389294 24.7826 0 24.3932 0 23.913V3.58696C0 1.60908 1.60908 0 3.58696 0H19.1304C19.6107 0 20 0.389348 20 0.869566V20.8696C20 21.3498 19.6107 21.7392 19.1304 21.7392C18.6502 21.7392 18.2609 21.3498 18.2609 20.8696V1.73913H3.58696C2.56804 1.73913 1.73913 2.56804 1.73913 3.58696V23.913C1.73913 24.3932 1.34984 24.7826 0.869566 24.7826Z"
+                                                                fill={color}
+                                                            />
+                                                            <path
+                                                                d="M19.1304 27.826H3.91304C1.75538 27.826 0 26.0708 0 23.913C0 21.7554 1.75538 20 3.91304 20H19.1304C19.6107 20 20 20.3894 20 20.8696C20 21.3498 19.6107 21.7392 19.1304 21.7392H3.91304C2.71434 21.7392 1.73913 22.7144 1.73913 23.913C1.73913 25.1118 2.71434 26.087 3.91304 26.087H19.1304C19.6107 26.087 20 26.4764 20 26.9566C20 27.4368 19.6107 27.826 19.1304 27.826Z"
+                                                                fill={color}
+                                                            />
+                                                            <path
+                                                                d="M19.1309 24.7827H3.91353C3.43325 24.7827 3.04395 24.3933 3.04395 23.9131C3.04395 23.4329 3.43325 23.0435 3.91353 23.0435H19.1309C19.6112 23.0435 20.0004 23.4329 20.0004 23.9131C20.0004 24.3933 19.6112 24.7827 19.1309 24.7827Z"
+                                                                fill={color}
+                                                            />
+                                                            <path
+                                                                d="M4.78267 21.7392C4.30239 21.7392 3.91309 21.3498 3.91309 20.8696V0.869566C3.91309 0.389348 4.30239 0 4.78267 0C5.26293 0 5.65223 0.389348 5.65223 0.869566V20.8696C5.65223 21.3498 5.26293 21.7392 4.78267 21.7392Z"
+                                                                fill={color}
+                                                            />
+                                                        </svg>
+                                                        Мой профиль
+                                                    </a>
                                                     <a
                                                         href={
                                                             user.link_personal_auth

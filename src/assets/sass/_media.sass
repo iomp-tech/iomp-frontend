@@ -533,16 +533,12 @@
 					width: 100%
 	// footer
 	.footer
-		&-media
-			display: flex
-			justify-content: space-between
+		&-top
+			flex-direction: column
 
 		&-middle
-			margin-top: 0
-			justify-content: flex-end
-
 			&-left
-				width: 80%
+				width: 100%
 
 		&-bottom-bottom
 			flex-direction: column
@@ -553,7 +549,13 @@
 				margin-top: 50px
 
 		&-nav
-			display: none
+			margin-top: 50px
+
+			flex-direction: column
+
+			&-block
+				margin-top: 50px
+				margin-left: 0
 
 		&-email-form
 			display: none
@@ -1072,14 +1074,6 @@
 
 	// footer
 	.footer
-		&-media
-			flex-direction: column
-
-		&-middle
-			&-left
-				margin-top: 50px
-				width: 100%
-
 		&-wrapper
 			flex-direction: column
 
