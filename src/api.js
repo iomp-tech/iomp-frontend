@@ -2,7 +2,7 @@
 export const API_DOMEN = "https://api.iomp.ru/public/api";
 
 // DOMEN
-export const DOMEN = "http://api.iomp.ru";
+export const DOMEN = "https://api.iomp.ru";
 //http://127.0.0.1:8000/api
 //http://api.iomp.ru/
 // https://api.iomp.ru/public/api
