@@ -23,6 +23,8 @@ import emailForm from './emailForm';
 import integration_page from './integration_page';
 import session_room from './session_room';
 import feedback from './feedback';
+import policy from './policy';
+import offerta from './offerta';
 
 const rootReducer = combineReducers({
 	visually,
@@ -47,6 +49,8 @@ const rootReducer = combineReducers({
 	integration_page,
 	session_room,
 	feedback,
+	policy,
+	offerta,
 	form: formReducer,
 });
 
