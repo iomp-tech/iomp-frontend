@@ -5,8 +5,8 @@ import {Helmet} from "react-helmet";
 import {fetchOfferta} from "../redux/actions/offerta";
 
 const PublicOffer = () => {
-	const dispatch = useDispatch();
-	
+    const dispatch = useDispatch();
+
     const {size} = useSelector(({visually}) => visually);
     const {items, isLoaded} = useSelector(({policy}) => policy);
 
@@ -16,8 +16,8 @@ const PublicOffer = () => {
         if (!items.length) {
             dispatch(fetchOfferta());
         }
-	}, []);
-	
+    }, []);
+
     return (
         <>
             <Helmet>
@@ -44,9 +44,10 @@ const PublicOffer = () => {
                                         </h3>
                                         <p
                                             className={`privacy-text-block__description ${size}`}
-                                        >
-                                            {item.description}
-                                        </p>
+                                            dangerouslySetInnerHTML={{
+                                                __html: item.description,
+                                            }}
+                                        ></p>
                                     </div>
                                 ))}
                         </div>
