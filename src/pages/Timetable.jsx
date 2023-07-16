@@ -97,7 +97,7 @@ const Timetable = (props) => {
         );
 
         history.push(
-            `/timetable${filters.cat !== "" ? `/${filters.cat}` : ""}/?${query}`
+            `/timetables${filters.cat !== "" ? `/${filters.cat}` : ""}/?${query}`
         );
 
         if (!Object.keys(items).length) {

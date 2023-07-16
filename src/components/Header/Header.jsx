@@ -129,7 +129,7 @@ const Header = React.memo(() => {
 
                             <div className="header-menu-hidden">
                                 <NavLink
-                                    to="/timetable"
+                                    to="/timetables"
                                     className={`header__link ${type}`}
                                     activeClassName={`header__link_active ${type}`}
                                 >

@@ -110,7 +110,7 @@ const HeaderModal = React.memo(({isLogin}) => {
                                 </NavLink>
                                 <NavLink
                                     onClick={toggleVisibleHeaderModal}
-                                    to="/timetable"
+                                    to="/timetables"
                                     className="header-modal__link"
                                     activeClassName="header-modal__link_active"
                                 >

@@ -94,9 +94,9 @@ function App() {
 						<Route path='/shop/:filters?' render={(props) => <Shop {...props} />} exact />
 						<Route path='/shop/pages/:url' render={(props) => <ShopPage {...props} />} exact />
 
-						<Route path='/timetable' render={(props) => <Timetable {...props} />} exact />
-						<Route path='/timetable/:cat?' render={(props) => <Timetable {...props} />} exact />
-						<Route path='/timetable/pages/:url' render={(props) => <TimetableSubs {...props} />} exact />
+						<Route path='/timetables' render={(props) => <Timetable {...props} />} />
+						<Route path='/timetables/:cat?' render={(props) => <Timetable {...props} />} />
+						<Route path='/timetable/pages/:url' render={(props) => <TimetableSubs {...props} />} />
 
 						<Route path='/teachers' render={() => <Teacher />} exact />
 

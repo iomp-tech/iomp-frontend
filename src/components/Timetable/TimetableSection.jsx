@@ -67,7 +67,7 @@ const TimetableSection = () => {
 
                             <div className="timetable-btn-wrapper">
                                 <Link
-                                    to="/timetable"
+                                    to="/timetables"
                                     className={`btn-bold_gray timetable__btn ${size}`}
                                 >
                                     Показать еще

@@ -8,7 +8,7 @@ const PublicOffer = () => {
     const dispatch = useDispatch();
 
     const {size} = useSelector(({visually}) => visually);
-    const {items, isLoaded} = useSelector(({policy}) => policy);
+    const {items, isLoaded} = useSelector(({offerta}) => offerta);
 
     React.useEffect(() => {
         window.scrollTo(0, 0);

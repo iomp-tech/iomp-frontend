@@ -50,7 +50,11 @@ const ShopPageGoods = ({title, goods, size}) => {
     return (
         <>
             {Object.keys(itemsAll).length ? (
-                <section className="shop" style={{marginBottom: "50px"}}>
+                <section
+                    className="shop"
+                    id="goods"
+                    style={{marginBottom: "50px"}}
+                >
                     <div className="container">
                         <div className="shop-wrapper">
                             <h2 className={`title ${size} shop__title`}>

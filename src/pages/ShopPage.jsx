@@ -36,13 +36,17 @@ const ShopPage = (props) => {
         dispatch(fetchByUrlGoods(url));
 
         if (Object.keys(byUrlItem).length) {
-			for (let i = 0; i < byUrlItem.page.length; i++) {
-				  if (byUrlItem.page[i].type === "composition-product") {
-					setTo("shop-page-composition-product");
-					
+            for (let i = 0; i < byUrlItem.page.length; i++) {
+                if (byUrlItem.page[i].type === "composition-product") {
+                    setTo("shop-page-composition-product");
+
                     break;
-				}
-				
+                }
+
+                if (byUrlItem.page[i].type === "goods") {
+                    setTo("goods");
+                }
+
                 if (byUrlItem.page[i].type === "main1") {
                     setTo("shop-page-main1");
                 }
