@@ -5,7 +5,7 @@ import validate from "./validate";
 
 import {RenderCheckboxPolycy, RenderInput} from "../../";
 
-let ShopPageForm = ({
+let ShopPageAwoForm = ({
     size,
     id_awo,
     action,
@@ -16,7 +16,7 @@ let ShopPageForm = ({
     pristine,
     initialize,
 }) => {
-	React.useEffect(() => {
+    React.useEffect(() => {
         initialize({
             required_fields: {email: 1},
             Contact: {id_newsletter: id_awo, id_advertising_channel_page: 0},
@@ -30,15 +30,15 @@ let ShopPageForm = ({
     return (
         <form
             action={action}
-            className={`shop-page-form ${size}`}
+            className={`shop-page-awo-form ${size}`}
             encType="application/x-www-form-urlencoded"
             acceptCharset="UTF-8"
             method="POST"
         >
-            <div className="shop-page-form-middle">
-                <div className={`shop-page-form-block-wrapper ${size}`}>
-                    <div className="input shop-page-form-input-wrapper">
-                        <div className="shop-page-form-input">
+            <div className="shop-page-awo-form-middle">
+                <div className={`shop-page-awo-form-block-wrapper ${size}`}>
+                    <div className="input shop-page-awo-form-input-wrapper">
+                        <div className="shop-page-awo-form-input">
                             <Field
                                 component={RenderInput}
                                 type="hidden"
@@ -94,7 +94,7 @@ let ShopPageForm = ({
                     </div>
                     <button
                         type="submit"
-                        className={`btn-bold_color shop-page-form__btn ${
+                        className={`btn-bold_color shop-page-awo-form__btn ${
                             !pristine && !submitting && !invalid
                                 ? ""
                                 : "btn-bold_color_disabled"
@@ -120,9 +120,9 @@ let ShopPageForm = ({
     );
 };
 
-ShopPageForm = reduxForm({
+ShopPageAwoForm = reduxForm({
     form: "shop_page_form",
     validate,
-})(ShopPageForm);
+})(ShopPageAwoForm);
 
-export default ShopPageForm;
+export default ShopPageAwoForm;

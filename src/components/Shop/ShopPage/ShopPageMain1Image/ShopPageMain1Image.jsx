@@ -32,6 +32,57 @@ const ShopPageMain1Image = ({
                         >
                             {description}
                         </p>
+{/* 
+                        <div className="shop-page-main1-image-form">
+                            {isSend ? (
+                                <div className="shop-page-form-thank">
+                                    <h3 className="shop-page-form-thank__title">
+                                        Спасибо за заявку!
+                                    </h3>
+
+                                    <p className="shop-page-form-thank__description">
+                                        С вами скоро свяжется наш менеджер
+                                    </p>
+                                </div>
+                            ) : (
+                                <ShopPageMain1ImageForm
+                                    onSubmit={onSubmit}
+                                    btnText={btnText}
+                                />
+                            )}
+                        </div> */}
+
+                        {/* <form
+                            action={CART_DOMEN}
+                            method="post"
+                            encType="application/x-www-form-urlencoded"
+                            acceptCharset="UTF-8"
+                            style={{width: "auto"}}
+                        >
+                            <input
+                                type="hidden"
+                                value="1"
+                                name={`Goods[${id_awo}]`}
+                            />
+
+                            <input
+                                name="CartAccount[name]"
+                                type="hidden"
+                                value=""
+                            />
+                            <input
+                                name="CartAccount[email]"
+                                type="hidden"
+                                value=""
+                            />
+
+                            <button
+                                type="submit"
+                                className={`btn-bold_color shop-page-main1-image-text__btn ${size}`}
+                            >
+                                {btnText}
+                            </button>
+                        </form> */}
                         <Link
                             to={to}
                             spy={true}

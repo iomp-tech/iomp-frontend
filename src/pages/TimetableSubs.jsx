@@ -14,7 +14,11 @@ import {
     ShopPageFeedbackPhotos,
     PreloaderPage,
     ShopPageFeedbackVideos,
-    ShopPageGoods,
+	ShopPageGoods,
+	ShopPageFaq,
+	ShopPageComparison,
+	ShopPageContent,
+	ShopPageVideo
 } from "../components/";
 
 import {Er404} from "./";
@@ -38,8 +42,8 @@ const TimetableSubs = (props) => {
         if (Object.keys(byUrlItem).length) {
             for (let i = 0; i < byUrlItem.page.length; i++) {
                 if (byUrlItem.page[i].type === "composition-product") {
-					setTo("shop-page-composition-product");
-					
+                    setTo("shop-page-composition-product");
+
                     break;
                 }
 
@@ -205,6 +209,22 @@ const TimetableSubs = (props) => {
                                     ) : null}
                                     {block.type === "goods" ? (
                                         <ShopPageGoods size={size} {...block} />
+                                    ) : null}
+
+                                    {block.type === "faq" ? (
+                                        <ShopPageFaq {...block} />
+                                    ) : null}
+
+                                    {block.type === "сomparison" ? (
+                                        <ShopPageComparison {...block} />
+                                    ) : null}
+
+                                    {block.type === "content" ? (
+                                        <ShopPageContent {...block} />
+                                    ) : null}
+
+                                    {block.type === "video" ? (
+                                        <ShopPageVideo {...block} />
                                     ) : null}
                                 </div>
                             ))

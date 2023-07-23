@@ -79,6 +79,7 @@ function App() {
 			<Helmet>
 				<style>{`body { color: ${color}; background-color: ${bgColor}; } .checkbox+label::before {border: 1px solid ${color};} .checkbox-label {color: ${color}} .input__field_small {color: ${color}} .input__field {color: ${color}} .header-user-menu__link:hover {background-color: ${bgColor};}`}</style>
 			</Helmet>
+
 			<div className="wrapper">
 				<div id="vanila__js__page__top"></div>
 				<div id="tags__js__page__top"></div>
@@ -105,7 +106,7 @@ function App() {
 						<Route path='/post/:id' render={(props) => <Post {...props} />} exact />
 						<Route path='/magazine/:cat?' render={(props) => <Magazine {...props} />} />
 
-						<Route path='/cart' render={() => <Cart />} exact />
+						{/* <Route path='/cart' render={() => <Cart />} exact /> */}
 
 						<Route path="/feedback" render={(props) => <Feedback {...props} />} exact />
 

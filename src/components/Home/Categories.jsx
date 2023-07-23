@@ -19,6 +19,12 @@ const Categories = React.memo(() => {
         dispatch(fetchGoods());
     }, []);
 
+    React.useEffect(() => {
+		if (isLoaded) {
+			setActiveThumb(items[Object.keys(items)[0]].thumb);
+        }
+    }, [isLoaded]);
+
     const onSelectItem = React.useCallback(
         (key) => {
             setActiveThumb(items[key].thumb);

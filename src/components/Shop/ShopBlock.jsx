@@ -1,6 +1,7 @@
 import React from "react";
 import NumberFormat from "react-number-format";
-import {Link} from "react-router-dom";
+
+import {CART_DOMEN} from "../../api";
 
 const ShopBlock = React.memo(
     ({
@@ -15,6 +16,7 @@ const ShopBlock = React.memo(
         price,
         expensiveText,
         id,
+        id_awo,
         href,
         auth,
         onClickAddGoods,
@@ -51,7 +53,7 @@ const ShopBlock = React.memo(
                 style={{opacity: isLoadedLimit ? "" : "0.3"}}
             >
                 <div className={`shop-block-left ${size}`}>
-                    <div className={`shop-block-thumb ${size}`}>
+                    <a href={href} className={`shop-block-thumb ${size}`}>
                         <div
                             className="shop-block__img"
                             style={{
@@ -71,16 +73,17 @@ const ShopBlock = React.memo(
                         {sale ? (
                             <span className="shop-block__sale">-{sale}%</span>
                         ) : null}
-                    </div>
+                    </a>
                     <div className={`shop-block-text ${size}`}>
                         <div className="shop-block-type-wrapper">
                             {Object.keys(categories).length
                                 ? categories[category] && (
-                                      <span
+                                      <a
+                                          href={`/shop/?category=${category}`}
                                           className={`shop-block__type_color ${size}`}
                                       >
                                           {categories[category].title}
-                                      </span>
+                                      </a>
                                   )
                                 : null}
 
@@ -97,25 +100,33 @@ const ShopBlock = React.memo(
                             {Object.keys(auths).length
                                 ? auth.map((key) =>
                                       auths[key] ? (
-                                          <span
+                                          <a
+                                              href={`/shop/?auth=${key}`}
                                               className={`shop-block__type_gray ${size}`}
                                               key={`${auths[key].name}_${key}`}
                                           >
                                               {auths[key].name}
-                                          </span>
+                                          </a>
                                       ) : null
                                   )
                                 : null}
                         </div>
-                        <h3 className={`shop-block__title ${size}`}>{title}</h3>
-                        <span className={`shop-block__time ${size}`}>
+                        <a href={href}>
+                            <h3
+                                href={href}
+                                className={`shop-block__title ${size}`}
+                            >
+                                {title}
+                            </h3>
+                        </a>
+                        {/* <span className={`shop-block__time ${size}`}>
                             {time}
-                        </span>
+                        </span> */}
                     </div>
                 </div>
 
                 <div className={`shop-block-right ${size}`}>
-                    <div className={`shop-block-price ${size}`}>
+                    <a href={href} className={`shop-block-price ${size}`}>
                         {expensive ? (
                             <>
                                 <span
@@ -175,8 +186,15 @@ const ShopBlock = React.memo(
                                 )}
                             </>
                         )}
-                    </div>
-                    {expensive ? (
+                    </a>
+                    <a
+                        href={href}
+                        target="_blank"
+                        className={`btn-bold_color shop-block__btn ${size}`}
+                    >
+                        Подробнее
+                    </a>
+                    {/* {expensive ? (
                         <a
                             href={href}
                             target="_blank"
@@ -185,23 +203,54 @@ const ShopBlock = React.memo(
                             Подробнее
                         </a>
                     ) : (
-                        <div className="shop-block-btn">
+                        // <div className="shop-block-btn">
+                        //     <button
+                        //         className={`btn-bold_color shop-block__btn ${size}`}
+                        //         onClick={setUpdateGoods}
+                        //     >
+                        //         Добавить в корзину
+                        //     </button>
+                        //     {page ? (
+                        //         <Link
+                        //             className="shop-block__link"
+                        //             to={`/shop/pages/${url}`}
+                        //         >
+                        //             Подробнее
+                        //         </Link>
+                        //     ) : null}
+                        // </div>
+                        <form
+                            action={CART_DOMEN}
+                            method="post"
+                            encType="application/x-www-form-urlencoded"
+                            acceptCharset="UTF-8"
+                            className="shop-block-btn"
+                        >
+                            <input
+                                type="hidden"
+                                value="1"
+                                name={`Goods[${id_awo}]`}
+                            />
+
+                            <input
+                                name="CartAccount[name]"
+                                type="hidden"
+                                value=""
+                            />
+                            <input
+                                name="CartAccount[email]"
+                                type="hidden"
+                                value=""
+                            />
+
                             <button
+                                type="submit"
                                 className={`btn-bold_color shop-block__btn ${size}`}
-                                onClick={setUpdateGoods}
                             >
-                                Добавить в корзину
+                                Оформить заказ
                             </button>
-                            {page ? (
-                                <Link
-                                    className="shop-block__link"
-                                    to={`/shop/pages/${url}`}
-                                >
-                                    Подробнее
-                                </Link>
-                            ) : null}
-                        </div>
-                    )}
+                        </form>
+                    )} */}
                 </div>
             </div>
         );

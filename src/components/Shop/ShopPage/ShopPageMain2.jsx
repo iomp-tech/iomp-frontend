@@ -4,7 +4,7 @@ import moment from "moment";
 import "moment/locale/ru";
 
 import ShopPageModal from "./ShopPageModal";
-import ShopPageForm from "./ShopPageForm";
+import ShopPageAwoForm from "./ShopPageAwoForm";
 
 const ShopPageMain2 = ({
     subtitle,
@@ -128,7 +128,7 @@ const ShopPageMain2 = ({
                                 Записаться
                             </button>
                         ) : (
-                            <ShopPageForm
+                            <ShopPageAwoForm
                                 id_awo={id_awo}
                                 action={action}
                                 formId={formId}

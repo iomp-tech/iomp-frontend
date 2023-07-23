@@ -1,17 +1,23 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import NumberFormat from "react-number-format";
-
+import Axios from "axios";
 import Slider from "react-slick";
 
-import "../../../assets/slick/slick.css";
-import "../../../assets/slick/slick-theme.css";
+import {CART_DOMEN, API_DOMEN} from "../../../../api";
 
-import {addGoodsCart, statusGoodsPush} from "../../../redux/actions/cart";
-import {fetchAllGoods} from "../../../redux/actions/goods";
+import "../../../../assets/slick/slick.css";
+import "../../../../assets/slick/slick-theme.css";
 
-import ShopPageModal from "./ShopPageModal";
-import ShopPageForm from "./ShopPageForm";
+import {addGoodsCart, statusGoodsPush} from "../../../../redux/actions/cart";
+import {fetchAllGoods} from "../../../../redux/actions/goods";
+
+import {
+    ShopPageModal,
+    ShopPageAwoForm,
+    ShopPageCompositionProductForm,
+    ShopPageCompositionProductStockForm,
+} from "../../../";
 
 const ShopPageCompositionProduct = ({
     title,
@@ -27,9 +33,10 @@ const ShopPageCompositionProduct = ({
     blockIndex,
 }) => {
     const dispatch = useDispatch();
-
     const {itemsAll} = useSelector(({goods}) => goods);
-    const {push} = useSelector(({cart}) => cart);
+
+    const [isSend, setIsSend] = React.useState(false);
+    const [isSendStock, setIsSendStock] = React.useState(false);
 
     React.useEffect(() => {
         if (!Object.keys(itemsAll).length) {
@@ -118,14 +125,14 @@ const ShopPageCompositionProduct = ({
         }
     };
 
-    const setUpdateGoods = (id) => {
-        const obj = {
-            id: id,
-        };
+    // const setUpdateGoods = (id) => {
+    //     const obj = {
+    //         id: id,
+    //     };
 
-        dispatch(addGoodsCart(obj));
-        dispatch(statusGoodsPush(!push));
-    };
+    //     dispatch(addGoodsCart(obj));
+    //     dispatch(statusGoodsPush(!push));
+    // };
 
     const [stateModalShopPage, setStateModalShopPage] = React.useState(false);
 
@@ -153,6 +160,26 @@ const ShopPageCompositionProduct = ({
         if (e.target === ShopPageModalRef.current) {
             setStateModalShopPage(false);
         }
+    };
+
+    const onSubmit = (data, message, idAwo) => {
+        Axios.post(`${API_DOMEN}/goods/getsite`, {
+            ...data,
+            message,
+            idAwo,
+        }).then(() => {
+            setIsSend(true);
+        });
+    };
+
+    const onSubmitStock = (data, message, idAwo) => {
+        Axios.post(`${API_DOMEN}/goods/getsite`, {
+            ...data,
+            message,
+            idAwo,
+        }).then(() => {
+            setIsSendStock(true);
+        });
     };
 
     return (
@@ -282,7 +309,7 @@ const ShopPageCompositionProduct = ({
                                         Записаться
                                     </button>
                                 ) : (
-                                    <ShopPageForm
+                                    <ShopPageAwoForm
                                         id_awo={id_awo}
                                         action={action}
                                         formId={formId}
@@ -388,7 +415,75 @@ const ShopPageCompositionProduct = ({
                                             </div>
                                         </div>
                                     </div>
-                                    <button
+
+                                    {isSend ? (
+                                        <div className="shop-page-form-thank">
+                                            <h3 className="shop-page-form-thank__title">
+                                                Спасибо за заявку!
+                                            </h3>
+
+                                            <p className="shop-page-form-thank__description">
+                                                С вами скоро свяжется наш
+                                                менеджер
+                                            </p>
+                                        </div>
+                                    ) : (
+                                        <ShopPageCompositionProductForm
+                                            btnText={
+                                                modules[stateModulesIndex]
+                                                    .btnText
+                                            }
+                                            onSubmit={(data) =>
+                                                onSubmit(
+                                                    data,
+                                                    `${modules[stateModulesIndex].title}`,
+                                                    modules[stateModulesIndex]
+                                                        .goodModuleId
+                                                )
+                                            }
+                                        />
+                                    )}
+
+                                    {/* <form
+                                        action={CART_DOMEN}
+                                        method="post"
+                                        encType="application/x-www-form-urlencoded"
+                                        acceptCharset="UTF-8"
+                                        style={{width: "auto"}}
+                                    >
+                                        <input
+                                            type="hidden"
+                                            value="1"
+                                            name={`Goods[${modules[stateModulesIndex].goodModuleId}]`}
+                                        />
+
+                                        <input
+                                            name="CartAccount[name]"
+                                            type="hidden"
+                                            value=""
+                                        />
+                                        <input
+                                            name="CartAccount[email]"
+                                            type="hidden"
+                                            value=""
+                                        />
+
+                                        <button
+                                            className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
+                                            // onClick={() =>
+                                            //     setUpdateGoods(
+                                            //         itemsAll[
+                                            //             modules[
+                                            //                 stateModulesIndex
+                                            //             ].goodModule
+                                            //         ].id
+                                            //     )
+                                            // }
+                                        >
+                                            Добавить в корзину
+                                        </button>
+                                    </form> */}
+                                    {/* <button
                                         className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
                                         onClick={() =>
                                             setUpdateGoods(
@@ -400,7 +495,7 @@ const ShopPageCompositionProduct = ({
                                         }
                                     >
                                         Добавить в корзину
-                                    </button>
+                                    </button> */}
                                 </div>
                                 {parseInt(
                                     modules[stateModulesIndex].stockBoolean
@@ -427,7 +522,78 @@ const ShopPageCompositionProduct = ({
                                             </p>
                                         </div>
                                         <div className="shop-page-composition-product-block-right-bottom">
-                                            <button
+                                            {isSendStock ? (
+                                                <div className="shop-page-form-thank">
+                                                    <h3 className="shop-page-form-thank__title">
+                                                        Спасибо за заявку!
+                                                    </h3>
+
+                                                    <p className="shop-page-form-thank__description">
+                                                        С вами скоро свяжется
+                                                        наш менеджер
+                                                    </p>
+                                                </div>
+                                            ) : (
+                                                <ShopPageCompositionProductStockForm
+                                                    btnText={
+                                                        modules[
+                                                            stateModulesIndex
+                                                        ].btnTextStock
+                                                    }
+                                                    onSubmit={(data) =>
+                                                        onSubmitStock(
+                                                            data,
+                                                            `${modules[stateModulesIndex].titleStock} - ${modules[stateModulesIndex].descriptionStock}`,
+                                                            modules[
+                                                                stateModulesIndex
+                                                            ].goodModuleStockId
+                                                        )
+                                                    }
+                                                />
+                                            )}
+                                            {/* <form
+                                                action={CART_DOMEN}
+                                                method="post"
+                                                encType="application/x-www-form-urlencoded"
+                                                acceptCharset="UTF-8"
+                                                style={{width: "auto"}}
+                                            >
+                                                <input
+                                                    type="hidden"
+                                                    value="1"
+                                                    name={`Goods[${modules[stateModulesIndex].goodModuleStockId}]`}
+                                                />
+
+                                                <input
+                                                    name="CartAccount[name]"
+                                                    type="hidden"
+                                                    value=""
+                                                />
+                                                <input
+                                                    name="CartAccount[email]"
+                                                    type="hidden"
+                                                    value=""
+                                                />
+
+                                                <button
+                                                    type="submit"
+                                                    className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
+                                                    // onClick={() =>
+                                                    //     setUpdateGoods(
+                                                    //         modules[
+                                                    //             stateModulesIndex
+                                                    //         ].goodModuleStock
+                                                    //     )
+                                                    // }
+                                                >
+                                                    {
+                                                        modules[
+                                                            stateModulesIndex
+                                                        ].btnTextStock
+                                                    }
+                                                </button>
+                                            </form> */}
+                                            {/* <button
                                                 type="submit"
                                                 className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
                                                 onClick={() =>
@@ -442,7 +608,7 @@ const ShopPageCompositionProduct = ({
                                                     modules[stateModulesIndex]
                                                         .btnTextStock
                                                 }
-                                            </button>
+                                            </button> */}
                                         </div>
                                     </div>
                                 ) : null}

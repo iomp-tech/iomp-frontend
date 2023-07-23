@@ -16,17 +16,38 @@ export { default as ShopSearch } from './Shop/ShopSearch';
 export { default as ShopBlock } from './Shop/ShopBlock';
 export { default as ShopBlockLoading } from './Shop/ShopBlockLoading';
 // ShopPage
-export { default as ShopPageMain1 } from './Shop/ShopPage/ShopPageMain1';
-export { default as ShopPageMain1Image } from './Shop/ShopPage/ShopPageMain1Image';
+export { default as ShopPageAwoForm } from './Shop/ShopPage/ShopPageAwoForm';
+export { default as ShopPageModal } from './Shop/ShopPage/ShopPageModal';
 export { default as ShopPageMain2 } from './Shop/ShopPage/ShopPageMain2';
 export { default as ShopPageMain2Image } from './Shop/ShopPage/ShopPageMain2Image';
 export { default as ShopPageSectionSquares } from './Shop/ShopPage/ShopPageSectionSquares';
 export { default as ShopPageSliderText } from './Shop/ShopPage/ShopPageSliderText';
-export { default as ShopPageCompositionProduct } from './Shop/ShopPage/ShopPageCompositionProduct';
 export { default as ShopPageTeachers } from './Shop/ShopPage/ShopPageTeachers';
 export { default as ShopPageFeedbackPhotos } from './Shop/ShopPage/ShopPageFeedbackPhotos';
 export { default as ShopPageFeedbackVideos } from './Shop/ShopPage/ShopPageFeedbackVideos';
 export { default as ShopPageGoods } from './Shop/ShopPage/ShopPageGoods';
+export { default as ShopPageComparison } from './Shop/ShopPage/ShopPageComparison';
+export { default as ShopPageContent } from './Shop/ShopPage/ShopPageContent';
+export { default as ShopPageVideo } from './Shop/ShopPage/ShopPageVideo';
+// ShopPageMain1Form
+export { default as ShopPageMain1 } from './Shop/ShopPage/ShopPageMain1/ShopPageMain1';
+export { default as ShopPageMain1Form } from './Shop/ShopPage/ShopPageMain1/ShopPageMain1Form';
+// ShopPageMain1Image
+export { default as ShopPageMain1Image } from './Shop/ShopPage/ShopPageMain1Image/ShopPageMain1Image';
+export { default as ShopPageMain1ImageForm } from './Shop/ShopPage/ShopPageMain1Image/ShopPageMain1ImageForm';
+// ShopPageCompositionProduct
+export { default as ShopPageCompositionProduct } from './Shop/ShopPage/ShopPageCompositionProduct/ShopPageCompositionProduct';
+export { default as ShopPageCompositionProductForm } from './Shop/ShopPage/ShopPageCompositionProduct/ShopPageCompositionProductForm';
+export { default as ShopPageCompositionProductStockForm } from './Shop/ShopPage/ShopPageCompositionProduct/ShopPageCompositionProductStockForm';
+// ShopPageFaq
+export { default as ShopPageFaq } from './Shop/ShopPage/ShopPageFaq/ShopPageFaq';
+export { default as ShopPageFaqItem } from './Shop/ShopPage/ShopPageFaq/ShopPageFaqItem';
+// ShopPageDemo
+export { default as ShopPageDemo } from './Shop/ShopPage/ShopPageDemo/ShopPageDemo';
+export { default as ShopPageDemoForm } from './Shop/ShopPage/ShopPageDemo/ShopPageDemoForm';
+// ShopPageFixedForm
+export { default as ShopPageFixedForm } from './Shop/ShopPage/ShopPageFixedForm/ShopPageFixedForm';
+export { default as ShopPageFixedFormForm } from './Shop/ShopPage/ShopPageFixedForm/ShopPageFixedFormForm';
 
 // Timetable
 export { default as TimetableSection } from './Timetable/TimetableSection';

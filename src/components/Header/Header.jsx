@@ -35,7 +35,7 @@ const Header = React.memo(() => {
 
     return (
         <>
-            <Link
+            {/* <Link
                 to="/cart"
                 className={`header-cart-button ${
                     visibleButtonCart && window.location.pathname !== "/cart"
@@ -67,7 +67,7 @@ const Header = React.memo(() => {
                 <span className="header-cart-button__number">
                     {Object.keys(cartItems).length}
                 </span>
-            </Link>
+            </Link> */}
             {/* <ScrollToTop
                 showUnder={500}
                 duration={1000}
@@ -151,13 +151,13 @@ const Header = React.memo(() => {
                                 </NavLink>
                             </div>
 
-                            <HeaderCart headerMobail={true} />
+                            {/* <HeaderCart headerMobail={true} /> */}
 
                             <HeaderModal isLogin={isLogin} />
                         </nav>
 
                         <div className="header-right">
-                            <HeaderCart headerMobail={false} />
+                            {/* <HeaderCart headerMobail={false} /> */}
 
                             <>
                                 {isLoaded ? (

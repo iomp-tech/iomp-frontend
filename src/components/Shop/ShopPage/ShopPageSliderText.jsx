@@ -7,7 +7,14 @@ import Slider from "react-slick";
 import "../../../assets/slick/slick.css";
 import "../../../assets/slick/slick-theme.css";
 
-const ShopPageSliderText = ({to, title, tabs, btnText, size, blockIndex}) => {
+const ShopPageSliderText = ({
+    to,
+    title,
+    tabs,
+    btnText,
+    size,
+    blockIndex,
+}) => {
     const [stateListTabsIndex, setStateListTabsIndex] = React.useState(0);
     const [stateAnimateTabs, setStateAnimateTabs] = React.useState(false);
     const [disabledArrow, setDisabledArrow] = React.useState(false);
@@ -203,6 +210,38 @@ const ShopPageSliderText = ({to, title, tabs, btnText, size, blockIndex}) => {
                             ></div>
                         </div>
                     </div>
+
+                    {/* <form
+                        action={CART_DOMEN}
+                        method="post"
+                        encType="application/x-www-form-urlencoded"
+                        acceptCharset="UTF-8"
+                        className="shop-page-slider-text-btn"
+                    >
+                        <input
+                            type="hidden"
+                            value="1"
+                            name={`Goods[${id_awo}]`}
+                        />
+
+                        <input
+                            name="CartAccount[name]"
+                            type="hidden"
+                            value=""
+                        />
+                        <input
+                            name="CartAccount[email]"
+                            type="hidden"
+                            value=""
+                        />
+
+                        <button
+                            type="submit"
+                            className={`btn-bold_color shop-page-slider-text__btn ${size}`}
+                        >
+                            {btnText}
+                        </button>
+                    </form> */}
                     <div className="shop-page-slider-text-btn">
                         <Link
                             to={to}
