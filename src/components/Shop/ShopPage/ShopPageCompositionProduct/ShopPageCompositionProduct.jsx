@@ -163,20 +163,26 @@ const ShopPageCompositionProduct = ({
     };
 
     const onSubmit = (data, message, idAwo) => {
+        const getUtmPartner = JSON.parse(localStorage.getItem("utm_partner"));
+
         Axios.post(`${API_DOMEN}/goods/getsite`, {
             ...data,
             message,
             idAwo,
+            partnerId: getUtmPartner,
         }).then(() => {
             setIsSend(true);
         });
     };
 
     const onSubmitStock = (data, message, idAwo) => {
+		const getUtmPartner = JSON.parse(localStorage.getItem("utm_partner"));
+		
         Axios.post(`${API_DOMEN}/goods/getsite`, {
             ...data,
             message,
             idAwo,
+            partnerId: getUtmPartner,
         }).then(() => {
             setIsSendStock(true);
         });

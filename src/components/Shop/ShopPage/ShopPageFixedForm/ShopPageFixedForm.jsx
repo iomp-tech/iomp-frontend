@@ -9,10 +9,13 @@ const ShopPageFixedForm = ({id_awo, title, description, btnText}) => {
     const [isSend, setIsSend] = React.useState(false);
 
     const onSubmit = (data) => {
+        const getUtmPartner = JSON.parse(localStorage.getItem("utm_partner"));
+
         Axios.post(`${API_DOMEN}/goods/getsite`, {
             ...data,
             message: "",
             idAwo: id_awo,
+            partnerId: getUtmPartner,
         }).then(() => {
             setIsSend(true);
         });
@@ -33,8 +36,7 @@ const ShopPageFixedForm = ({id_awo, title, description, btnText}) => {
                         dangerouslySetInnerHTML={{
                             __html: description,
                         }}
-                    >
-                    </p>
+                    ></p>
 
                     {isSend ? (
                         <div className="shop-page-form-thank">

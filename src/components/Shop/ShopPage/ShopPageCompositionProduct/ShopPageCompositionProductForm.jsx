@@ -1,6 +1,5 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
-import {createTextMask} from "redux-form-input-masks";
 
 import {RenderInput} from "../../../";
 
@@ -33,11 +32,6 @@ const ShopPageCompositionProductForm = ({handleSubmit, btnText}) => {
                     label={"Ваш телефон"}
                     type="text"
                     name="phone"
-                    {...createTextMask({
-                        pattern: "+7 999 999 99-99",
-                        guide: false,
-                        stripMask: false,
-                    })}
                 />
             </div>
 

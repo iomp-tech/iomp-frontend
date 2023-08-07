@@ -17,10 +17,13 @@ const ShopPageDemo = ({
     const [isSend, setIsSend] = React.useState(false);
 
     const onSubmit = (data) => {
+        const getUtmPartner = JSON.parse(localStorage.getItem("utm_partner"));
+
         Axios.post(`${API_DOMEN}/goods/getsite`, {
             ...data,
             idAwo: courseAwoId,
             message: "ДЕМО УРОКИ",
+            partnerId: getUtmPartner,
         }).then(() => {
             setIsSend(true);
         });

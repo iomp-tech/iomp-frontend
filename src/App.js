@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Helmet } from "react-helmet";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Header, Footer, PreloaderPage } from './components';
@@ -35,6 +35,7 @@ const Feedback = React.lazy(() => import('./pages/Feedback'));
 
 function App() {
 	const disaptch = useDispatch();
+	const { search } = useLocation()
 
 	const { color, bgColor } = useSelector(({ visually }) => visually);
 	const { integration } = useSelector(({ integration_page }) => integration_page);
@@ -45,6 +46,12 @@ function App() {
 
 		if (!Object.keys(integration).length) {
 			disaptch(fetchIntegrationPage());
+		}
+
+		const query = new URLSearchParams(search)
+
+		if (query.get("utm_partner")) {
+			localStorage.setItem("utm_partner", query.get("utm_partner"))
 		}
 	}, []);
 
