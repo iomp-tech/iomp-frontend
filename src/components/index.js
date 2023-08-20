@@ -45,6 +45,9 @@ export { default as ShopPageFaqItem } from './Shop/ShopPage/ShopPageFaq/ShopPage
 // ShopPageDemo
 export { default as ShopPageDemo } from './Shop/ShopPage/ShopPageDemo/ShopPageDemo';
 export { default as ShopPageDemoForm } from './Shop/ShopPage/ShopPageDemo/ShopPageDemoForm';
+// ShopPageProgramm
+export { default as ShopPageProgramm } from './Shop/ShopPage/ShopPageProgramm/ShopPageProgramm';
+export { default as ShopPageProgrammItem } from './Shop/ShopPage/ShopPageProgramm/ShopPageProgrammItem';
 // ShopPageFixedForm
 export { default as ShopPageFixedForm } from './Shop/ShopPage/ShopPageFixedForm/ShopPageFixedForm';
 export { default as ShopPageFixedFormForm } from './Shop/ShopPage/ShopPageFixedForm/ShopPageFixedFormForm';

@@ -14,11 +14,12 @@ import {
     ShopPageFeedbackPhotos,
     PreloaderPage,
     ShopPageFeedbackVideos,
-	ShopPageGoods,
-	ShopPageFaq,
-	ShopPageComparison,
-	ShopPageContent,
-	ShopPageVideo
+    ShopPageGoods,
+    ShopPageFaq,
+    ShopPageComparison,
+    ShopPageContent,
+    ShopPageVideo,
+    ShopPageProgramm,
 } from "../components/";
 
 import {Er404} from "./";
@@ -225,6 +226,10 @@ const TimetableSubs = (props) => {
 
                                     {block.type === "video" ? (
                                         <ShopPageVideo {...block} />
+                                    ) : null}
+
+                                    {block.type === "programm" ? (
+                                        <ShopPageProgramm {...block} />
                                     ) : null}
                                 </div>
                             ))

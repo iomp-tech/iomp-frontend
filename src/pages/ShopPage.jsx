@@ -21,6 +21,7 @@ import {
     ShopPageContent,
     ShopPageVideo,
     ShopPageDemo,
+    ShopPageProgramm,
 } from "../components/";
 
 import {Er404} from "./";
@@ -213,6 +214,10 @@ const ShopPage = (props) => {
 
                                 {block.type === "demo" ? (
                                     <ShopPageDemo {...block} />
+                                ) : null}
+
+                                {block.type === "programm" ? (
+                                    <ShopPageProgramm {...block} />
                                 ) : null}
 
                                 {block.type === "fixed-form" ? (

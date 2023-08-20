@@ -995,6 +995,7 @@
 				background-size: cover
 				background-repeat: no-repeat
 
+	// &-modal
 	&-modal
 		&-wrapper
 			display: flex
@@ -1082,6 +1083,7 @@
 				&.X2
 					font-size: 32px
 
+	// &-awo-form
 	&-awo-form
 		margin: 25px 0
 
@@ -1128,6 +1130,7 @@
 			&.X2
 				font-size: 32px
 
+	// &-faq
 	&-faq
 		margin: 100px 0
 
@@ -1156,6 +1159,11 @@
 					font-size: 32px
 
 				&-arrow
+					+transition
+
+					&.rotate
+						transform: rotate(180deg)
+						
 					& > svg
 						width: 25px
 
@@ -1165,6 +1173,7 @@
 				&__description
 					font-size: 21px
 
+	// &-comparison
 	&-comparison
 		margin: 100px 0
 
@@ -1199,6 +1208,7 @@
 					&:last-child
 						margin-bottom: 0
 
+	// &-content
 	&-content
 		margin: 75px 0
 
@@ -1227,6 +1237,7 @@
 				width: 100%
 				border-radius: 15px
 
+	// &-video
 	&-video
 		margin: 75px 0
 
@@ -1246,6 +1257,7 @@
 
 				border-radius: 15px
 
+	// &-demo
 	&-demo
 		margin: 100px 0
 
@@ -1312,6 +1324,65 @@
 				width: 100%
 				border-radius: 15px
 
+	// &-programm
+	&-programm
+		margin: 100px 0
+
+		&__title
+			font-size: 42px
+			margin-bottom: 25px
+
+		&__description
+			width: 75%
+			font-size: 21px
+			margin-bottom: 50px
+
+		&-items-wrapper
+			background-color: $lightGray
+			border-radius: 15px
+
+		&-item
+			cursor: pointer
+			padding: 25px 25px 0 25px
+
+			overflow: hidden
+
+			border-bottom: 1px solid $gray
+
+			&:last-child
+				border: none
+
+			&-top
+				display: flex
+				justify-content: space-between
+				align-items: center
+
+				padding-bottom: 25px
+
+				&-text
+					&__subtitle
+						font-size: 21px
+						margin-bottom: 10px
+
+					&__title
+						font-size: 32px
+
+				&-arrow
+					+transition
+
+					&.rotate
+						transform: rotate(180deg)
+
+					& > svg
+						width: 25px
+
+			&-bottom
+				+transition
+
+				&__description
+					font-size: 21px
+
+	// &-fixed-form
 	&-fixed-form
 		margin: 75px 0
 

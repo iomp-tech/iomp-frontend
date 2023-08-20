@@ -1,6 +1,6 @@
 import React from "react";
 
-const ShopPageFaqItem = ({title, description}) => {
+const ShopPageProgrammItem = ({subtitle, title, description}) => {
     const [state, setState] = React.useState(false);
     const [height, setHeight] = React.useState(0);
     const [isInitHeight, setIsInitHeight] = React.useState(false);
@@ -13,16 +13,25 @@ const ShopPageFaqItem = ({title, description}) => {
 
     React.useEffect(() => {
         setHeight(contentRef.current.offsetHeight);
+
         setIsInitHeight(true);
     }, []);
 
     return (
-        <div className="shop-page-faq-item" onClick={toggleState}>
-            <div className="shop-page-faq-item-top">
-                <h3 className="shop-page-faq-item-top__title">{title}</h3>
+        <div className="shop-page-programm-item" onClick={toggleState}>
+            <div className="shop-page-programm-item-top">
+                <div className="shop-page-programm-item-top-text">
+                    <p className="shop-page-programm-item-top-text__subtitle">
+                        {subtitle}
+                    </p>
+
+                    <h3 className="shop-page-programm-item-top-text__title">
+                        {title}
+                    </h3>
+                </div>
 
                 <div
-                    className={`shop-page-faq-item-top-arrow ${
+                    className={`shop-page-programm-item-top-arrow ${
                         state ? "rotate" : ""
                     }`}>
                     <svg
@@ -50,7 +59,7 @@ const ShopPageFaqItem = ({title, description}) => {
             </div>
 
             <div
-                className="shop-page-faq-item-bottom"
+                className="shop-page-programm-item-bottom"
                 ref={contentRef}
                 style={
                     isInitHeight
@@ -59,7 +68,7 @@ const ShopPageFaqItem = ({title, description}) => {
                           }
                         : {}
                 }>
-                <p className="shop-page-faq-item-bottom__description">
+                <p className="shop-page-programm-item-bottom__description">
                     {description}
                 </p>
             </div>
@@ -67,4 +76,4 @@ const ShopPageFaqItem = ({title, description}) => {
     );
 };
 
-export default ShopPageFaqItem;
+export default ShopPageProgrammItem;
