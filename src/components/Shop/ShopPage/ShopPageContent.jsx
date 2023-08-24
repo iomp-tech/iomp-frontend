@@ -20,15 +20,12 @@ const ShopPageMain1Image = ({
                             className={`shop-page-content-text__title ${size}`}
                             dangerouslySetInnerHTML={{
                                 __html: title,
-                            }}
-                        ></h1>
+                            }}></h1>
                         <p
                             className={`shop-page-content-text__description ${size}`}
-                        >
-                            {description}
-                        </p>
-					</div>
-					
+                            dangerouslySetInnerHTML={{__html: description}}></p>
+                    </div>
+
                     <div className="shop-page-content-cover">
                         <img
                             src={image}

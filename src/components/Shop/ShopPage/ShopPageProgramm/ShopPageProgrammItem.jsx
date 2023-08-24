@@ -68,9 +68,11 @@ const ShopPageProgrammItem = ({subtitle, title, description}) => {
                           }
                         : {}
                 }>
-                <p className="shop-page-programm-item-bottom__description">
-                    {description}
-                </p>
+                <p
+                    className="shop-page-programm-item-bottom__description"
+                    dangerouslySetInnerHTML={{
+                        __html: description,
+                    }}></p>
             </div>
         </div>
     );

@@ -38,12 +38,13 @@ const ShopPageDemo = ({
                             className={`shop-page-demo-text__title`}
                             dangerouslySetInnerHTML={{
                                 __html: title,
-                            }}
-                        ></h1>
+                            }}></h1>
 
-                        <p className={`shop-page-demo-text__description`}>
-                            {description}
-                        </p>
+                        <p
+                            className={`shop-page-demo-text__description`}
+                            dangerouslySetInnerHTML={{
+                                __html: description,
+                            }}></p>
 
                         {isSend ? (
                             <div className="shop-page-demo-text-thank">
@@ -51,14 +52,13 @@ const ShopPageDemo = ({
                                     className={`shop-page-demo-text-thank__title`}
                                     dangerouslySetInnerHTML={{
                                         __html: thankTitle,
-                                    }}
-                                ></h1>
+                                    }}></h1>
 
                                 <p
                                     className={`shop-page-demo-text-thank__description`}
-                                >
-                                    {thankDescription}
-                                </p>
+                                    dangerouslySetInnerHTML={{
+                                        __html: thankDescription,
+                                    }}></p>
                             </div>
                         ) : (
                             <ShopPageDemoForm

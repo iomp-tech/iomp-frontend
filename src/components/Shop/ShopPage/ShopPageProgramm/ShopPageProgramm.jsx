@@ -9,9 +9,11 @@ const ShopPageProgramm = ({title, description, items}) => {
                 <div className="shop-page-programm-wrapper">
                     <h2 className="shop-page-programm__title">{title}</h2>
 
-                    <p className="shop-page-programm__description">
-                        {description}
-                    </p>
+                    <p
+                        className="shop-page-programm__description"
+                        dangerouslySetInnerHTML={{
+                            __html: description,
+                        }}></p>
 
                     <div className="shop-page-programm-items-wrapper">
                         {items.map((item, index) => (

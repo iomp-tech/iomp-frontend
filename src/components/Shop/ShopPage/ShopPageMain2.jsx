@@ -58,40 +58,35 @@ const ShopPageMain2 = ({
                             className={`shop-page-main2__title ${size}`}
                             dangerouslySetInnerHTML={{
                                 __html: title,
-                            }}
-                        ></h1>
-                        <p className={`shop-page-main2__description ${size}`}>
-                            {description}
-                        </p>
+                            }}></h1>
+                        <p
+                            className={`shop-page-main2__description ${size}`}
+                            dangerouslySetInnerHTML={{__html: description}}></p>
 
                         <div className="circle-wrapper main-circle-wrapper">
                             <div className="circle-regular main-circle1"></div>
                             <div
-                                className={`circle-bold ${size} main-circle2`}
-                            ></div>
+                                className={`circle-bold ${size} main-circle2`}></div>
                         </div>
 
                         {range ? (
                             <div className="shop-page-main2-date">
                                 <div className="shop-page-main2-date-left">
                                     <span
-                                        className={`shop-page-main2__date-range ${size}`}
-                                    >
+                                        className={`shop-page-main2__date-range ${size}`}>
                                         <b>Дата старта:</b>
                                     </span>
                                 </div>
                                 <div className="shop-page-main2-date-right">
                                     <span
-                                        className={`shop-page-main2__date-range ${size}`}
-                                    >
+                                        className={`shop-page-main2__date-range ${size}`}>
                                         <b>с:</b>{" "}
                                         {moment(minDate, "YYYY-MM-DD, HH:mm")
                                             .locale("ru")
                                             .format("DD MMMM, HH:mm")}
                                     </span>
                                     <span
-                                        className={`shop-page-main2__date-range ${size}`}
-                                    >
+                                        className={`shop-page-main2__date-range ${size}`}>
                                         <b>до:</b>{" "}
                                         {moment(maxDate, "YYYY-MM-DD, HH:mm")
                                             .locale("ru")
@@ -103,15 +98,13 @@ const ShopPageMain2 = ({
                             <div className={`shop-page-main2-date ${size}`}>
                                 <div className="shop-page-main2-date-left">
                                     <span
-                                        className={`shop-page-main2__date ${size}`}
-                                    >
+                                        className={`shop-page-main2__date ${size}`}>
                                         <b>Дата старта:</b>
                                     </span>
                                 </div>
                                 <div className="shop-page-main2-date-right">
                                     <span
-                                        className={`shop-page-main2__date ${size}`}
-                                    >
+                                        className={`shop-page-main2__date ${size}`}>
                                         {moment(date, "YYYY-MM-DD, HH:mm")
                                             .locale("ru")
                                             .format("DD MMMM, HH:mm")}
@@ -123,8 +116,7 @@ const ShopPageMain2 = ({
                         {vkUrl || telegramUrl ? (
                             <button
                                 onClick={toggleModal}
-                                className={`btn-bold_color shop-page-main2__btn ${size}`}
-                            >
+                                className={`btn-bold_color shop-page-main2__btn ${size}`}>
                                 Записаться
                             </button>
                         ) : (
