@@ -509,23 +509,49 @@
 
 			&-composition-product
 				&-modules
+					&-description
+						margin: 15px 0
+
+					&__description
+						font-size: 18px
+
+					&-items-wrapper
+						flex-direction: column
+						align-items: flex-start
+
 					&-item
-						padding-right: 15px
+						padding: 0
+						margin-bottom: 25px
+
+						&:last-child
+							margin-bottom: 0
 
 				&-block
-					&-left
-						&-price
-							&-wrapper
-								align-items: center
-								flex-wrap: wrap
+					flex-direction: column
 
-					&__price
-						padding: 15px 0
-						font-size: 32px
+					&-text
+						&__title
+							font-size: 24px
 
-					&__title
-						&_color
-							font-size: 28px
+						&__description
+							font-size: 18px
+
+					&-form
+						width: 100%
+						margin-top: 25px
+
+					// &-left
+					// 	&-price
+					// 		&-wrapper
+					// 			align-items: center
+					// 			flex-wrap: wrap
+
+					// &__price
+					// 	padding: 15px 0
+					// 	font-size: 32px
+
+					// &__title
+					// 	&_color
 
 			&-comparison
 				&-blocks
@@ -571,6 +597,16 @@
 			&-fixed-form
 				&-wrapper
 					width: 100%
+
+			&-text-form
+				&-wrapper
+					flex-direction: column
+
+				&-text, &-form
+					width: 100%
+
+				&-form
+					margin-top: 50px
 
 	// timetable
 	.timetable
@@ -1308,6 +1344,14 @@
 					&-bottom
 						&__description
 							font-size: 18px
+
+			&-text-form
+				&-text
+					&__title
+						font-size: 32px
+
+					&__description
+						font-size: 18px
 
 @media screen and (max-width: 480px)
 	//header

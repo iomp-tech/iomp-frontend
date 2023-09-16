@@ -17,13 +17,23 @@ const ShopPageDemo = ({
     const [isSend, setIsSend] = React.useState(false);
 
     const onSubmit = (data) => {
-        const getUtmPartner = JSON.parse(localStorage.getItem("utm_partner"));
+        const utm_partner = parseInt(localStorage.getItem("utm_partner"));
+        const utm_source = localStorage.getItem("utm_source");
+        const utm_medium = localStorage.getItem("utm_medium");
+        const utm_campaign = localStorage.getItem("utm_campaign");
+        const utm_content = localStorage.getItem("utm_content");
+        const utm_term = localStorage.getItem("utm_term");
 
         Axios.post(`${API_DOMEN}/goods/getsite`, {
             ...data,
             idAwo: courseAwoId,
             message: "ДЕМО УРОКИ",
-            partnerId: getUtmPartner,
+            utm_partner,
+            utm_source,
+            utm_medium,
+            utm_campaign,
+            utm_content,
+            utm_term,
         }).then(() => {
             setIsSend(true);
         });
@@ -34,11 +44,11 @@ const ShopPageDemo = ({
             <div className="container">
                 <div className="shop-page-demo-wrapper">
                     <div className="shop-page-demo-text">
-                        <h1
+                        <h2
                             className={`shop-page-demo-text__title`}
                             dangerouslySetInnerHTML={{
                                 __html: title,
-                            }}></h1>
+                            }}></h2>
 
                         <p
                             className={`shop-page-demo-text__description`}

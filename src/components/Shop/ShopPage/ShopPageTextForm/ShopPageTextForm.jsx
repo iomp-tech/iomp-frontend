@@ -3,9 +3,9 @@ import Axios from "axios";
 
 import {API_DOMEN} from "../../../../api";
 
-import {ShopPageFixedFormForm} from "../../../";
+import {ShopPageTextFormForm} from "../../../";
 
-const ShopPageFixedForm = ({id_awo, title, description, btnText}) => {
+const ShopPageTextForm = ({id_awo, title, description, btnText}) => {
     const [isSend, setIsSend] = React.useState(false);
 
     const onSubmit = (data) => {
@@ -32,19 +32,19 @@ const ShopPageFixedForm = ({id_awo, title, description, btnText}) => {
     };
 
     return (
-        <section className="shop-page-fixed-form" id="fixed-form">
+        <section className={`shop-page-text-form`}>
             <div className="container">
-                <div className="shop-page-fixed-form-wrapper">
-                    <h2
-                        className="shop-page-fixed-form__title"
-                        dangerouslySetInnerHTML={{
-                            __html: title,
-                        }}></h2>
-                    <p
-                        className="shop-page-fixed-form__description"
-                        dangerouslySetInnerHTML={{
-                            __html: description,
-                        }}></p>
+                <div className="shop-page-text-form-wrapper">
+                    <div className="shop-page-text-form-text">
+                        <h1
+                            className={`shop-page-text-form-text__title`}
+                            dangerouslySetInnerHTML={{
+                                __html: title,
+                            }}></h1>
+                        <p
+                            className={`shop-page-text-form-text__description`}
+                            dangerouslySetInnerHTML={{__html: description}}></p>
+                    </div>
 
                     {isSend ? (
                         <div className="shop-page-form-thank">
@@ -57,7 +57,7 @@ const ShopPageFixedForm = ({id_awo, title, description, btnText}) => {
                             </p>
                         </div>
                     ) : (
-                        <ShopPageFixedFormForm
+                        <ShopPageTextFormForm
                             onSubmit={onSubmit}
                             btnText={btnText}
                         />
@@ -68,4 +68,4 @@ const ShopPageFixedForm = ({id_awo, title, description, btnText}) => {
     );
 };
 
-export default ShopPageFixedForm;
+export default ShopPageTextForm;

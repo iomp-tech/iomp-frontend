@@ -20,6 +20,8 @@ import {
     ShopPageContent,
     ShopPageVideo,
     ShopPageProgramm,
+    ShopPageFixedForm,
+    ShopPageTextForm,
 } from "../components/";
 
 import {Er404} from "./";
@@ -230,6 +232,20 @@ const TimetableSubs = (props) => {
 
                                     {block.type === "programm" ? (
                                         <ShopPageProgramm {...block} />
+                                    ) : null}
+
+                                    {block.type === "fixed-form" ? (
+                                        <ShopPageFixedForm
+                                            id_awo={byUrlItem.id_awo}
+                                            {...block}
+                                        />
+                                    ) : null}
+
+                                    {block.type === "text-form" ? (
+                                        <ShopPageTextForm
+                                            id_awo={byUrlItem.id_awo}
+                                            {...block}
+                                        />
                                     ) : null}
                                 </div>
                             ))

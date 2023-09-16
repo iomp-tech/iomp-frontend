@@ -1,8 +1,8 @@
 import React from "react";
 
-const TeacherBlock = React.memo(({name, type, avatar, onClick, size}) => {
+const TeacherBlock = React.memo(({name, type, avatar, onClick, size, big}) => {
     return (
-        <div className={`teacher-block ${size}`} onClick={onClick}>
+        <div className={`teacher-block ${size} ${big ? "big" : ""}`} onClick={onClick}>
             <div className="teacher-block-left-top"></div>
             <div className="teacher-block-text">
                 <h3 className={`teacher-block__title ${size}`}>{name}</h3>

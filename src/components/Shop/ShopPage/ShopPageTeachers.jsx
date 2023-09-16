@@ -51,7 +51,11 @@ const ShopPageTeachers = ({auth, title, size}) => {
         <section className="teacher" style={{marginBottom: "50px"}}>
             <div className="container">
                 <div className="teacher-wrapper">
-                    <h2 className={`title ${size} teacher__title`}>{title}</h2>
+                    <h2
+                        className={`title ${size} teacher__title`}
+                        dangerouslySetInnerHTML={{
+                            __html: title,
+                        }}></h2>
 
                     <TeacherModal
                         rgb={rgb}
@@ -77,6 +81,11 @@ const ShopPageTeachers = ({auth, title, size}) => {
                                                   )
                                               }
                                               {...itemsMain[obj]}
+                                              big={
+                                                  auth.length === 1
+                                                      ? true
+                                                      : false
+                                              }
                                           />
                                       )
                               )
@@ -85,8 +94,7 @@ const ShopPageTeachers = ({auth, title, size}) => {
                                   .map((_, index) => (
                                       <div
                                           className="teacher-block"
-                                          key={index}
-                                      >
+                                          key={index}>
                                           <TeacherBlockLoading />
                                       </div>
                                   ))}

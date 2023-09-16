@@ -2,12 +2,10 @@ import React from "react";
 
 import {Link, animateScroll as scroll} from "react-scroll";
 
-const ShopPageMain1Image = ({
-    to,
+const ShopPageContent = ({
     subtitle,
     title,
     description,
-    btnText,
     image,
     size,
 }) => {
@@ -16,6 +14,12 @@ const ShopPageMain1Image = ({
             <div className="container">
                 <div className="shop-page-content-wrapper">
                     <div className="shop-page-content-text">
+                        <span
+                            className={`shop-page-content-text__subtitle ${size}`}
+                            dangerouslySetInnerHTML={{
+                                __html: subtitle,
+							}}></span>
+						
                         <h1
                             className={`shop-page-content-text__title ${size}`}
                             dangerouslySetInnerHTML={{
@@ -39,4 +43,4 @@ const ShopPageMain1Image = ({
     );
 };
 
-export default ShopPageMain1Image;
+export default ShopPageContent;

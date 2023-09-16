@@ -8,9 +8,11 @@ const ServicesBlock = ({title, description, index, type, size}) => {
                 <h3 className={`services-block__title ${size}`}>{title}</h3>
             )}
             {description && (
-                <p className={`services-block__description ${size}`}>
-                    {description}
-                </p>
+                <p
+                    className={`services-block__description ${size}`}
+                    dangerouslySetInnerHTML={{
+                        __html: description,
+                    }}></p>
             )}
         </div>
     );

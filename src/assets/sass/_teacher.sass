@@ -63,9 +63,9 @@
 			flex-direction: column
 			align-items: flex-start
 			justify-content: center
-			padding-left: 100px
-			padding-top: 100px
-			padding-bottom: 100px
+			padding-left: 50px
+			padding-top: 50px
+			padding-bottom: 50px
 			max-width: 60%
 
 		&__title
@@ -131,6 +131,7 @@
 		border: 1px solid $gray
 		border-radius: 2px
 		margin-bottom: 25px
+
 		&::before
 			content: ''
 			position: absolute
@@ -151,6 +152,16 @@
 		&:hover::before
 			width: 450px
 			height: 450px
+
+		&.big
+			width: 100%
+			height: 500px
+
+		&.big &-text &__title
+			font-size: 36px
+
+		&.big &-text &__subtitle
+			font-size: 24px
 
 		&.X1-5, &.X2
 			height: 500px

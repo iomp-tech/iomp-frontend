@@ -5,10 +5,10 @@ import {RenderInput} from "../../../";
 
 import validate from "./validate";
 
-const ShopPageCompositionProductForm = ({handleSubmit, btnText}) => {
+const ShopPageTextFormForm = ({handleSubmit, btnText}) => {
     return (
-        <form className="shop-page-composition-product-block-form" onSubmit={handleSubmit}>
-            <div className="shop-page-composition-product-block-form-input">
+        <form className="shop-page-text-form-form" onSubmit={handleSubmit}>
+            <div className="shop-page-form-input">
                 <Field
                     component={RenderInput}
                     label={"Ваше имя"}
@@ -17,7 +17,7 @@ const ShopPageCompositionProductForm = ({handleSubmit, btnText}) => {
                 />
             </div>
 
-            <div className="shop-page-composition-product-block-form-input">
+            <div className="shop-page-form-input">
                 <Field
                     component={RenderInput}
                     label={"Ваша почта"}
@@ -26,7 +26,7 @@ const ShopPageCompositionProductForm = ({handleSubmit, btnText}) => {
                 />
             </div>
 
-            <div className="shop-page-composition-product-block-form-input">
+            <div className="shop-page-form-input">
                 <Field
                     component={RenderInput}
                     label={"Ваш телефон"}
@@ -35,7 +35,7 @@ const ShopPageCompositionProductForm = ({handleSubmit, btnText}) => {
                 />
             </div>
 
-            <button className="btn-bold_color shop-page-composition-product-block-form__btn">
+            <button className="btn-bold_color shop-page-form__link">
                 {btnText}
             </button>
         </form>
@@ -43,6 +43,6 @@ const ShopPageCompositionProductForm = ({handleSubmit, btnText}) => {
 };
 
 export default reduxForm({
-    form: "shop-page-composition-product-form",
+    form: "shop-page-text-form",
     validate,
-})(ShopPageCompositionProductForm);
+})(ShopPageTextFormForm);

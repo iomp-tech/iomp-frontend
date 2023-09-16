@@ -22,6 +22,7 @@ import {
     ShopPageVideo,
     ShopPageDemo,
     ShopPageProgramm,
+    ShopPageTextForm,
 } from "../components/";
 
 import {Er404} from "./";
@@ -222,6 +223,13 @@ const ShopPage = (props) => {
 
                                 {block.type === "fixed-form" ? (
                                     <ShopPageFixedForm
+                                        id_awo={byUrlItem.id_awo}
+                                        {...block}
+                                    />
+                                ) : null}
+
+                                {block.type === "text-form" ? (
+                                    <ShopPageTextForm
                                         id_awo={byUrlItem.id_awo}
                                         {...block}
                                     />

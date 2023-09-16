@@ -735,12 +735,14 @@
 
 		&-modules
 			&-description
-				margin: 50px 0
-				padding-bottom: 25px
+				margin: 25px 0
 
 			&__description
 				font-size: 26px
 				max-width: 900px
+
+				& ul, ol
+					margin-left: 15px
 
 				&.X1-5, &.X2
 					max-width: 100%
@@ -750,6 +752,10 @@
 
 				&.X2
 					font-size: 42px
+
+			&-items-wrapper
+				display: flex
+				align-items: center
 
 			&-item
 				padding-right: 100px
@@ -770,9 +776,6 @@
 
 					&.active
 						color: $mainColor
-
-		&-arrow
-			margin-top: 50px
 
 		&-list
 			width: 100%
@@ -826,119 +829,139 @@
 					&.X2
 						font-size: 42px
 
-		&-circle1
-			width: 450px
-			height: 450px
-
-		&-circle2
-			position: absolute
-			bottom: -100px
-			right: 100px
-			width: 450px
-			height: 450px
-
 		&-block
-			&-left
-				display: flex
-				flex-direction: column
-				justify-content: space-between
-				padding-right: 50px
-				width: 45%
-				border-right: 1px solid $gray
+			display: flex
+			justify-content: space-between
 
-				&.X1-5, &.X2
-					border: none
-					padding: 0
-					padding-bottom: 50px
-					border-bottom: 1px solid $gray
-					width: 100%
+			padding: 25px
+			border-radius: 15px
+			background-color: $lightGray
 
-				&-price
-					&-wrapper
-						display: flex
-						justify-content: space-between
+			&-text
+				width: 55%
 
-						&.X1-5, &.X2
-							flex-direction: column
-
-			&-right
-				width: 50%
-				display: flex
-				flex-direction: column
-				justify-content: space-between
-
-				&.X1-5, &.X2
-					margin-top: 50px
-					width: 100%
-
-			&-wrapper
-				display: flex
-				justify-content: space-between
-
-				&.X1-5, &.X2
-					flex-direction: column
-
-			&__title
-				font-size: 32px
-
-				&_color
-					font-size: 36px
-					margin-bottom: 25px
-					color: $mainColor
-
-					&.X1-5
-						font-size: 54px
-
-					&.X2
-						font-size: 72px
-
-				&.X1-5
-					font-size: 54px
-
-				&.X2
-					font-size: 72px
-
-			&__subtitle
-				font-size: 21px
-
-				&.X1-5
+				&__title
 					font-size: 32px
+					margin-bottom: 15px
 
-				&.X2
-					font-size: 42px
-
-			&-price
-				display: flex
-				flex-direction: column
-				justify-content: space-between
-
-			&__subprice
-				font-size: 38px
-				color: $gray
-				text-decoration: line-through
-
-			&__price
-				font-size: 48px
-				color: $mainColor
-
-				&.X1-5, &.X2
-					margin-top: 25px
-
-				&.X1-5
-					font-size: 54px
-
-				&.X2
-					font-size: 72px
-
-			&__btn
-				width: 100%
-				margin-top: 50px
-
-				&.X1-5
+				&__description
 					font-size: 24px
 
-				&.X2
+				&__price
+					margin-top: 25px
 					font-size: 32px
+					color: $mainColor
+
+			&-form
+				width: 40%
+
+				&-input
+					margin-bottom: 15px
+
+				&__btn
+					width: 100%
+
+			// &-left
+			// 	display: flex
+			// 	flex-direction: column
+			// 	justify-content: space-between
+			// 	padding-right: 50px
+			// 	width: 45%
+			// 	border-right: 1px solid $gray
+
+			// 	&.X1-5, &.X2
+			// 		border: none
+			// 		padding: 0
+			// 		padding-bottom: 50px
+			// 		border-bottom: 1px solid $gray
+			// 		width: 100%
+
+			// 	&-price
+			// 		&-wrapper
+			// 			display: flex
+			// 			justify-content: space-between
+
+			// 			&.X1-5, &.X2
+			// 				flex-direction: column
+
+			// &-right
+			// 	width: 50%
+			// 	display: flex
+			// 	flex-direction: column
+			// 	justify-content: space-between
+
+			// 	&.X1-5, &.X2
+			// 		margin-top: 50px
+			// 		width: 100%
+
+			// &-wrapper
+			// 	display: flex
+			// 	justify-content: space-between
+
+			// 	&.X1-5, &.X2
+			// 		flex-direction: column
+
+			// &__title
+			// 	font-size: 32px
+
+			// 	&_color
+			// 		font-size: 36px
+			// 		margin-bottom: 25px
+			// 		color: $mainColor
+
+			// 		&.X1-5
+			// 			font-size: 54px
+
+			// 		&.X2
+			// 			font-size: 72px
+
+			// 	&.X1-5
+			// 		font-size: 54px
+
+			// 	&.X2
+			// 		font-size: 72px
+
+			// &__subtitle
+			// 	font-size: 21px
+
+			// 	&.X1-5
+			// 		font-size: 32px
+
+			// 	&.X2
+			// 		font-size: 42px
+
+			// &-price
+			// 	display: flex
+			// 	flex-direction: column
+			// 	justify-content: space-between
+
+			// &__subprice
+			// 	font-size: 38px
+			// 	color: $gray
+			// 	text-decoration: line-through
+
+			// &__price
+			// 	font-size: 48px
+			// 	color: $mainColor
+
+			// 	&.X1-5, &.X2
+			// 		margin-top: 25px
+
+			// 	&.X1-5
+			// 		font-size: 54px
+
+			// 	&.X2
+			// 		font-size: 72px
+
+			// &__btn
+			// 	width: 100%
+			// 	margin-top: 50px
+
+			// 	&.X1-5
+			// 		font-size: 24px
+
+			// 	&.X2
+			// 		font-size: 32px
 
 		&__btn
 			width: 40%
@@ -1134,6 +1157,9 @@
 	&-faq
 		margin: 100px 0
 
+		& ul, ol
+			margin-left: 15px
+
 		&__title
 			font-size: 42px
 			margin-bottom: 25px
@@ -1163,7 +1189,7 @@
 
 					&.rotate
 						transform: rotate(180deg)
-						
+
 					& > svg
 						width: 25px
 
@@ -1215,11 +1241,16 @@
 		&-wrapper
 			position: relative
 			display: flex
-			align-items: center
 			justify-content: space-between
+			align-items: flex-start
 
 		&-text
 			max-width: 50%
+
+			&__subtitle
+				display: block
+				font-size: 24px
+				margin-bottom: 15px
 
 			&__title
 				font-size: 46px
@@ -1233,8 +1264,9 @@
 			width: 40%
 
 			&__image
-				user-select: none
 				width: 100%
+
+				user-select: none
 				border-radius: 15px
 
 	// &-video
@@ -1328,6 +1360,9 @@
 	&-programm
 		margin: 100px 0
 
+		& ul, ol
+			margin-left: 15px
+
 		&__title
 			font-size: 42px
 			margin-bottom: 25px
@@ -1395,3 +1430,29 @@
 
 		&__description
 			font-size: 24px
+
+	// &-text-form
+	&-text-form
+		margin: 75px 0
+
+		&-wrapper
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+
+			padding: 25px
+			border-radius: 15px
+			background-color: $lightGray
+
+		&-text
+			width: 50%
+
+			&__title
+				font-size: 42px
+				margin-bottom: 25px
+
+			&__description
+				font-size: 24px
+
+		&-form
+			width: 45%

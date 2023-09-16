@@ -53,6 +53,26 @@ function App() {
 		if (query.get("utm_partner")) {
 			localStorage.setItem("utm_partner", query.get("utm_partner"))
 		}
+
+		if (query.get("utm_source")) {
+			localStorage.setItem("utm_source", query.get("utm_source"))
+		}
+
+		if (query.get("utm_medium")) {
+			localStorage.setItem("utm_medium", query.get("utm_medium"))
+		}
+
+		if (query.get("utm_campaign")) {
+			localStorage.setItem("utm_campaign", query.get("utm_campaign"))
+		}
+
+		if (query.get("utm_content")) {
+			localStorage.setItem("utm_content", query.get("utm_content"))
+		}
+
+		if (query.get("utm_term")) {
+			localStorage.setItem("utm_term", query.get("utm_term"))
+		}
 	}, []);
 
 	React.useEffect(() => {

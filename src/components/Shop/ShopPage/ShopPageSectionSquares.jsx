@@ -12,15 +12,18 @@ const ShopPageSectionSquares = ({title, squares, size, type}) => {
                     type === null ? (
                         <>
                             <div
-                                className={`circle-bold ${size} services-circle1`}
-                            ></div>
+                                className={`circle-bold ${size} services-circle1`}></div>
                             <div
-                                className={`circle-bold ${size} services-circle2`}
-                            ></div>
+                                className={`circle-bold ${size} services-circle2`}></div>
                         </>
                     ) : null}
 
-                    <h2 className={`title ${size} services__title`}>{title}</h2>
+                    <h2
+                        className={`title ${size} services__title`}
+                        dangerouslySetInnerHTML={{
+                            __html: title,
+                        }}>
+                    </h2>
 
                     <div className="services-block-wrapper">
                         {squares.map((obj, index) => (

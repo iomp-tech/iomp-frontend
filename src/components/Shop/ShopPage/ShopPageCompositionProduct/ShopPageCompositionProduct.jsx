@@ -2,7 +2,6 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import NumberFormat from "react-number-format";
 import Axios from "axios";
-import Slider from "react-slick";
 
 import {CART_DOMEN, API_DOMEN} from "../../../../api";
 
@@ -163,28 +162,48 @@ const ShopPageCompositionProduct = ({
     };
 
     const onSubmit = (data, message, idAwo) => {
-        const getUtmPartner = JSON.parse(localStorage.getItem("utm_partner"));
+        const utm_partner = parseInt(localStorage.getItem("utm_partner"));
+        const utm_source = localStorage.getItem("utm_source");
+        const utm_medium = localStorage.getItem("utm_medium");
+        const utm_campaign = localStorage.getItem("utm_campaign");
+        const utm_content = localStorage.getItem("utm_content");
+        const utm_term = localStorage.getItem("utm_term");
 
         Axios.post(`${API_DOMEN}/goods/getsite`, {
             ...data,
             message,
             idAwo,
-            partnerId: getUtmPartner,
+            utm_partner,
+            utm_source,
+            utm_medium,
+            utm_campaign,
+            utm_content,
+            utm_term,
         }).then(() => {
             setIsSend(true);
         });
     };
 
     const onSubmitStock = (data, message, idAwo) => {
-        const getUtmPartner = JSON.parse(localStorage.getItem("utm_partner"));
+        const utm_partner = parseInt(localStorage.getItem("utm_partner"));
+        const utm_source = localStorage.getItem("utm_source");
+        const utm_medium = localStorage.getItem("utm_medium");
+        const utm_campaign = localStorage.getItem("utm_campaign");
+        const utm_content = localStorage.getItem("utm_content");
+        const utm_term = localStorage.getItem("utm_term");
 
         Axios.post(`${API_DOMEN}/goods/getsite`, {
             ...data,
             message,
             idAwo,
-            partnerId: getUtmPartner,
+            utm_partner,
+            utm_source,
+            utm_medium,
+            utm_campaign,
+            utm_content,
+            utm_term,
         }).then(() => {
-            setIsSendStock(true);
+            setIsSend(true);
         });
     };
 
@@ -196,10 +215,12 @@ const ShopPageCompositionProduct = ({
                 <div className="container">
                     <div className="shop-page-composition-product-wrapper">
                         <h2
-                            className={`title ${size} shop-page-composition-product__title`}>
-                            {title}
-                        </h2>
-                        <Slider ref={sliderRef} {...settings}>
+                            className={`title ${size} shop-page-composition-product__title`}
+                            dangerouslySetInnerHTML={{
+                                __html: title,
+                            }}></h2>
+
+                        <div className="shop-page-composition-product-modules-items-wrapper">
                             {modules.map((module, index) => (
                                 <div
                                     key={`shop-page-composition-product-modules-item-${index}`}
@@ -217,38 +238,8 @@ const ShopPageCompositionProduct = ({
                                     </h3>
                                 </div>
                             ))}
-                        </Slider>
-                        <div className="shop-page-composition-product-arrow">
-                            <div
-                                className="arrow"
-                                style={{
-                                    pointerEvents: disabledArrow
-                                        ? "none"
-                                        : "auto",
-                                    opacity: disabledArrow ? 0.3 : 1,
-                                }}>
-                                <div className="arrow-prev" onClick={prev}>
-                                    <svg
-                                        width="50"
-                                        height="25"
-                                        viewBox="0 0 50 25"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M-0.000164032 12.4993C-0.000464032 12.3246 0.0687362 12.157 0.192436 12.0333L12.0603 0.184753C12.3222 -0.0678466 12.7396 -0.0605456 12.9926 0.200954C13.2394 0.456054 13.2394 0.860454 12.9926 1.11545L1.59153 12.4993L12.9926 23.8817C13.2456 24.1432 13.2383 24.5599 12.9765 24.8125C12.7209 25.0589 12.3159 25.0589 12.0603 24.8125L0.192436 12.964C0.0691362 12.8407 -6.4032e-05 12.6736 -0.000164032 12.4993Z" />
-                                        <path d="M0 12.5673C0 12.2059 0.466398 11.9129 1.0417 11.9129L48.9583 11.9129C49.5336 11.913 50 12.2059 50 12.5673C50 12.9287 49.5336 13.2217 48.9583 13.2217L1.0416 13.2217C0.466399 13.2217 0 12.9287 0 12.5673Z" />
-                                    </svg>
-                                </div>
-                                <div className="arrow-next" onClick={next}>
-                                    <svg
-                                        width="50"
-                                        height="25"
-                                        viewBox="0 0 50 25"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M50.0002 12.5007C50.0005 12.6754 49.9313 12.843 49.8076 12.9667L37.9397 24.8152C37.6778 25.0678 37.2604 25.0605 37.0074 24.799C36.7606 24.5439 36.7606 24.1395 37.0074 23.8845L48.4085 12.5007L37.0074 1.11824C36.7544 0.856768 36.7617 0.440031 37.0235 0.187449C37.2791 -0.0589638 37.6841 -0.0589638 37.9397 0.187449L49.8076 12.036C49.9309 12.1593 50.0001 12.3264 50.0002 12.5007Z" />
-                                        <path d="M50 12.4328C50 12.7942 49.5336 13.0872 48.9583 13.0872L1.0417 13.0872C0.466406 13.0871 0 12.7942 0 12.4328C0 12.0714 0.466406 11.7784 1.0417 11.7784L48.9584 11.7784C49.5336 11.7784 50 12.0714 50 12.4328Z" />
-                                    </svg>
-                                </div>
-                            </div>
                         </div>
+
                         <div
                             className={`shop-page-composition-product-modules-description ${size}`}>
                             <p
@@ -258,6 +249,7 @@ const ShopPageCompositionProduct = ({
                                         .description,
                                 }}></p>
                         </div>
+
                         <div
                             className="shop-page-composition-product-list-wrapper"
                             style={{height: heightList}}>
@@ -285,13 +277,8 @@ const ShopPageCompositionProduct = ({
                                         )
                                     )}
                             </div>
-                            <div className="circle-wrapper shop-page-composition-product-circle-wrapper">
-                                <div
-                                    className={`circle-bold ${size} shop-page-composition-product-circle1`}></div>
-                                <div
-                                    className={`circle-regular ${size} shop-page-composition-product-circle2`}></div>
-                            </div>
                         </div>
+
                         {parseInt(formBoolean) ? (
                             <>
                                 {vkUrl || telegramUrl ? (
@@ -309,180 +296,140 @@ const ShopPageCompositionProduct = ({
                                     />
                                 )}
                             </>
-                        ) : Object.keys(itemsAll).length ? (
+                        ) : parseInt(
+                              modules[stateModulesIndex].stockBoolean
+                          ) ? (
                             <div
                                 id="shop-page-composition-product"
-                                className={`shop-page-composition-product-block-wrapper ${size}`}>
-                                <div
-                                    className={`shop-page-composition-product-block-left ${size}`}>
-                                    <div
-                                        className={`shop-page-composition-product-block-left-price-wrapper ${size}`}>
+                                className={`shop-page-composition-product-block ${size}`}>
+                                <div className="shop-page-composition-product-block-text">
+                                    <h3
+                                        className="shop-page-composition-product-block-text__title"
+                                        dangerouslySetInnerHTML={{
+                                            __html: modules[stateModulesIndex]
+                                                .titleStock,
+                                        }}></h3>
+
+                                    <p
+                                        className="shop-page-composition-product-block-text__description"
+                                        dangerouslySetInnerHTML={{
+                                            __html: modules[stateModulesIndex]
+                                                .descriptionStock,
+                                        }}></p>
+
+                                    <h3
+                                        className="shop-page-composition-product-block-text__price"
+                                        dangerouslySetInnerHTML={{
+                                            __html: modules[stateModulesIndex]
+                                                .price,
+                                        }}></h3>
+                                </div>
+
+                                {isSend ? (
+                                    <div className="shop-page-form-thank">
+                                        <h3 className="shop-page-form-thank__title">
+                                            Спасибо за заявку!
+                                        </h3>
+
+                                        <p className="shop-page-form-thank__description">
+                                            С вами скоро свяжется наш менеджер
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <ShopPageCompositionProductForm
+                                        btnText={
+                                            modules[stateModulesIndex]
+                                                .btnTextStock
+                                        }
+                                        onSubmit={(data) =>
+                                            onSubmit(
+                                                data,
+                                                `${modules[stateModulesIndex].titleStock}`,
+                                                modules[stateModulesIndex]
+                                                    .goodModuleStockId
+                                            )
+                                        }
+                                    />
+                                )}
+                            </div>
+                        ) : (
+                            <div
+                                id="shop-page-composition-product"
+                                className={`shop-page-composition-product-block ${size}`}>
+                                <div className="shop-page-composition-product-block-text">
+                                    <h3
+                                        className="shop-page-composition-product-block-text__title"
+                                        dangerouslySetInnerHTML={{
+                                            __html: modules[stateModulesIndex]
+                                                .titleForm,
+                                        }}></h3>
+
+                                    <p
+                                        className="shop-page-composition-product-block-text__description"
+                                        dangerouslySetInnerHTML={{
+                                            __html: modules[stateModulesIndex]
+                                                .descriptionForm,
+                                        }}></p>
+
+                                    <h3
+                                        className="shop-page-composition-product-block-text__price"
+                                        dangerouslySetInnerHTML={{
+                                            __html: modules[stateModulesIndex]
+                                                .price,
+                                        }}></h3>
+                                </div>
+                                {/* <div
+                                        className={`shop-page-composition-product-block-price-wrapper ${size}`}>
                                         <h4
                                             className={`shop-page-composition-product-block__title ${size}`}>
                                             Стоимость:
                                         </h4>
                                         <div className="shop-page-composition-product-block-price">
                                             <div className="shop-page-composition-product-block-price-top">
-                                                {itemsAll[
-                                                    modules[stateModulesIndex]
-                                                        .goodModule
-                                                ] &&
-                                                itemsAll[
-                                                    modules[stateModulesIndex]
-                                                        .goodModule
-                                                ].sale ? (
-                                                    <>
-                                                        <p
-                                                            className={`shop-page-composition-product-block__subprice ${size}`}>
-                                                            <NumberFormat
-                                                                value={
-                                                                    itemsAll[
-                                                                        modules[
-                                                                            stateModulesIndex
-                                                                        ]
-                                                                            .goodModule
-                                                                    ].priceOld
-                                                                }
-                                                                displayType={
-                                                                    "text"
-                                                                }
-                                                                thousandSeparator={
-                                                                    " "
-                                                                }
-                                                            />
-                                                            ₽
-                                                        </p>
-                                                        <h3
-                                                            className={`shop-page-composition-product-block__price ${size}`}>
-                                                            <NumberFormat
-                                                                value={
-                                                                    itemsAll[
-                                                                        modules[
-                                                                            stateModulesIndex
-                                                                        ]
-                                                                            .goodModule
-                                                                    ].price
-                                                                }
-                                                                displayType={
-                                                                    "text"
-                                                                }
-                                                                thousandSeparator={
-                                                                    " "
-                                                                }
-                                                            />
-                                                            ₽
-                                                        </h3>
-                                                    </>
-                                                ) : (
-                                                    <h3
-                                                        className={`shop-page-composition-product-block__price ${size}`}>
-                                                        <NumberFormat
-                                                            value={
-                                                                itemsAll[
-                                                                    modules[
-                                                                        stateModulesIndex
-                                                                    ].goodModule
-                                                                ] &&
-                                                                itemsAll[
-                                                                    modules[
-                                                                        stateModulesIndex
-                                                                    ].goodModule
-                                                                ].price
-                                                            }
-                                                            displayType={"text"}
-                                                            thousandSeparator={
-                                                                " "
-                                                            }
-                                                        />
-                                                        ₽
-                                                    </h3>
-                                                )}
+                                                <h3
+                                                    className={`shop-page-composition-product-block__price ${size}`}>
+                                                    <NumberFormat
+                                                        value={
+                                                            modules[
+                                                                stateModulesIndex
+                                                            ].price
+                                                        }
+                                                        displayType={"text"}
+                                                        thousandSeparator={" "}
+                                                    />
+                                                    ₽
+                                                </h3>
                                             </div>
                                         </div>
+                                    </div> */}
+
+                                {isSend ? (
+                                    <div className="shop-page-form-thank">
+                                        <h3 className="shop-page-form-thank__title">
+                                            Спасибо за заявку!
+                                        </h3>
+
+                                        <p className="shop-page-form-thank__description">
+                                            С вами скоро свяжется наш менеджер
+                                        </p>
                                     </div>
-
-                                    {isSend ? (
-                                        <div className="shop-page-form-thank">
-                                            <h3 className="shop-page-form-thank__title">
-                                                Спасибо за заявку!
-                                            </h3>
-
-                                            <p className="shop-page-form-thank__description">
-                                                С вами скоро свяжется наш
-                                                менеджер
-                                            </p>
-                                        </div>
-                                    ) : (
-                                        <ShopPageCompositionProductForm
-                                            btnText={
+                                ) : (
+                                    <ShopPageCompositionProductForm
+                                        btnText={
+                                            modules[stateModulesIndex].btnText
+                                        }
+                                        onSubmit={(data) =>
+                                            onSubmit(
+                                                data,
+                                                `${modules[stateModulesIndex].title}`,
                                                 modules[stateModulesIndex]
-                                                    .btnText
-                                            }
-                                            onSubmit={(data) =>
-                                                onSubmit(
-                                                    data,
-                                                    `${modules[stateModulesIndex].title}`,
-                                                    modules[stateModulesIndex]
-                                                        .goodModuleId
-                                                )
-                                            }
-                                        />
-                                    )}
-
-                                    {/* <form
-                                        action={CART_DOMEN}
-                                        method="post"
-                                        encType="application/x-www-form-urlencoded"
-                                        acceptCharset="UTF-8"
-                                        style={{width: "auto"}}
-                                    >
-                                        <input
-                                            type="hidden"
-                                            value="1"
-                                            name={`Goods[${modules[stateModulesIndex].goodModuleId}]`}
-                                        />
-
-                                        <input
-                                            name="CartAccount[name]"
-                                            type="hidden"
-                                            value=""
-                                        />
-                                        <input
-                                            name="CartAccount[email]"
-                                            type="hidden"
-                                            value=""
-                                        />
-
-                                        <button
-                                            className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
-                                            // onClick={() =>
-                                            //     setUpdateGoods(
-                                            //         itemsAll[
-                                            //             modules[
-                                            //                 stateModulesIndex
-                                            //             ].goodModule
-                                            //         ].id
-                                            //     )
-                                            // }
-                                        >
-                                            Добавить в корзину
-                                        </button>
-                                    </form> */}
-                                    {/* <button
-                                        className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
-                                        onClick={() =>
-                                            setUpdateGoods(
-                                                itemsAll[
-                                                    modules[stateModulesIndex]
-                                                        .goodModule
-                                                ].id
+                                                    .goodModuleId
                                             )
                                         }
-                                    >
-                                        Добавить в корзину
-                                    </button> */}
-                                </div>
-                                {parseInt(
+                                    />
+                                )}
+
+                                {/* {parseInt(
                                     modules[stateModulesIndex].stockBoolean
                                 ) ? (
                                     <div
@@ -533,69 +480,11 @@ const ShopPageCompositionProduct = ({
                                                     }
                                                 />
                                             )}
-                                            {/* <form
-                                                action={CART_DOMEN}
-                                                method="post"
-                                                encType="application/x-www-form-urlencoded"
-                                                acceptCharset="UTF-8"
-                                                style={{width: "auto"}}
-                                            >
-                                                <input
-                                                    type="hidden"
-                                                    value="1"
-                                                    name={`Goods[${modules[stateModulesIndex].goodModuleStockId}]`}
-                                                />
-
-                                                <input
-                                                    name="CartAccount[name]"
-                                                    type="hidden"
-                                                    value=""
-                                                />
-                                                <input
-                                                    name="CartAccount[email]"
-                                                    type="hidden"
-                                                    value=""
-                                                />
-
-                                                <button
-                                                    type="submit"
-                                                    className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
-                                                    // onClick={() =>
-                                                    //     setUpdateGoods(
-                                                    //         modules[
-                                                    //             stateModulesIndex
-                                                    //         ].goodModuleStock
-                                                    //     )
-                                                    // }
-                                                >
-                                                    {
-                                                        modules[
-                                                            stateModulesIndex
-                                                        ].btnTextStock
-                                                    }
-                                                </button>
-                                            </form> */}
-                                            {/* <button
-                                                type="submit"
-                                                className={`btn-bold_color shop-page-composition-product-block__btn ${size}`}
-                                                onClick={() =>
-                                                    setUpdateGoods(
-                                                        modules[
-                                                            stateModulesIndex
-                                                        ].goodModuleStock
-                                                    )
-                                                }
-                                            >
-                                                {
-                                                    modules[stateModulesIndex]
-                                                        .btnTextStock
-                                                }
-                                            </button> */}
                                         </div>
                                     </div>
-                                ) : null}
+                                ) : null} */}
                             </div>
-                        ) : null}
+                        )}
                     </div>
                 </div>
             </section>
